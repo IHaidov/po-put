@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace PO_PRO.Classes
 {
-    class Room
+    public enum Room_Type
     {
+        Lux_2_persons,
+        Lux_1_person,
+        Normal_2_persons,
+        Normal_1_person
+    }
+    public class Room
+    {
+        public int ID { get; }
+        public Room_Type Type { get; set; }
+        public double Price { get; set; }
+        public bool Free_or_no { get; set; }
     }
 }

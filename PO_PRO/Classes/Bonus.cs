@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace PO_PRO.Classes
 {
-    class Bonus
+    public class Bonus
     {
+        public int ID { get; }
+        public int Hotel_ID { get; }
+        public int Price { get; set; }
+
+        
     }
 }

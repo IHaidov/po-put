@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace PO_PRO.Classes
 {
-    class Address
+    public class Address
     {
+        public int ID { get; }
+        public string Street { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Postal_Code { get; set; }
+        public string Country { get; set; }
     }
 }
