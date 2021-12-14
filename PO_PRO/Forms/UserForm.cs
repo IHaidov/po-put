@@ -16,5 +16,10 @@ namespace PO_PRO.Forms
         {
             InitializeComponent();
         }
+
+        private void UserForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

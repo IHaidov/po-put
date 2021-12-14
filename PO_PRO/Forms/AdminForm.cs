@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PO_PRO.Forms
 {
-    public partial class MainForm : Form
+    public partial class AdminForm : Form
     {
-        public MainForm()
+        public AdminForm()
         {
             InitializeComponent();
         }
