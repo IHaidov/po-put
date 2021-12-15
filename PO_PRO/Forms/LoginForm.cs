@@ -35,12 +35,51 @@ namespace PO_PRO
             graphics.FillRectangle(b, gradient_rectangle);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void onClick_LogIn(object sender, EventArgs e)
         {
-
+            Login();
         }
 
-        private void onClick_LogIn(object sender, EventArgs e)
+        private void onClick_Register(object sender, EventArgs e)
+        {
+            MessageBox.Show("Register");
+        }
+        private void onClick_ClearFields(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
+        private void onClick_Exit(object sender, EventArgs e)
+        {
+            ExitApplication();
+        }
+
+        private void KeyDown_Form(object sender, KeyEventArgs e)
+        {
+            //ESC - exit an application
+            if (e.KeyData == Keys.Escape)
+            {
+                ExitApplication();
+            }
+        }
+        private void KeyDown_Text(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                Login();
+            }
+            if (e.KeyData == Keys.Escape)
+            {
+                ExitApplication();
+            }
+        }
+
+        private void ExitApplication()
+        {
+            Application.Exit();
+        }
+
+        private void Login()
         {
             if (txtPassword.Text == "1234" && txtUsername.Text == "user")
             {
@@ -59,24 +98,15 @@ namespace PO_PRO
             else
             {
                 MessageBox.Show("The password or username is not correct");
-                txtUsername.Focus();
+                //txtUsername.Focus();
             }
-
+            ClearFields();
         }
 
-        private void onClick_Register(object sender, EventArgs e)
-        {
-            MessageBox.Show("Register");
-        }
-        private void onClick_ClearFields(object sender, EventArgs e)
+        private void ClearFields()
         {
             txtUsername.Text = "";
             txtPassword.Text = "";
-        }
-
-        private void onClick_Exit(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
