@@ -60,7 +60,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.panel1.Location = new System.Drawing.Point(39, 237);
+            this.panel1.Location = new System.Drawing.Point(36, 237);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(236, 1);
             this.panel1.TabIndex = 3;
@@ -68,7 +68,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.panel2.Location = new System.Drawing.Point(39, 300);
+            this.panel2.Location = new System.Drawing.Point(36, 300);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(236, 1);
             this.panel2.TabIndex = 5;
@@ -77,7 +77,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::PO_PRO.Properties.Resources.key_1_;
-            this.pictureBox3.Location = new System.Drawing.Point(39, 264);
+            this.pictureBox3.Location = new System.Drawing.Point(36, 264);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -88,7 +88,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::PO_PRO.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(39, 201);
+            this.pictureBox2.Location = new System.Drawing.Point(36, 201);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -114,7 +114,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(39, 354);
+            this.button1.Location = new System.Drawing.Point(36, 354);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 33);
             this.button1.TabIndex = 4;
@@ -129,7 +129,7 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.label2.Location = new System.Drawing.Point(171, 329);
+            this.label2.Location = new System.Drawing.Point(168, 329);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 19);
             this.label2.TabIndex = 3;
@@ -143,7 +143,7 @@
             this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Exit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.Exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.Exit.Location = new System.Drawing.Point(140, 449);
+            this.Exit.Location = new System.Drawing.Point(136, 449);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(36, 19);
             this.Exit.TabIndex = 6;
@@ -154,22 +154,26 @@
             // 
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtUsername.Location = new System.Drawing.Point(79, 201);
+            this.txtUsername.Location = new System.Drawing.Point(76, 201);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(196, 30);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.Text = "login";
+            this.txtUsername.Click += new System.EventHandler(this.onClick_Text);
             this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDown_Text);
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtPassword.Location = new System.Drawing.Point(79, 264);
+            this.txtPassword.Location = new System.Drawing.Point(76, 264);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(196, 30);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "password";
+            this.txtPassword.Click += new System.EventHandler(this.onClick_Text);
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDown_Text);
             // 
             // button2
@@ -180,7 +184,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(39, 403);
+            this.button2.Location = new System.Drawing.Point(36, 401);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(236, 33);
             this.button2.TabIndex = 5;

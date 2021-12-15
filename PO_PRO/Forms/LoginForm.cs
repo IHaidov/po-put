@@ -18,7 +18,7 @@ namespace PO_PRO
         {
             InitializeComponent();
             this.Paint += new PaintEventHandler(set_background);
-            
+            ResetColor();
         }
 
         private void set_background(Object sender, PaintEventArgs e)
@@ -42,16 +42,23 @@ namespace PO_PRO
 
         private void onClick_Register(object sender, EventArgs e)
         {
-            MessageBox.Show("Register");
+            new RegisterForm().Show();
+            this.Hide();
         }
         private void onClick_ClearFields(object sender, EventArgs e)
         {
             ClearFields();
+            ResetColor();
         }
 
         private void onClick_Exit(object sender, EventArgs e)
         {
             ExitApplication();
+        }
+
+        private void onClick_Text(object sender, EventArgs e)
+        {
+            ResetColor();
         }
 
         private void KeyDown_Form(object sender, KeyEventArgs e)
@@ -97,6 +104,8 @@ namespace PO_PRO
 
             else
             {
+                txtUsername.BackColor = ColorTranslator.FromHtml("#ff8787");
+                txtPassword.BackColor = ColorTranslator.FromHtml("#ff8787");
                 MessageBox.Show("The password or username is not correct");
                 //txtUsername.Focus();
             }
@@ -108,5 +117,12 @@ namespace PO_PRO
             txtUsername.Text = "";
             txtPassword.Text = "";
         }
+
+        private void ResetColor()
+        {
+            txtUsername.BackColor = Color.White;
+            txtPassword.BackColor = Color.White;
+        }
+
     }
 }
