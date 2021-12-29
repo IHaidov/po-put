@@ -15,15 +15,15 @@ namespace PO_PRO
 
         private static readonly ConfigurationOptions configurationOptions = new ConfigurationOptions
         {
-            EndPoints = { { "", 13080 } },
+            EndPoints = { { "redis-16263.c16.us-east-1-2.ec2.cloud.redislabs.com", 16263 } },
             Ssl = false,
             AsyncTimeout = 60000,
             SyncTimeout = 60000,
             //AllowAdmin = true,
             //SslProtocols = SslProtocols.Auto,
             DefaultDatabase = 0,
-            Password = "",
-            User = "",
+            Password = "ElNbPom1CbKYMeYRxPKFswAl2DxbWDz9",
+            User = "default",
             AbortOnConnectFail = true,
             ReconnectRetryPolicy = new LinearRetry(60000),
             ConnectRetry = 3,
