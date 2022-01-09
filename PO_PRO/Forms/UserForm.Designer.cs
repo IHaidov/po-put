@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.pictureMinimize = new System.Windows.Forms.PictureBox();
+            this.pictureMaximize = new System.Windows.Forms.PictureBox();
+            this.pictureExit = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.pictureMinimize = new System.Windows.Forms.PictureBox();
-            this.pictureMaximize = new System.Windows.Forms.PictureBox();
-            this.pictureExit = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMaximize)).BeginInit();
@@ -53,8 +53,44 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(800, 100);
+            this.panelMenu.Size = new System.Drawing.Size(1109, 100);
             this.panelMenu.TabIndex = 0;
+            // 
+            // pictureMinimize
+            // 
+            this.pictureMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureMinimize.Image = global::PO_PRO.Properties.Resources.minimize_sign;
+            this.pictureMinimize.Location = new System.Drawing.Point(1038, 8);
+            this.pictureMinimize.Name = "pictureMinimize";
+            this.pictureMinimize.Size = new System.Drawing.Size(16, 16);
+            this.pictureMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureMinimize.TabIndex = 4;
+            this.pictureMinimize.TabStop = false;
+            this.pictureMinimize.Click += new System.EventHandler(this.pictureMinimize_Click);
+            // 
+            // pictureMaximize
+            // 
+            this.pictureMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureMaximize.Image = global::PO_PRO.Properties.Resources.maximize_size_option;
+            this.pictureMaximize.Location = new System.Drawing.Point(1060, 8);
+            this.pictureMaximize.Name = "pictureMaximize";
+            this.pictureMaximize.Size = new System.Drawing.Size(16, 16);
+            this.pictureMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureMaximize.TabIndex = 3;
+            this.pictureMaximize.TabStop = false;
+            this.pictureMaximize.Click += new System.EventHandler(this.pictureMaximize_Click);
+            // 
+            // pictureExit
+            // 
+            this.pictureExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureExit.Image = global::PO_PRO.Properties.Resources.close;
+            this.pictureExit.Location = new System.Drawing.Point(1082, 8);
+            this.pictureExit.Name = "pictureExit";
+            this.pictureExit.Size = new System.Drawing.Size(16, 16);
+            this.pictureExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureExit.TabIndex = 2;
+            this.pictureExit.TabStop = false;
+            this.pictureExit.Click += new System.EventHandler(this.pictureExit_Click);
             // 
             // btnSearch
             // 
@@ -84,7 +120,7 @@
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(0, 100);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(800, 9);
+            this.panelShadow.Size = new System.Drawing.Size(1109, 9);
             this.panelShadow.TabIndex = 1;
             // 
             // panelDesktop
@@ -92,50 +128,14 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(0, 109);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(800, 341);
+            this.panelDesktop.Size = new System.Drawing.Size(1109, 614);
             this.panelDesktop.TabIndex = 2;
-            // 
-            // pictureMinimize
-            // 
-            this.pictureMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureMinimize.Image = global::PO_PRO.Properties.Resources.minimize_sign;
-            this.pictureMinimize.Location = new System.Drawing.Point(729, 8);
-            this.pictureMinimize.Name = "pictureMinimize";
-            this.pictureMinimize.Size = new System.Drawing.Size(16, 16);
-            this.pictureMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureMinimize.TabIndex = 4;
-            this.pictureMinimize.TabStop = false;
-            this.pictureMinimize.Click += new System.EventHandler(this.pictureMinimize_Click);
-            // 
-            // pictureMaximize
-            // 
-            this.pictureMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureMaximize.Image = global::PO_PRO.Properties.Resources.maximize_size_option;
-            this.pictureMaximize.Location = new System.Drawing.Point(751, 8);
-            this.pictureMaximize.Name = "pictureMaximize";
-            this.pictureMaximize.Size = new System.Drawing.Size(16, 16);
-            this.pictureMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureMaximize.TabIndex = 3;
-            this.pictureMaximize.TabStop = false;
-            this.pictureMaximize.Click += new System.EventHandler(this.pictureMaximize_Click);
-            // 
-            // pictureExit
-            // 
-            this.pictureExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureExit.Image = global::PO_PRO.Properties.Resources.close;
-            this.pictureExit.Location = new System.Drawing.Point(773, 8);
-            this.pictureExit.Name = "pictureExit";
-            this.pictureExit.Size = new System.Drawing.Size(16, 16);
-            this.pictureExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureExit.TabIndex = 2;
-            this.pictureExit.TabStop = false;
-            this.pictureExit.Click += new System.EventHandler(this.pictureExit_Click);
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1109, 723);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelMenu);
