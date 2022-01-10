@@ -30,7 +30,9 @@ namespace PO_PRO.Forms.UserChildForms
         private void InitializeComponent()
         {
             this.panelFilter = new System.Windows.Forms.Panel();
+            this.txtLocation = new System.Windows.Forms.TextBox();
             this.btnFacilities = new FontAwesome.Sharp.IconButton();
+            this.btnChildrenMinus = new FontAwesome.Sharp.IconButton();
             this.btnAdultsMinus = new FontAwesome.Sharp.IconButton();
             this.btnChildrenPlus = new FontAwesome.Sharp.IconButton();
             this.btnAdultsPlus = new FontAwesome.Sharp.IconButton();
@@ -40,21 +42,32 @@ namespace PO_PRO.Forms.UserChildForms
             this.lblChildren = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblCheckOut = new System.Windows.Forms.Label();
+            this.lblCheckIn = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnChildrenMinus = new FontAwesome.Sharp.IconButton();
-            this.txtLocation = new System.Windows.Forms.TextBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
-            this.lblCheckIn = new System.Windows.Forms.Label();
-            this.lblCheckOut = new System.Windows.Forms.Label();
+            this.btnFilter = new FontAwesome.Sharp.IconButton();
+            this.btnHamburger = new FontAwesome.Sharp.IconButton();
+            this.btnCloseMenu = new FontAwesome.Sharp.IconButton();
+            this.btnBathroom = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.panelFacilities = new System.Windows.Forms.Panel();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.panelFilter.SuspendLayout();
+            this.panelFacilities.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFilter
             // 
             this.panelFilter.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelFilter.Controls.Add(this.panelFacilities);
             this.panelFilter.Controls.Add(this.txtLocation);
+            this.panelFilter.Controls.Add(this.btnFilter);
             this.panelFilter.Controls.Add(this.btnFacilities);
+            this.panelFilter.Controls.Add(this.btnCloseMenu);
             this.panelFilter.Controls.Add(this.btnChildrenMinus);
             this.panelFilter.Controls.Add(this.btnAdultsMinus);
             this.panelFilter.Controls.Add(this.btnChildrenPlus);
@@ -71,8 +84,20 @@ namespace PO_PRO.Forms.UserChildForms
             this.panelFilter.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelFilter.Location = new System.Drawing.Point(0, 0);
             this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(225, 620);
+            this.panelFilter.Size = new System.Drawing.Size(225, 670);
             this.panelFilter.TabIndex = 1;
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.BackColor = System.Drawing.SystemColors.Info;
+            this.txtLocation.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtLocation.Location = new System.Drawing.Point(15, 60);
+            this.txtLocation.MaxLength = 35000;
+            this.txtLocation.Multiline = true;
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(190, 34);
+            this.txtLocation.TabIndex = 1;
+            this.txtLocation.Text = "Where to go?";
             // 
             // btnFacilities
             // 
@@ -98,8 +123,34 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnFacilities.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFacilities.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFacilities.UseVisualStyleBackColor = false;
+            this.btnFacilities.Click += new System.EventHandler(this.btnFacilities_Click);
             this.btnFacilities.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnFacilities.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            // 
+            // btnChildrenMinus
+            // 
+            this.btnChildrenMinus.BackColor = System.Drawing.Color.Transparent;
+            this.btnChildrenMinus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChildrenMinus.FlatAppearance.BorderSize = 0;
+            this.btnChildrenMinus.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnChildrenMinus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnChildrenMinus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnChildrenMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChildrenMinus.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.btnChildrenMinus.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btnChildrenMinus.IconColor = System.Drawing.Color.Black;
+            this.btnChildrenMinus.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnChildrenMinus.IconSize = 24;
+            this.btnChildrenMinus.Location = new System.Drawing.Point(142, 352);
+            this.btnChildrenMinus.Margin = new System.Windows.Forms.Padding(0);
+            this.btnChildrenMinus.Name = "btnChildrenMinus";
+            this.btnChildrenMinus.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnChildrenMinus.Size = new System.Drawing.Size(24, 24);
+            this.btnChildrenMinus.TabIndex = 6;
+            this.btnChildrenMinus.UseVisualStyleBackColor = false;
+            this.btnChildrenMinus.Click += new System.EventHandler(this.btnChildrenMinus_Click);
+            this.btnChildrenMinus.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.btnChildrenMinus.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
             // btnAdultsMinus
             // 
@@ -276,74 +327,17 @@ namespace PO_PRO.Forms.UserChildForms
             this.label2.TabIndex = 0;
             this.label2.Text = "Adults";
             // 
-            // label1
+            // lblCheckOut
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(20, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Location";
-            // 
-            // btnChildrenMinus
-            // 
-            this.btnChildrenMinus.BackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenMinus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChildrenMinus.FlatAppearance.BorderSize = 0;
-            this.btnChildrenMinus.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenMinus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenMinus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChildrenMinus.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.btnChildrenMinus.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.btnChildrenMinus.IconColor = System.Drawing.Color.Black;
-            this.btnChildrenMinus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChildrenMinus.IconSize = 24;
-            this.btnChildrenMinus.Location = new System.Drawing.Point(142, 352);
-            this.btnChildrenMinus.Margin = new System.Windows.Forms.Padding(0);
-            this.btnChildrenMinus.Name = "btnChildrenMinus";
-            this.btnChildrenMinus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnChildrenMinus.Size = new System.Drawing.Size(24, 24);
-            this.btnChildrenMinus.TabIndex = 6;
-            this.btnChildrenMinus.UseVisualStyleBackColor = false;
-            this.btnChildrenMinus.Click += new System.EventHandler(this.btnChildrenMinus_Click);
-            this.btnChildrenMinus.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnChildrenMinus.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
-            // txtLocation
-            // 
-            this.txtLocation.BackColor = System.Drawing.SystemColors.Info;
-            this.txtLocation.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtLocation.Location = new System.Drawing.Point(15, 60);
-            this.txtLocation.MaxLength = 35000;
-            this.txtLocation.Multiline = true;
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(190, 34);
-            this.txtLocation.TabIndex = 1;
-            this.txtLocation.Text = "Where to go?";
-            // 
-            // panelShadow
-            // 
-            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelShadow.Location = new System.Drawing.Point(225, 0);
-            this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1, 620);
-            this.panelShadow.TabIndex = 2;
-            // 
-            // monthCalendar
-            // 
-            this.monthCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.monthCalendar.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.monthCalendar.Location = new System.Drawing.Point(250, 101);
-            this.monthCalendar.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
-            this.monthCalendar.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
-            this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.TabIndex = 3;
-            this.monthCalendar.Visible = false;
-            this.monthCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
+            this.lblCheckOut.AutoSize = true;
+            this.lblCheckOut.BackColor = System.Drawing.Color.Transparent;
+            this.lblCheckOut.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCheckOut.ForeColor = System.Drawing.Color.Black;
+            this.lblCheckOut.Location = new System.Drawing.Point(20, 239);
+            this.lblCheckOut.Name = "lblCheckOut";
+            this.lblCheckOut.Size = new System.Drawing.Size(117, 30);
+            this.lblCheckOut.TabIndex = 0;
+            this.lblCheckOut.Text = "Location";
             // 
             // lblCheckIn
             // 
@@ -357,30 +351,265 @@ namespace PO_PRO.Forms.UserChildForms
             this.lblCheckIn.TabIndex = 0;
             this.lblCheckIn.Text = "Location";
             // 
-            // lblCheckOut
+            // label1
             // 
-            this.lblCheckOut.AutoSize = true;
-            this.lblCheckOut.BackColor = System.Drawing.Color.Transparent;
-            this.lblCheckOut.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCheckOut.ForeColor = System.Drawing.Color.Black;
-            this.lblCheckOut.Location = new System.Drawing.Point(20, 239);
-            this.lblCheckOut.Name = "lblCheckOut";
-            this.lblCheckOut.Size = new System.Drawing.Size(117, 30);
-            this.lblCheckOut.TabIndex = 0;
-            this.lblCheckOut.Text = "Location";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Location";
+            // 
+            // panelShadow
+            // 
+            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelShadow.Location = new System.Drawing.Point(225, 0);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(1, 670);
+            this.panelShadow.TabIndex = 2;
+            // 
+            // monthCalendar
+            // 
+            this.monthCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.monthCalendar.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
+            this.monthCalendar.Location = new System.Drawing.Point(250, 101);
+            this.monthCalendar.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
+            this.monthCalendar.MaxSelectionCount = 365;
+            this.monthCalendar.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2022, 1, 10, 0, 0, 0, 0), new System.DateTime(2023, 1, 9, 0, 0, 0, 0));
+            this.monthCalendar.TabIndex = 3;
+            this.monthCalendar.Visible = false;
+            this.monthCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnFilter.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnFilter.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnFilter.IconColor = System.Drawing.Color.Black;
+            this.btnFilter.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFilter.IconSize = 30;
+            this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFilter.Location = new System.Drawing.Point(0, 619);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnFilter.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnFilter.Size = new System.Drawing.Size(225, 51);
+            this.btnFilter.TabIndex = 8;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.btnFilter.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            // 
+            // btnHamburger
+            // 
+            this.btnHamburger.BackColor = System.Drawing.Color.Transparent;
+            this.btnHamburger.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHamburger.FlatAppearance.BorderSize = 0;
+            this.btnHamburger.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnHamburger.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnHamburger.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnHamburger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHamburger.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.btnHamburger.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.btnHamburger.IconColor = System.Drawing.Color.Black;
+            this.btnHamburger.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHamburger.IconSize = 30;
+            this.btnHamburger.Location = new System.Drawing.Point(229, 10);
+            this.btnHamburger.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHamburger.Name = "btnHamburger";
+            this.btnHamburger.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnHamburger.Size = new System.Drawing.Size(30, 30);
+            this.btnHamburger.TabIndex = 5;
+            this.btnHamburger.UseVisualStyleBackColor = false;
+            this.btnHamburger.Click += new System.EventHandler(this.btnHamburger_Click);
+            this.btnHamburger.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.btnHamburger.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            // 
+            // btnCloseMenu
+            // 
+            this.btnCloseMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnCloseMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCloseMenu.FlatAppearance.BorderSize = 0;
+            this.btnCloseMenu.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnCloseMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCloseMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCloseMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseMenu.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.btnCloseMenu.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCloseMenu.IconColor = System.Drawing.Color.Black;
+            this.btnCloseMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCloseMenu.IconSize = 30;
+            this.btnCloseMenu.Location = new System.Drawing.Point(190, 10);
+            this.btnCloseMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCloseMenu.Name = "btnCloseMenu";
+            this.btnCloseMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCloseMenu.Size = new System.Drawing.Size(30, 30);
+            this.btnCloseMenu.TabIndex = 5;
+            this.btnCloseMenu.UseVisualStyleBackColor = false;
+            this.btnCloseMenu.Click += new System.EventHandler(this.btnCloseMenu_Click);
+            this.btnCloseMenu.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.btnCloseMenu.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            // 
+            // btnBathroom
+            // 
+            this.btnBathroom.BackColor = System.Drawing.Color.Transparent;
+            this.btnBathroom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBathroom.FlatAppearance.BorderSize = 0;
+            this.btnBathroom.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnBathroom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBathroom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnBathroom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBathroom.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnBathroom.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
+            this.btnBathroom.IconColor = System.Drawing.Color.Black;
+            this.btnBathroom.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBathroom.IconSize = 20;
+            this.btnBathroom.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnBathroom.Location = new System.Drawing.Point(15, 12);
+            this.btnBathroom.Name = "btnBathroom";
+            this.btnBathroom.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnBathroom.Size = new System.Drawing.Size(141, 33);
+            this.btnBathroom.TabIndex = 8;
+            this.btnBathroom.Text = "Bathroom";
+            this.btnBathroom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBathroom.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnBathroom.UseVisualStyleBackColor = false;
+            this.btnBathroom.Click += new System.EventHandler(this.btnBathroom_Click);
+            this.btnBathroom.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.btnBathroom.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 20;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.iconButton1.Location = new System.Drawing.Point(15, 51);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.iconButton1.Size = new System.Drawing.Size(141, 33);
+            this.iconButton1.TabIndex = 8;
+            this.iconButton1.Text = "Bathroom";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.btnBathroom_Click);
+            this.iconButton1.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.iconButton1.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.iconButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 20;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.iconButton2.Location = new System.Drawing.Point(15, 90);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.iconButton2.Size = new System.Drawing.Size(141, 33);
+            this.iconButton2.TabIndex = 8;
+            this.iconButton2.Text = "Bathroom";
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.btnBathroom_Click);
+            this.iconButton2.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.iconButton2.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.vScrollBar1.Location = new System.Drawing.Point(179, 0);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(21, 155);
+            this.vScrollBar1.TabIndex = 6;
+            // 
+            // panelFacilities
+            // 
+            this.panelFacilities.BackColor = System.Drawing.Color.Transparent;
+            this.panelFacilities.Controls.Add(this.iconButton3);
+            this.panelFacilities.Controls.Add(this.iconButton2);
+            this.panelFacilities.Controls.Add(this.vScrollBar1);
+            this.panelFacilities.Controls.Add(this.btnBathroom);
+            this.panelFacilities.Controls.Add(this.iconButton1);
+            this.panelFacilities.Location = new System.Drawing.Point(10, 447);
+            this.panelFacilities.Name = "panelFacilities";
+            this.panelFacilities.Size = new System.Drawing.Size(200, 155);
+            this.panelFacilities.TabIndex = 7;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.iconButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 20;
+            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.iconButton3.Location = new System.Drawing.Point(15, 125);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.iconButton3.Size = new System.Drawing.Size(141, 33);
+            this.iconButton3.TabIndex = 8;
+            this.iconButton3.Text = "Bathroom";
+            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.Click += new System.EventHandler(this.btnBathroom_Click);
+            this.iconButton3.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.iconButton3.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
             // SearchFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 620);
+            this.ClientSize = new System.Drawing.Size(973, 670);
             this.Controls.Add(this.monthCalendar);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelFilter);
+            this.Controls.Add(this.btnHamburger);
             this.Name = "SearchFrom";
             this.Text = "SearchFrom";
             this.panelFilter.ResumeLayout(false);
             this.panelFilter.PerformLayout();
+            this.panelFacilities.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -404,5 +633,14 @@ namespace PO_PRO.Forms.UserChildForms
         private System.Windows.Forms.MonthCalendar monthCalendar;
         private System.Windows.Forms.Label lblCheckIn;
         private System.Windows.Forms.Label lblCheckOut;
+        private FontAwesome.Sharp.IconButton btnFilter;
+        private FontAwesome.Sharp.IconButton btnHamburger;
+        private FontAwesome.Sharp.IconButton btnCloseMenu;
+        private FontAwesome.Sharp.IconButton btnBathroom;
+        private System.Windows.Forms.Panel panelFacilities;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }

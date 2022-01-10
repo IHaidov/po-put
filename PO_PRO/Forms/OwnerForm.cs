@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PO_PRO.Forms
 {
-    public partial class DbForm : Form
+    public partial class OwnerForm : Form
     {
-        public DbForm()
+        public OwnerForm()
         {
             InitializeComponent();
         }

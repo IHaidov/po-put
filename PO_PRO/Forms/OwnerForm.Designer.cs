@@ -1,6 +1,6 @@
 ﻿namespace PO_PRO.Forms
 {
-    partial class DbForm
+    partial class OwnerForm
     {
         /// <summary>
         /// Required designer variable.

@@ -21,6 +21,11 @@ namespace PO_PRO.Forms.UserChildForms
             panelShadow.Paint += new PaintEventHandler(SetShadowBackground);
             lblCheckIn.Text = DateTime.Today.ToString("dd.MM.yyyy");
             lblCheckOut.Text = DateTime.Today.ToString("dd.MM.yyyy");
+            btnFilter.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#b55a19");
+            btnFilter.BackColor = ColorTranslator.FromHtml("#d59223");
+            btnHamburger.Visible = false;
+            btnHamburger.Location = new Point(10, 10);
+            panelFacilities.Visible = false;
         }
         private void SetFilterBackground(Object sender, PaintEventArgs e)
         {
@@ -120,6 +125,41 @@ namespace PO_PRO.Forms.UserChildForms
         {
             string date = monthCalendar.SelectionRange.Start.ToShortDateString();
             label.Text = date;
+            //monthCalendar.Visible = false;
+        }
+
+        private void btnCloseMenu_Click(object sender, EventArgs e)
+        {
+            panelFilter.Visible = false;
+            btnHamburger.Visible = true;
+        }
+
+        private void btnHamburger_Click(object sender, EventArgs e)
+        {
+            panelFilter.Visible = true;
+            btnHamburger.Visible = false;
+        }
+
+        private void CheckedClicked(IconButton btn)
+        {
+            if(btn.IconChar.ToString() == "CheckSquare")
+            {
+                btn.IconChar = IconChar.Square;
+            }
+            else
+            {
+                btn.IconChar = IconChar.CheckSquare;
+            }
+        }
+
+        private void btnBathroom_Click(object sender, EventArgs e)
+        {
+            CheckedClicked((IconButton)sender);
+        }
+
+        private void btnFacilities_Click(object sender, EventArgs e)
+        {
+            panelFacilities.Visible = !panelFacilities.Visible;
         }
     }
 }

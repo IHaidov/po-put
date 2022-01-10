@@ -60,11 +60,11 @@
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\Room.cs" />
     <Compile Include="DB\DB.cs" />
-    <Compile Include="Forms\DbForm.cs">
+    <Compile Include="Forms\OwnerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DbForm.Designer.cs">
-      <DependentUpon>DbForm.cs</DependentUpon>
+    <Compile Include="Forms\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
