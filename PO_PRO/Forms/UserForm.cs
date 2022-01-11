@@ -31,7 +31,7 @@ namespace PO_PRO.Forms
             panelDesktop.Controls.Add(childForm);
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
-            childForm.Show();
+            childForm.Visible = true;
         }
 
         private void Reset()

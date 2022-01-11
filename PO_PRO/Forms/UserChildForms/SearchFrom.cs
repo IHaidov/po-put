@@ -14,6 +14,21 @@ namespace PO_PRO.Forms.UserChildForms
 {
     public partial class SearchFrom : Form
     {
+        [System.Runtime.InteropServices.DllImport("user32")]
+        static extern bool AnimateWindow(IntPtr hwnd, int time, AnimateWindowFlags flags);
+        enum AnimateWindowFlags : uint
+        {
+            AW_HOR_POSITIVE = 0x00000001,
+            AW_HOR_NEGATIVE = 0x00000002,
+            AW_VER_POSITIVE = 0x00000004,
+            AW_VER_NEGATIVE = 0x00000008,
+            AW_CENTER = 0x00000010,
+            AW_HIDE = 0x00010000,
+            AW_ACTIVATE = 0x00020000,
+            AW_SLIDE = 0x00040000,
+            AW_BLEND = 0x00080000
+        }
+
         public SearchFrom()
         {
             InitializeComponent();
@@ -128,18 +143,22 @@ namespace PO_PRO.Forms.UserChildForms
             //monthCalendar.Visible = false;
         }
 
+        //Hamburger menu
         private void btnCloseMenu_Click(object sender, EventArgs e)
         {
-            panelFilter.Visible = false;
+            panelShadow.Visible = false;
+            AnimateWindow(panelFilter.Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_HOR_NEGATIVE | AnimateWindowFlags.AW_HIDE);
             btnHamburger.Visible = true;
         }
 
         private void btnHamburger_Click(object sender, EventArgs e)
         {
-            panelFilter.Visible = true;
             btnHamburger.Visible = false;
+            AnimateWindow(panelFilter.Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_HOR_POSITIVE);
+            panelShadow.Visible = true;
         }
 
+        //(Un)Check facilities
         private void CheckedClicked(IconButton btn)
         {
             if(btn.IconChar.ToString() == "CheckSquare")
