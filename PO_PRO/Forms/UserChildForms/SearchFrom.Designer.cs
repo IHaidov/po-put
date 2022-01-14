@@ -31,7 +31,11 @@ namespace PO_PRO.Forms.UserChildForms
         {
             this.panelFilter = new System.Windows.Forms.Panel();
             this.panelFacilities = new System.Windows.Forms.Panel();
+            this.btnElectricKettle = new FontAwesome.Sharp.IconButton();
+            this.btnFitnessCentre = new FontAwesome.Sharp.IconButton();
             this.btnParking = new FontAwesome.Sharp.IconButton();
+            this.btnTV = new FontAwesome.Sharp.IconButton();
+            this.btnPetsAllowed = new FontAwesome.Sharp.IconButton();
             this.btnWifi = new FontAwesome.Sharp.IconButton();
             this.btnBalcony = new FontAwesome.Sharp.IconButton();
             this.btnPrivateBathroom = new FontAwesome.Sharp.IconButton();
@@ -56,10 +60,6 @@ namespace PO_PRO.Forms.UserChildForms
             this.panelShadow = new System.Windows.Forms.Panel();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.btnHamburger = new FontAwesome.Sharp.IconButton();
-            this.btnPetsAllowed = new FontAwesome.Sharp.IconButton();
-            this.btnFitnessCentre = new FontAwesome.Sharp.IconButton();
-            this.btnElectricKettle = new FontAwesome.Sharp.IconButton();
-            this.btnTV = new FontAwesome.Sharp.IconButton();
             this.panelFilter.SuspendLayout();
             this.panelFacilities.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +93,7 @@ namespace PO_PRO.Forms.UserChildForms
             // 
             // panelFacilities
             // 
+            this.panelFacilities.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panelFacilities.AutoScroll = true;
             this.panelFacilities.BackColor = System.Drawing.Color.Transparent;
             this.panelFacilities.Controls.Add(this.btnElectricKettle);
@@ -104,11 +105,66 @@ namespace PO_PRO.Forms.UserChildForms
             this.panelFacilities.Controls.Add(this.btnBalcony);
             this.panelFacilities.Controls.Add(this.btnPrivateBathroom);
             this.panelFacilities.Controls.Add(this.btnKitchen);
-            this.panelFacilities.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelFacilities.Location = new System.Drawing.Point(0, 396);
             this.panelFacilities.Name = "panelFacilities";
             this.panelFacilities.Size = new System.Drawing.Size(225, 253);
             this.panelFacilities.TabIndex = 7;
+            // 
+            // btnElectricKettle
+            // 
+            this.btnElectricKettle.BackColor = System.Drawing.Color.Transparent;
+            this.btnElectricKettle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnElectricKettle.FlatAppearance.BorderSize = 0;
+            this.btnElectricKettle.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnElectricKettle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnElectricKettle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnElectricKettle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElectricKettle.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnElectricKettle.IconChar = FontAwesome.Sharp.IconChar.Square;
+            this.btnElectricKettle.IconColor = System.Drawing.Color.Black;
+            this.btnElectricKettle.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnElectricKettle.IconSize = 20;
+            this.btnElectricKettle.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnElectricKettle.Location = new System.Drawing.Point(8, 276);
+            this.btnElectricKettle.Name = "btnElectricKettle";
+            this.btnElectricKettle.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnElectricKettle.Size = new System.Drawing.Size(190, 33);
+            this.btnElectricKettle.TabIndex = 8;
+            this.btnElectricKettle.Text = "Electric kettle";
+            this.btnElectricKettle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnElectricKettle.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnElectricKettle.UseVisualStyleBackColor = false;
+            this.btnElectricKettle.Click += new System.EventHandler(this.btnElectricKettle_Click);
+            this.btnElectricKettle.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.btnElectricKettle.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            // 
+            // btnFitnessCentre
+            // 
+            this.btnFitnessCentre.BackColor = System.Drawing.Color.Transparent;
+            this.btnFitnessCentre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFitnessCentre.FlatAppearance.BorderSize = 0;
+            this.btnFitnessCentre.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnFitnessCentre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnFitnessCentre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnFitnessCentre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFitnessCentre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnFitnessCentre.IconChar = FontAwesome.Sharp.IconChar.Square;
+            this.btnFitnessCentre.IconColor = System.Drawing.Color.Black;
+            this.btnFitnessCentre.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFitnessCentre.IconSize = 20;
+            this.btnFitnessCentre.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnFitnessCentre.Location = new System.Drawing.Point(8, 237);
+            this.btnFitnessCentre.Name = "btnFitnessCentre";
+            this.btnFitnessCentre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnFitnessCentre.Size = new System.Drawing.Size(190, 33);
+            this.btnFitnessCentre.TabIndex = 8;
+            this.btnFitnessCentre.Text = "Fitness centre";
+            this.btnFitnessCentre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFitnessCentre.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnFitnessCentre.UseVisualStyleBackColor = false;
+            this.btnFitnessCentre.Click += new System.EventHandler(this.btnFitnessCentre_Click);
+            this.btnFitnessCentre.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.btnFitnessCentre.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
             // btnParking
             // 
@@ -137,6 +193,62 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnParking.Click += new System.EventHandler(this.btnParking_Click);
             this.btnParking.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnParking.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            // 
+            // btnTV
+            // 
+            this.btnTV.BackColor = System.Drawing.Color.Transparent;
+            this.btnTV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTV.FlatAppearance.BorderSize = 0;
+            this.btnTV.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnTV.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnTV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnTV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTV.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnTV.IconChar = FontAwesome.Sharp.IconChar.Square;
+            this.btnTV.IconColor = System.Drawing.Color.Black;
+            this.btnTV.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTV.IconSize = 20;
+            this.btnTV.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnTV.Location = new System.Drawing.Point(8, 315);
+            this.btnTV.Name = "btnTV";
+            this.btnTV.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnTV.Size = new System.Drawing.Size(190, 33);
+            this.btnTV.TabIndex = 8;
+            this.btnTV.Text = "TV";
+            this.btnTV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnTV.UseVisualStyleBackColor = false;
+            this.btnTV.Click += new System.EventHandler(this.btnTV_Click);
+            this.btnTV.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.btnTV.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            // 
+            // btnPetsAllowed
+            // 
+            this.btnPetsAllowed.BackColor = System.Drawing.Color.Transparent;
+            this.btnPetsAllowed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPetsAllowed.FlatAppearance.BorderSize = 0;
+            this.btnPetsAllowed.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnPetsAllowed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPetsAllowed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPetsAllowed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPetsAllowed.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPetsAllowed.IconChar = FontAwesome.Sharp.IconChar.Square;
+            this.btnPetsAllowed.IconColor = System.Drawing.Color.Black;
+            this.btnPetsAllowed.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPetsAllowed.IconSize = 20;
+            this.btnPetsAllowed.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnPetsAllowed.Location = new System.Drawing.Point(8, 198);
+            this.btnPetsAllowed.Name = "btnPetsAllowed";
+            this.btnPetsAllowed.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnPetsAllowed.Size = new System.Drawing.Size(190, 33);
+            this.btnPetsAllowed.TabIndex = 8;
+            this.btnPetsAllowed.Text = "Pets allowed";
+            this.btnPetsAllowed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPetsAllowed.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnPetsAllowed.UseVisualStyleBackColor = false;
+            this.btnPetsAllowed.Click += new System.EventHandler(this.btnPetsAllowed_Click);
+            this.btnPetsAllowed.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.btnPetsAllowed.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
             // btnWifi
             // 
@@ -264,9 +376,9 @@ namespace PO_PRO.Forms.UserChildForms
             // 
             // btnFilter
             // 
+            this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnFilter.BackColor = System.Drawing.Color.Transparent;
             this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnFilter.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -624,118 +736,6 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnHamburger.Click += new System.EventHandler(this.btnHamburger_Click);
             this.btnHamburger.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnHamburger.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
-            // btnPetsAllowed
-            // 
-            this.btnPetsAllowed.BackColor = System.Drawing.Color.Transparent;
-            this.btnPetsAllowed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPetsAllowed.FlatAppearance.BorderSize = 0;
-            this.btnPetsAllowed.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnPetsAllowed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnPetsAllowed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnPetsAllowed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPetsAllowed.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPetsAllowed.IconChar = FontAwesome.Sharp.IconChar.Square;
-            this.btnPetsAllowed.IconColor = System.Drawing.Color.Black;
-            this.btnPetsAllowed.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPetsAllowed.IconSize = 20;
-            this.btnPetsAllowed.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnPetsAllowed.Location = new System.Drawing.Point(8, 198);
-            this.btnPetsAllowed.Name = "btnPetsAllowed";
-            this.btnPetsAllowed.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnPetsAllowed.Size = new System.Drawing.Size(190, 33);
-            this.btnPetsAllowed.TabIndex = 8;
-            this.btnPetsAllowed.Text = "Pets allowed";
-            this.btnPetsAllowed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPetsAllowed.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnPetsAllowed.UseVisualStyleBackColor = false;
-            this.btnPetsAllowed.Click += new System.EventHandler(this.btnPetsAllowed_Click);
-            this.btnPetsAllowed.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnPetsAllowed.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
-            // btnFitnessCentre
-            // 
-            this.btnFitnessCentre.BackColor = System.Drawing.Color.Transparent;
-            this.btnFitnessCentre.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFitnessCentre.FlatAppearance.BorderSize = 0;
-            this.btnFitnessCentre.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnFitnessCentre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnFitnessCentre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnFitnessCentre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFitnessCentre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnFitnessCentre.IconChar = FontAwesome.Sharp.IconChar.Square;
-            this.btnFitnessCentre.IconColor = System.Drawing.Color.Black;
-            this.btnFitnessCentre.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnFitnessCentre.IconSize = 20;
-            this.btnFitnessCentre.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnFitnessCentre.Location = new System.Drawing.Point(8, 237);
-            this.btnFitnessCentre.Name = "btnFitnessCentre";
-            this.btnFitnessCentre.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnFitnessCentre.Size = new System.Drawing.Size(190, 33);
-            this.btnFitnessCentre.TabIndex = 8;
-            this.btnFitnessCentre.Text = "Fitness centre";
-            this.btnFitnessCentre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFitnessCentre.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnFitnessCentre.UseVisualStyleBackColor = false;
-            this.btnFitnessCentre.Click += new System.EventHandler(this.btnFitnessCentre_Click);
-            this.btnFitnessCentre.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnFitnessCentre.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
-            // btnElectricKettle
-            // 
-            this.btnElectricKettle.BackColor = System.Drawing.Color.Transparent;
-            this.btnElectricKettle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnElectricKettle.FlatAppearance.BorderSize = 0;
-            this.btnElectricKettle.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnElectricKettle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnElectricKettle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnElectricKettle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnElectricKettle.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnElectricKettle.IconChar = FontAwesome.Sharp.IconChar.Square;
-            this.btnElectricKettle.IconColor = System.Drawing.Color.Black;
-            this.btnElectricKettle.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnElectricKettle.IconSize = 20;
-            this.btnElectricKettle.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnElectricKettle.Location = new System.Drawing.Point(8, 276);
-            this.btnElectricKettle.Name = "btnElectricKettle";
-            this.btnElectricKettle.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnElectricKettle.Size = new System.Drawing.Size(190, 33);
-            this.btnElectricKettle.TabIndex = 8;
-            this.btnElectricKettle.Text = "Electric kettle";
-            this.btnElectricKettle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnElectricKettle.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnElectricKettle.UseVisualStyleBackColor = false;
-            this.btnElectricKettle.Click += new System.EventHandler(this.btnElectricKettle_Click);
-            this.btnElectricKettle.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnElectricKettle.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
-            // btnTV
-            // 
-            this.btnTV.BackColor = System.Drawing.Color.Transparent;
-            this.btnTV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTV.FlatAppearance.BorderSize = 0;
-            this.btnTV.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnTV.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnTV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnTV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTV.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnTV.IconChar = FontAwesome.Sharp.IconChar.Square;
-            this.btnTV.IconColor = System.Drawing.Color.Black;
-            this.btnTV.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTV.IconSize = 20;
-            this.btnTV.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnTV.Location = new System.Drawing.Point(8, 315);
-            this.btnTV.Name = "btnTV";
-            this.btnTV.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnTV.Size = new System.Drawing.Size(190, 33);
-            this.btnTV.TabIndex = 8;
-            this.btnTV.Text = "TV";
-            this.btnTV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnTV.UseVisualStyleBackColor = false;
-            this.btnTV.Click += new System.EventHandler(this.btnTV_Click);
-            this.btnTV.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnTV.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
             // SearchFrom
             // 

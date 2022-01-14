@@ -99,21 +99,22 @@ namespace PO_PRO.Forms
             if(currentChildForm != null)  currentChildForm.Close();
             Reset();
         }
+        #region WindowTools
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
-        private void pictureMaximize_Click(object sender, EventArgs e)
+        private void btnMaximize_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal) WindowState = FormWindowState.Maximized;
             else WindowState = FormWindowState.Normal;
         }
 
-        private void pictureMinimize_Click(object sender, EventArgs e)
+        private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        #endregion
     }
 }
