@@ -38,9 +38,10 @@ namespace PO_PRO.Forms.UserChildForms
             lblCheckOut.Text = DateTime.Today.ToString("dd.MM.yyyy");
             btnFilter.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#b55a19");
             btnFilter.BackColor = ColorTranslator.FromHtml("#d59223");
+            panelFacilities.BackColor = ColorTranslator.FromHtml("#df9925");
+            panelFacilities.Visible = false;
             btnHamburger.Visible = false;
             btnHamburger.Location = new Point(10, 10);
-            panelFacilities.Visible = false;
         }
         private void SetFilterBackground(Object sender, PaintEventArgs e)
         {
@@ -157,7 +158,10 @@ namespace PO_PRO.Forms.UserChildForms
             AnimateWindow(panelFilter.Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_HOR_POSITIVE);
             panelShadow.Visible = true;
         }
-
+        private void btnFacilities_Click(object sender, EventArgs e)
+        {
+            panelFacilities.Visible = !panelFacilities.Visible;
+        }
         //(Un)Check facilities
         private void CheckedClicked(IconButton btn)
         {
@@ -165,20 +169,57 @@ namespace PO_PRO.Forms.UserChildForms
             {
                 btn.IconChar = IconChar.Square;
             }
-            else
+            else if(btn.IconChar.ToString() == "Square")
             {
                 btn.IconChar = IconChar.CheckSquare;
             }
         }
-
-        private void btnBathroom_Click(object sender, EventArgs e)
+        
+        #region Facilities
+        private void btnPrivateBathroom_Click(object sender, EventArgs e)
         {
             CheckedClicked((IconButton)sender);
         }
 
-        private void btnFacilities_Click(object sender, EventArgs e)
+        private void btnKitchen_Click(object sender, EventArgs e)
         {
-            panelFacilities.Visible = !panelFacilities.Visible;
+            CheckedClicked((IconButton)sender);
         }
+
+        private void btnBalcony_Click(object sender, EventArgs e)
+        {
+            CheckedClicked((IconButton)sender);
+        }
+
+        private void btnWifi_Click(object sender, EventArgs e)
+        {
+            CheckedClicked((IconButton)sender);
+        }
+
+        private void btnParking_Click(object sender, EventArgs e)
+        {
+            CheckedClicked((IconButton)sender);
+        }
+
+        private void btnPetsAllowed_Click(object sender, EventArgs e)
+        {
+            CheckedClicked((IconButton)sender);
+        }
+
+        private void btnFitnessCentre_Click(object sender, EventArgs e)
+        {
+            CheckedClicked((IconButton)sender);
+        }
+
+        private void btnElectricKettle_Click(object sender, EventArgs e)
+        {
+            CheckedClicked((IconButton)sender);
+        }
+
+        private void btnTV_Click(object sender, EventArgs e)
+        {
+            CheckedClicked((IconButton)sender);
+        }
+        #endregion
     }
 }
