@@ -33,47 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net48\FontAwesome.Sharp.dll</HintPath>
     </Reference>
-    <Reference Include="Pipelines.Sockets.Unofficial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42ea0a778e13fbe2, processorArchitecture=MSIL">
-      <HintPath>..\packages\Pipelines.Sockets.Unofficial.2.2.0\lib\net472\Pipelines.Sockets.Unofficial.dll</HintPath>
-    </Reference>
-    <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
-      <HintPath>..\packages\StackExchange.Redis.2.2.88\lib\net472\StackExchange.Redis.dll</HintPath>
-    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="System.Diagnostics.PerformanceCounter, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.PerformanceCounter.5.0.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.IO.Pipelines, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.Pipelines.5.0.0\lib\net461\System.IO.Pipelines.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Channels, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Threading.Channels.5.0.0\lib\net461\System.Threading.Channels.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,6 +50,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Address.cs" />
@@ -92,11 +60,11 @@
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\Room.cs" />
     <Compile Include="DB\DB.cs" />
-    <Compile Include="Forms\DbForm.cs">
+    <Compile Include="Forms\OwnerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DbForm.Designer.cs">
-      <DependentUpon>DbForm.cs</DependentUpon>
+    <Compile Include="Forms\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
@@ -116,6 +84,12 @@
     <Compile Include="Forms\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserChildForms\SearchFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserChildForms\SearchFrom.Designer.cs">
+      <DependentUpon>SearchFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserChildForms\SearchFrom.resx">
+      <DependentUpon>SearchFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
@@ -171,6 +148,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Icons\key%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Icons\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Icons\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Icons\minimize-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Icons\maximize-size-option.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
