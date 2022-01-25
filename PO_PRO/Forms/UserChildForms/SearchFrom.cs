@@ -125,12 +125,14 @@ namespace PO_PRO.Forms.UserChildForms
             panelShadow.Visible = false;
             AnimateWindow(panelFilter.Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_HOR_NEGATIVE | AnimateWindowFlags.AW_HIDE);
             btnHamburger.Visible = true;
-            panelHotels.Left -= panelFilter.Size.Width / 2;
+            panelHotels.Left -= 3 * panelFilter.Size.Width / 4;
+            panelHotels.Width += panelFilter.Size.Width / 2;
         }
         private void btnHamburger_Click(object sender, EventArgs e)
         {
             btnHamburger.Visible = false;
-            panelHotels.Left += panelFilter.Size.Width / 2;
+            panelHotels.Left += 3 * panelFilter.Size.Width / 4;
+            panelHotels.Width -= panelFilter.Size.Width / 2;
             AnimateWindow(panelFilter.Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_HOR_POSITIVE);
             panelShadow.Visible = true;
         }

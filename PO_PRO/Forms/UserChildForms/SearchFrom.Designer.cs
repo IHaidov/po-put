@@ -729,7 +729,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnHotelName.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHotelName.IconSize = 24;
             this.btnHotelName.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnHotelName.Location = new System.Drawing.Point(206, 30);
+            this.btnHotelName.Location = new System.Drawing.Point(216, 10);
             this.btnHotelName.Name = "btnHotelName";
             this.btnHotelName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnHotelName.Size = new System.Drawing.Size(199, 47);
@@ -746,10 +746,10 @@ namespace PO_PRO.Forms.UserChildForms
             this.pbPhoto.IconChar = FontAwesome.Sharp.IconChar.None;
             this.pbPhoto.IconColor = System.Drawing.SystemColors.ControlText;
             this.pbPhoto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.pbPhoto.IconSize = 170;
-            this.pbPhoto.Location = new System.Drawing.Point(30, 30);
+            this.pbPhoto.IconSize = 200;
+            this.pbPhoto.Location = new System.Drawing.Point(10, 10);
             this.pbPhoto.Name = "pbPhoto";
-            this.pbPhoto.Size = new System.Drawing.Size(170, 170);
+            this.pbPhoto.Size = new System.Drawing.Size(200, 200);
             this.pbPhoto.TabIndex = 0;
             this.pbPhoto.TabStop = false;
             // 
@@ -762,7 +762,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(795, 230);
+            this.panel1.Size = new System.Drawing.Size(795, 220);
             this.panel1.TabIndex = 10;
             // 
             // lblCity
@@ -771,7 +771,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.lblCity.BackColor = System.Drawing.Color.Transparent;
             this.lblCity.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblCity.ForeColor = System.Drawing.Color.Black;
-            this.lblCity.Location = new System.Drawing.Point(214, 80);
+            this.lblCity.Location = new System.Drawing.Point(225, 60);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(46, 22);
             this.lblCity.TabIndex = 0;
@@ -779,6 +779,7 @@ namespace PO_PRO.Forms.UserChildForms
             // 
             // btnSeeMore
             // 
+            this.btnSeeMore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSeeMore.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSeeMore.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeeMore.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
@@ -791,7 +792,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnSeeMore.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSeeMore.IconSize = 24;
             this.btnSeeMore.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnSeeMore.Location = new System.Drawing.Point(610, 170);
+            this.btnSeeMore.Location = new System.Drawing.Point(610, 160);
             this.btnSeeMore.Name = "btnSeeMore";
             this.btnSeeMore.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSeeMore.Size = new System.Drawing.Size(165, 40);
