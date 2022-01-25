@@ -34,25 +34,21 @@ namespace PO_PRO.Forms.UserChildForms
             InitializeComponent();
             panelFilter.Paint += new PaintEventHandler(SetFilterBackground);
             panelShadow.Paint += new PaintEventHandler(SetShadowBackground);
-            lblCheckIn.Text = DateTime.Today.ToString("dd.MM.yyyy");
-            lblCheckOut.Text = DateTime.Today.ToString("dd.MM.yyyy");
+            lblCheckIn.Text = DateTime.Today.ToString("dd.MM.yyyy") + " -\n" + DateTime.Today.ToString("dd.MM.yyyy");
             btnFilter.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#b55a19");
             btnFilter.BackColor = ColorTranslator.FromHtml("#d59223");
-            panelFacilities.BackColor = ColorTranslator.FromHtml("#df9925");
             panelFacilities.Visible = false;
             btnHamburger.Visible = false;
             btnHamburger.Location = new Point(10, 10);
+            monthCalendar.BringToFront();
         }
         private void SetFilterBackground(Object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-
             //the rectangle, the same size as our Form
             Rectangle gradient_rectangle = new Rectangle(0, 0, Width, Height);
-
             //define gradient's properties
             Brush b = new LinearGradientBrush(gradient_rectangle, ColorTranslator.FromHtml("#c8641c"), ColorTranslator.FromHtml("#df9925"), 75f);
-
             //apply gradient         
             graphics.FillRectangle(b, gradient_rectangle);
         }
@@ -60,14 +56,8 @@ namespace PO_PRO.Forms.UserChildForms
         private void SetShadowBackground(Object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-
-            //the rectangle, the same size as our Form
             Rectangle gradient_rectangle = new Rectangle(0, 0, Width, Height);
-
-            //define gradient's properties
-            Brush b = new LinearGradientBrush(gradient_rectangle, ColorTranslator.FromHtml("#b55a19"), ColorTranslator.FromHtml("#d59223"), 75f);
-
-            //apply gradient         
+            Brush b = new LinearGradientBrush(gradient_rectangle, ColorTranslator.FromHtml("#b55a19"), ColorTranslator.FromHtml("#d59223"), 75f);       
             graphics.FillRectangle(b, gradient_rectangle);
         }
 
@@ -121,40 +111,26 @@ namespace PO_PRO.Forms.UserChildForms
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            monthCalendar.Visible = true;
-            ChangeDate(lblCheckIn);
-        }
-
-        private void btnCheckOut_Click(object sender, EventArgs e)
-        {
-
+            monthCalendar.Visible = !monthCalendar.Visible;
         }
 
         private void monthCalendar_DateSelected(object sender, DateRangeEventArgs e)
         {
-            string date = monthCalendar.SelectionRange.Start.ToShortDateString();
-            MessageBox.Show(date);
-            
+            lblCheckIn.Text = monthCalendar.SelectionRange.Start.ToShortDateString() + " -\n" + monthCalendar.SelectionRange.End.ToShortDateString();
         }
-
-        private void ChangeDate(Label label)
-        {
-            string date = monthCalendar.SelectionRange.Start.ToShortDateString();
-            label.Text = date;
-            //monthCalendar.Visible = false;
-        }
-
         //Hamburger menu
         private void btnCloseMenu_Click(object sender, EventArgs e)
         {
+            monthCalendar.Visible = false;
             panelShadow.Visible = false;
             AnimateWindow(panelFilter.Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_HOR_NEGATIVE | AnimateWindowFlags.AW_HIDE);
             btnHamburger.Visible = true;
+            panelHotels.Left -= panelFilter.Size.Width / 2;
         }
-
         private void btnHamburger_Click(object sender, EventArgs e)
         {
             btnHamburger.Visible = false;
+            panelHotels.Left += panelFilter.Size.Width / 2;
             AnimateWindow(panelFilter.Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_HOR_POSITIVE);
             panelShadow.Visible = true;
         }

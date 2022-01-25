@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnHistory = new FontAwesome.Sharp.IconButton();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.btnLogo = new FontAwesome.Sharp.IconButton();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnClose = new FontAwesome.Sharp.IconButton();
-            this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.btnHistory = new FontAwesome.Sharp.IconButton();
+            this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.btnLogo = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,70 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(1100, 88);
             this.panelMenu.TabIndex = 0;
+            // 
+            // panelShadow
+            // 
+            this.panelShadow.BackColor = System.Drawing.Color.Gray;
+            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelShadow.Location = new System.Drawing.Point(0, 88);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(1100, 1);
+            this.panelShadow.TabIndex = 1;
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(0, 89);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(1100, 720);
+            this.panelDesktop.TabIndex = 2;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Osi;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButton1.Location = new System.Drawing.Point(828, 30);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(260, 55);
+            this.iconButton1.TabIndex = 9;
+            this.iconButton1.Text = "Anna Kowalska";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize.IconColor = System.Drawing.Color.Black;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnMinimize.IconSize = 24;
+            this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMinimize.Location = new System.Drawing.Point(1034, 5);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(24, 24);
+            this.btnMinimize.TabIndex = 6;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.btnMinimize.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.btnMinimize.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
             // btnHistory
             // 
@@ -75,8 +139,32 @@
             this.btnHistory.Text = "Order history";
             this.btnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHistory.UseVisualStyleBackColor = false;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             this.btnHistory.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnHistory.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnClose.IconColor = System.Drawing.Color.Black;
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClose.IconSize = 24;
+            this.btnClose.Location = new System.Drawing.Point(1064, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(24, 24);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
+            this.btnClose.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
             // btnSearch
             // 
@@ -124,93 +212,6 @@
             this.btnLogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogo.UseVisualStyleBackColor = false;
             this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
-            // 
-            // panelShadow
-            // 
-            this.panelShadow.BackColor = System.Drawing.Color.Gray;
-            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShadow.Location = new System.Drawing.Point(0, 88);
-            this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1100, 9);
-            this.panelShadow.TabIndex = 1;
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(0, 97);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1100, 712);
-            this.panelDesktop.TabIndex = 2;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnClose.IconColor = System.Drawing.Color.Black;
-            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 24;
-            this.btnClose.Location = new System.Drawing.Point(1064, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(24, 24);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            this.btnClose.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnClose.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimize.IconColor = System.Drawing.Color.Black;
-            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnMinimize.IconSize = 24;
-            this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMinimize.Location = new System.Drawing.Point(1034, 5);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(24, 24);
-            this.btnMinimize.TabIndex = 6;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            this.btnMinimize.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnMinimize.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Osi;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton1.Location = new System.Drawing.Point(828, 30);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(260, 55);
-            this.iconButton1.TabIndex = 9;
-            this.iconButton1.Text = "Anna Kowalska";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
             // 
             // UserForm
             // 
