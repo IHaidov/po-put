@@ -90,7 +90,7 @@ namespace PO_PRO.Forms
         {
 
         }
-
+        #region Menu
         private void btnLogo_Click(object sender, EventArgs e)
         {
             if(currentChildForm != null)  currentChildForm.Close();
@@ -104,6 +104,11 @@ namespace PO_PRO.Forms
         {
             OpenChildForm(new UserChildForms.OrderHistory());
         }
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserChildForms.Profile());
+        }
+        #endregion
         #region WindowTools
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -121,6 +126,5 @@ namespace PO_PRO.Forms
             WindowState = FormWindowState.Minimized;
         }
         #endregion
-
     }
 }

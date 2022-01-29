@@ -42,6 +42,7 @@ namespace PO_PRO.Forms.UserChildForms
             btnHamburger.Location = new Point(10, 10);
             monthCalendar.BringToFront();
         }
+        #region BackgroundGradient
         private void SetFilterBackground(Object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
@@ -60,7 +61,7 @@ namespace PO_PRO.Forms.UserChildForms
             Brush b = new LinearGradientBrush(gradient_rectangle, ColorTranslator.FromHtml("#b55a19"), ColorTranslator.FromHtml("#d59223"), 75f);       
             graphics.FillRectangle(b, gradient_rectangle);
         }
-
+        #endregion
         private void BtnMouseEnter(object sender, EventArgs e)
         {
             IconButton btn = (IconButton)sender;
@@ -75,6 +76,7 @@ namespace PO_PRO.Forms.UserChildForms
             btn.IconColor = Color.Black;
         }
 
+        #region PlusMinusButtons
         private void btnAdultsPlus_Click(object sender, EventArgs e)
         {
             int number = Int32.Parse(lblAdults.Text);
@@ -108,7 +110,7 @@ namespace PO_PRO.Forms.UserChildForms
                 lblChildren.Text = number.ToString();
             }
         }
-
+        #endregion
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
             monthCalendar.Visible = !monthCalendar.Visible;
@@ -118,7 +120,7 @@ namespace PO_PRO.Forms.UserChildForms
         {
             lblCheckIn.Text = monthCalendar.SelectionRange.Start.ToShortDateString() + " -\n" + monthCalendar.SelectionRange.End.ToShortDateString();
         }
-        //Hamburger menu
+        #region HamburgerMenu
         private void btnCloseMenu_Click(object sender, EventArgs e)
         {
             monthCalendar.Visible = false;
@@ -136,6 +138,7 @@ namespace PO_PRO.Forms.UserChildForms
             AnimateWindow(panelFilter.Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_HOR_POSITIVE);
             panelShadow.Visible = true;
         }
+        #endregion
         private void btnFacilities_Click(object sender, EventArgs e)
         {
             panelFacilities.Visible = !panelFacilities.Visible;
@@ -199,5 +202,30 @@ namespace PO_PRO.Forms.UserChildForms
             CheckedClicked((IconButton)sender);
         }
         #endregion
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToggleSeeMore(Panel panel)
+        {
+            if(panel.Height == 220)
+            {
+                panel.AutoSize = true;
+            }
+            else
+            {
+                panel.AutoSize = false;
+                panel.Height = 220;
+            }
+        }
+
+        private void btnHotelName_Click(object sender, EventArgs e)
+        {
+            IconButton btn = (IconButton)sender;
+            Panel panel = (Panel)btn.Parent;
+            ToggleSeeMore(panel);
+        }
+
     }
 }
