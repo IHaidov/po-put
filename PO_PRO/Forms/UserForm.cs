@@ -35,18 +35,20 @@ namespace PO_PRO.Forms
         {
             InitializeComponent();
             panelMenu.Paint += new PaintEventHandler(SetFilterBackground);
+            panelShadow.Paint += new PaintEventHandler(SetShadowBackground);
         }
         private void SetFilterBackground(Object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-
-            //the rectangle, the same size as our Form
             Rectangle gradient_rectangle = new Rectangle(0, 0, Width, Height);
-
-            //define gradient's properties
-            Brush b = new LinearGradientBrush(gradient_rectangle, ColorTranslator.FromHtml("#c8641c"), ColorTranslator.FromHtml("#df9925"), 180f);
-
-            //apply gradient         
+            Brush b = new LinearGradientBrush(gradient_rectangle, ColorTranslator.FromHtml("#c8641c"), ColorTranslator.FromHtml("#df9925"), 180f);       
+            graphics.FillRectangle(b, gradient_rectangle);
+        }
+        private void SetShadowBackground(Object sender, PaintEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Rectangle gradient_rectangle = new Rectangle(0, 0, Width, Height);
+            Brush b = new LinearGradientBrush(gradient_rectangle, ColorTranslator.FromHtml("#b35b1d"), ColorTranslator.FromHtml("#ba8020"), 180f);       
             graphics.FillRectangle(b, gradient_rectangle);
         }
         private void OpenChildForm(Form childForm)
@@ -88,17 +90,25 @@ namespace PO_PRO.Forms
         {
 
         }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new UserChildForms.SearchFrom());
-        }
-
+        #region Menu
         private void btnLogo_Click(object sender, EventArgs e)
         {
             if(currentChildForm != null)  currentChildForm.Close();
             Reset();
         }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserChildForms.SearchFrom());
+        }
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserChildForms.OrderHistory());
+        }
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserChildForms.Profile());
+        }
+        #endregion
         #region WindowTools
         private void btnClose_Click(object sender, EventArgs e)
         {
