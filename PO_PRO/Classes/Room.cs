@@ -13,6 +13,7 @@ namespace PO_PRO.Classes
         Normal_2_persons,
         Normal_1_person
     }
+    [Serializable]
     public class Room
     {
         public int ID { get; }

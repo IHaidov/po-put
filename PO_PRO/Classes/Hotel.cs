@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PO_PRO.Classes
 {
+    [Serializable]
     public class Hotel
     {
         public int ID { get; }

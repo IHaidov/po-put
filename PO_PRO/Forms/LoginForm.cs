@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using Newtonsoft.Json;
+using PO_PRO.Classes;
 using PO_PRO.Forms;
 
 namespace PO_PRO
@@ -88,27 +90,40 @@ namespace PO_PRO
 
         private void Login()
         {
-            if (txtPassword.Text == "1234" && txtUsername.Text == "user")
+            if (DB.Key_exist(txtUsername.Text.ToLower()))
             {
-                new UserForm().Show();
-                this.Hide();
-                //MessageBox.Show("User");
-            }
+                string temp;
+                DB.Read(txtUsername.Text.ToLower(), out temp);
+                Person user = JsonConvert.DeserializeObject<Person>(temp);
+                MessageBox.Show(user.Email+"\n"+user.Password+" "+txtPassword.Text);
+                if (txtPassword.Text.Equals(user.Password)) 
+                {
+                    new UserForm().Show();
+                    this.Hide();
+                    //MessageBox.Show("User");
+                }
 
-            else if (txtPassword.Text == "1234" && txtUsername.Text == "admin")
-            {
-                new AdminForm().Show();
-                this.Hide();
-                //MessageBox.Show("Admin");
-            }
+                else if (txtPassword.Text == "1234" && txtUsername.Text == "admin@gmail.com")
+                {
+                    new AdminForm().Show();
+                    this.Hide();
+                    //MessageBox.Show("Admin");
+                }
 
+                else
+                {
+                    txtUsername.BackColor = ColorTranslator.FromHtml("#ff8787");
+                    txtPassword.BackColor = ColorTranslator.FromHtml("#ff8787");
+                    MessageBox.Show("The password or username is not correct");
+                    //txtUsername.Focus();
+                }
+            }
             else
             {
-                txtUsername.BackColor = ColorTranslator.FromHtml("#ff8787");
-                txtPassword.BackColor = ColorTranslator.FromHtml("#ff8787");
-                MessageBox.Show("The password or username is not correct");
-                //txtUsername.Focus();
+                MessageBox.Show("You should register firstly!");
             }
+            
+
             ClearFields();
         }
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PO_PRO.Classes
 {
+    [Serializable]
     public class Address
     {
         public int ID { get; }

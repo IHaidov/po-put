@@ -13,13 +13,15 @@ namespace PO_PRO.Classes
         User,
         Accountant
     }
+    [Serializable]
     public class Person
     {
-        private int ID { get; }
-        private Type User_Type { get; set; }
+        public string ID { get; }
+        public Type User_Type { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
         public string Phone { get; set; }
         public string Passport_ID { get; set; }
         public DateTime BirthTime { get; set; }
@@ -27,7 +29,8 @@ namespace PO_PRO.Classes
 
         public Person()
         {
-
+            ID = Guid.NewGuid().ToString();
+            User_Type = Type.User;
         }
     }
 }

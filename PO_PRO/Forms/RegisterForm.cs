@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using Newtonsoft.Json;
+using PO_PRO.Classes;
 using PO_PRO.Forms;
 
 namespace PO_PRO
@@ -82,7 +84,28 @@ namespace PO_PRO
             //if txtUsername doesn't exit:
             if(txtPassword.Text == txtConfirm.Text)
             {
-                MessageBox.Show("Successfully registered");
+                Person user = new Person();
+                user.Email = txtUsername.Text;
+                user.Password = txtPassword.Text;
+               
+                try
+                {
+                    if (!DB.Key_exist(user.Email.ToLower()))
+                    {
+                        
+                        DB.Write(user.Email.ToLower(), JsonConvert.SerializeObject(user));
+                        MessageBox.Show("Successfully registered");
+                    }
+                    else
+                    {
+                        MessageBox.Show("User with such email already exists");
+                    }
+                    
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
             else
             {

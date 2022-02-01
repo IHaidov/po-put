@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PO_PRO.Classes
 {
-   
+   [Serializable]
     public class Order
     {
         public int ID { get; }
