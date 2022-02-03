@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Newtonsoft.Json;
+using PO_PRO.Classes;
 
 namespace PO_PRO.Forms
 {
@@ -29,6 +31,7 @@ namespace PO_PRO.Forms
             AW_BLEND = 0x00080000
         }
 
+        private Person user;
 
         private Form currentChildForm;
         public UserForm()
@@ -36,6 +39,17 @@ namespace PO_PRO.Forms
             InitializeComponent();
             panelMenu.Paint += new PaintEventHandler(SetFilterBackground);
             panelShadow.Paint += new PaintEventHandler(SetShadowBackground);
+        }
+        public UserForm(string key)
+        {
+            InitializeComponent();
+            panelMenu.Paint += new PaintEventHandler(SetFilterBackground);
+            panelShadow.Paint += new PaintEventHandler(SetShadowBackground);
+            string temp;
+            DB.Read(key, out temp);
+            user = JsonConvert.DeserializeObject<Person>(temp);
+            btnProfile.Text = user.Email;
+
         }
         private void SetFilterBackground(Object sender, PaintEventArgs e)
         {
@@ -106,7 +120,7 @@ namespace PO_PRO.Forms
         }
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new UserChildForms.Profile());
+            OpenChildForm(new UserChildForms.Profile(user.Email));
         }
         #endregion
         #region WindowTools
@@ -126,5 +140,20 @@ namespace PO_PRO.Forms
             WindowState = FormWindowState.Minimized;
         }
         #endregion
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnProfile_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.Show(user.Email, btnProfile);
+        }
+
+        private void btnProfile_MouseLeave(object sender, EventArgs e)
+        {
+            toolTip1.Hide(btnProfile);
+        }
     }
 }

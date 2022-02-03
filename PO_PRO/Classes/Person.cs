@@ -19,6 +19,7 @@ namespace PO_PRO.Classes
         public string ID { get; }
         public Type User_Type { get; set; }
         public string Name { get; set; }
+        public string Username { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -31,6 +32,7 @@ namespace PO_PRO.Classes
         {
             ID = Guid.NewGuid().ToString();
             User_Type = Type.User;
+            BirthTime = DateTime.Now;
         }
     }
 }

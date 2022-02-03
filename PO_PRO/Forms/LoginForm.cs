@@ -95,15 +95,15 @@ namespace PO_PRO
                 string temp;
                 DB.Read(txtUsername.Text.ToLower(), out temp);
                 Person user = JsonConvert.DeserializeObject<Person>(temp);
-                MessageBox.Show(user.Email+"\n"+user.Password+" "+txtPassword.Text);
+                
                 if (txtPassword.Text.Equals(user.Password)) 
                 {
-                    new UserForm().Show();
-                    this.Hide();
+                    new UserForm(txtUsername.Text.ToLower()).Show();
+                    this.Hide(); 
                     //MessageBox.Show("User");
                 }
 
-                else if (txtPassword.Text == "1234" && txtUsername.Text == "admin@gmail.com")
+                else if (txtPassword.Text.Equals(user.Password) && txtUsername.Text == "admin@gmail.com")
                 {
                     new AdminForm().Show();
                     this.Hide();
