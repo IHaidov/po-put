@@ -155,5 +155,10 @@ namespace PO_PRO.Forms
         {
             toolTip1.Hide(btnProfile);
         }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PO_PRO.Forms;
 
 namespace PO_PRO
 {
@@ -16,7 +17,7 @@ namespace PO_PRO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new AdminForm());
         }
     }
 }

@@ -299,5 +299,53 @@ namespace PO_PRO
                 return false;
             }
         }
+
+        public static List<string> GetAllkeys()
+        {
+            List<string> listKeys = new List<string>();
+            try
+            {
+                if (!Redis_initialized)
+            {
+                var redis = ConnectionMultiplexer.Connect(configurationOptions);
+                db = redis.GetDatabase(0);
+                Redis_initialized = true;
+            
+                var keys = redis.GetServer("redis-16263.c16.us-east-1-2.ec2.cloud.redislabs.com", 16263).Keys();
+                listKeys.AddRange(keys.Select(key => (string)key).ToList());
+
+            }
+            }
+            catch (Exception e)
+            {
+                Console.Write($" exception  : {e}");
+            }
+            return listKeys;
+        }
+        public static bool ReadAll(out List<string> answer)
+        {
+            List<string> keys = GetAllkeys();
+            answer = new List<string>();
+            while (true)
+                try
+                {
+                    if (!Redis_initialized)
+                    {
+                        var redis = ConnectionMultiplexer.Connect(configurationOptions);
+                        db = redis.GetDatabase(0);
+                        Redis_initialized = true;
+                    }
+
+                    foreach (var key in keys)
+                    {
+                        answer.Add(db.StringGet(key));
+                    }
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    Console.Write($"Read exception : {e}");
+                }
+        }
     }
 }
