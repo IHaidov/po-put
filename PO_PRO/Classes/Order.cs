@@ -9,13 +9,13 @@ namespace PO_PRO.Classes
    [Serializable]
     public class Order
     {
-        public int ID { get; }
+        public string ID { get; }
         public DateTime Date_of_Reservation { get; set; }
         public double Price { get; set; }
-        private int User_ID { get; set; }
-        private int Hotel_ID { get; set; }
-        private int Room_ID { get; set; }
-        public int Bonus_ID { get; set; }
+        private string User_ID { get; set; }
+        private string Hotel_ID { get; set; }
+        private string Room_ID { get; set; }
+        public string Bonus_ID { get; set; }
 
     }
 }

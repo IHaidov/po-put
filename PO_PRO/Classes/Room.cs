@@ -16,7 +16,7 @@ namespace PO_PRO.Classes
     [Serializable]
     public class Room
     {
-        public int ID { get; }
+        public string ID { get; }
         public Room_Type Type { get; set; }
         public double Price { get; set; }
         public bool Free_or_no { get; set; }

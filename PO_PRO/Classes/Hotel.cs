@@ -6,7 +6,7 @@ namespace PO_PRO.Classes
     [Serializable]
     public class Hotel
     {
-        public int ID { get; }
+        public string ID { get; }
         public string Name { get; set; }
         public int Stars { get; set; }
         public List<Room> Rooms { get; set; }

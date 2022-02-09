@@ -322,10 +322,10 @@ namespace PO_PRO
             }
             return listKeys;
         }
-        public static bool ReadAll(out List<string> answer)
+        public static bool ReadAll(out Dictionary<string, string> answer)
         {
             List<string> keys = GetAllkeys();
-            answer = new List<string>();
+            answer = new Dictionary<string, string>();
             while (true)
                 try
                 {
@@ -338,7 +338,7 @@ namespace PO_PRO
 
                     foreach (var key in keys)
                     {
-                        answer.Add(db.StringGet(key));
+                        answer.Add(key, db.StringGet(key));
                     }
                     return true;
                 }
