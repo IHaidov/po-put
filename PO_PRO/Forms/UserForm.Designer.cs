@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnProfile = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
@@ -38,13 +37,12 @@
             this.btnLogo = new FontAwesome.Sharp.IconButton();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(104)))), ((int)(((byte)(36)))));
             this.panelMenu.Controls.Add(this.btnProfile);
             this.panelMenu.Controls.Add(this.btnMinimize);
             this.panelMenu.Controls.Add(this.btnHistory);
@@ -54,7 +52,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1096, 88);
+            this.panelMenu.Size = new System.Drawing.Size(1100, 88);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -81,8 +79,6 @@
             this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProfile.UseVisualStyleBackColor = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
-            this.btnProfile.MouseEnter += new System.EventHandler(this.btnProfile_MouseEnter);
-            this.btnProfile.MouseLeave += new System.EventHandler(this.btnProfile_MouseLeave);
             // 
             // btnMinimize
             // 
@@ -94,12 +90,13 @@
             this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(4)))), ((int)(((byte)(15)))));
             this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.btnMinimize.IconColor = System.Drawing.Color.Black;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnMinimize.IconSize = 24;
             this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMinimize.Location = new System.Drawing.Point(1030, 5);
+            this.btnMinimize.Location = new System.Drawing.Point(1034, 5);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(24, 24);
             this.btnMinimize.TabIndex = 6;
@@ -142,11 +139,12 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(4)))), ((int)(((byte)(15)))));
             this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnClose.IconColor = System.Drawing.Color.Black;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 24;
-            this.btnClose.Location = new System.Drawing.Point(1060, 5);
+            this.btnClose.Location = new System.Drawing.Point(1064, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(24, 24);
             this.btnClose.TabIndex = 6;
@@ -189,7 +187,7 @@
             this.btnLogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogo.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnLogo.ForeColor = System.Drawing.Color.Gold;
+            this.btnLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(4)))), ((int)(((byte)(15)))));
             this.btnLogo.IconChar = FontAwesome.Sharp.IconChar.Fire;
             this.btnLogo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -209,23 +207,23 @@
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(0, 88);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1096, 1);
+            this.panelShadow.Size = new System.Drawing.Size(1100, 1);
             this.panelShadow.TabIndex = 1;
             // 
             // panelDesktop
             // 
+            this.panelDesktop.BackColor = System.Drawing.SystemColors.Control;
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(0, 89);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1096, 745);
+            this.panelDesktop.Size = new System.Drawing.Size(1100, 749);
             this.panelDesktop.TabIndex = 2;
-            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // UserForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1096, 834);
+            this.ClientSize = new System.Drawing.Size(1100, 838);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
@@ -253,6 +251,5 @@
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconButton btnClose;
         private FontAwesome.Sharp.IconButton btnProfile;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

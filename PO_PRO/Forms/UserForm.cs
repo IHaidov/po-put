@@ -120,7 +120,7 @@ namespace PO_PRO.Forms
         }
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new UserChildForms.Profile(user.Email));
+            OpenChildForm(new UserChildForms.Profile());
         }
         #endregion
         #region WindowTools
@@ -142,21 +142,6 @@ namespace PO_PRO.Forms
         #endregion
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnProfile_MouseEnter(object sender, EventArgs e)
-        {
-            toolTip1.Show(user.Email, btnProfile);
-        }
-
-        private void btnProfile_MouseLeave(object sender, EventArgs e)
-        {
-            toolTip1.Hide(btnProfile);
-        }
-
-        private void panelDesktop_Paint(object sender, PaintEventArgs e)
         {
 
         }
