@@ -11,5 +11,9 @@ namespace PO_PRO.Classes
         public int Stars { get; set; }
         public List<Room> Rooms { get; set; }
         public Address Address { get; set; }
+        public Hotel()
+        {
+            ID = Guid.NewGuid().ToString();
+        }
     }
 }

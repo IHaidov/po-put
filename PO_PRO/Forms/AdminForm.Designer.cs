@@ -28,35 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnCreate = new FontAwesome.Sharp.IconButton();
-            this.btnDelete = new FontAwesome.Sharp.IconButton();
-            this.btnEdit = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.panelNav = new System.Windows.Forms.Panel();
             this.btnLogo = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSubmit = new FontAwesome.Sharp.IconButton();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.bonusPanel = new System.Windows.Forms.Panel();
+            this.roomPanel = new System.Windows.Forms.Panel();
+            this.hotelPanel = new System.Windows.Forms.Panel();
+            this.bonusComboBox = new System.Windows.Forms.ComboBox();
+            this.bonusNumeric = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.roomNumeric = new System.Windows.Forms.NumericUpDown();
+            this.roomComboBox = new System.Windows.Forms.ComboBox();
+            this.roomFreeRadioBtn = new System.Windows.Forms.RadioButton();
+            this.roomBusyRadioBtn = new System.Windows.Forms.RadioButton();
+            this.hotelName = new System.Windows.Forms.TextBox();
+            this.starsNumeric = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panelNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.bonusPanel.SuspendLayout();
+            this.roomPanel.SuspendLayout();
+            this.hotelPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bonusNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.starsNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(195)))), ((int)(((byte)(151)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dataGridView1.Location = new System.Drawing.Point(253, 65);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 110);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1054, 384);
+            this.dataGridView1.Size = new System.Drawing.Size(1294, 421);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // comboBox1
             // 
@@ -67,28 +119,14 @@
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.IntegralHeight = false;
-            this.comboBox1.ItemHeight = 23;
+            this.comboBox1.ItemHeight = 30;
             this.comboBox1.Location = new System.Drawing.Point(9, 65);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(232, 31);
+            this.comboBox1.Size = new System.Drawing.Size(232, 38);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.Text = "Select";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(171)))), ((int)(((byte)(134)))));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dataGridView2.Location = new System.Drawing.Point(253, 469);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(1054, 68);
-            this.dataGridView2.TabIndex = 5;
             // 
             // btnCreate
             // 
@@ -104,7 +142,7 @@
             this.btnCreate.IconColor = System.Drawing.Color.Black;
             this.btnCreate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCreate.IconSize = 24;
-            this.btnCreate.Location = new System.Drawing.Point(15, 111);
+            this.btnCreate.Location = new System.Drawing.Point(1073, 65);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(230, 40);
             this.btnCreate.TabIndex = 2;
@@ -112,54 +150,7 @@
             this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreate.UseVisualStyleBackColor = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.btnDelete.IconColor = System.Drawing.Color.Black;
-            this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDelete.IconSize = 24;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDelete.Location = new System.Drawing.Point(11, 241);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(230, 40);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.btnEdit.IconColor = System.Drawing.Color.Black;
-            this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEdit.IconSize = 24;
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEdit.Location = new System.Drawing.Point(11, 177);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(230, 40);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnMinimize
             // 
@@ -217,6 +208,7 @@
             this.panelNav.Name = "panelNav";
             this.panelNav.Size = new System.Drawing.Size(1315, 48);
             this.panelNav.TabIndex = 12;
+            this.panelNav.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNav_Paint);
             // 
             // btnLogo
             // 
@@ -250,16 +242,278 @@
             this.panel1.Size = new System.Drawing.Size(1315, 1);
             this.panel1.TabIndex = 13;
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubmit.FlatAppearance.BorderSize = 0;
+            this.btnSubmit.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnSubmit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSubmit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.btnSubmit.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnSubmit.IconColor = System.Drawing.Color.Black;
+            this.btnSubmit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSubmit.IconSize = 24;
+            this.btnSubmit.Location = new System.Drawing.Point(1073, 536);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(230, 40);
+            this.btnSubmit.TabIndex = 14;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSubmit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Visible = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowDrop = true;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(171)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dataGridView2.Location = new System.Drawing.Point(9, 581);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Name = "dataGridView2";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(1294, 109);
+            this.dataGridView2.TabIndex = 5;
+            this.dataGridView2.VirtualMode = true;
+            this.dataGridView2.Visible = false;
+            this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellValueChanged);
+            this.dataGridView2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView2_KeyDown);
+            // 
+            // bonusPanel
+            // 
+            this.bonusPanel.Controls.Add(this.label2);
+            this.bonusPanel.Controls.Add(this.label1);
+            this.bonusPanel.Controls.Add(this.bonusNumeric);
+            this.bonusPanel.Controls.Add(this.bonusComboBox);
+            this.bonusPanel.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusPanel.Location = new System.Drawing.Point(12, 558);
+            this.bonusPanel.Name = "bonusPanel";
+            this.bonusPanel.Size = new System.Drawing.Size(767, 132);
+            this.bonusPanel.TabIndex = 15;
+            this.bonusPanel.Visible = false;
+            // 
+            // roomPanel
+            // 
+            this.roomPanel.Controls.Add(this.roomBusyRadioBtn);
+            this.roomPanel.Controls.Add(this.roomFreeRadioBtn);
+            this.roomPanel.Controls.Add(this.label3);
+            this.roomPanel.Controls.Add(this.roomComboBox);
+            this.roomPanel.Controls.Add(this.label4);
+            this.roomPanel.Controls.Add(this.roomNumeric);
+            this.roomPanel.Location = new System.Drawing.Point(9, 550);
+            this.roomPanel.Name = "roomPanel";
+            this.roomPanel.Size = new System.Drawing.Size(767, 137);
+            this.roomPanel.TabIndex = 16;
+            this.roomPanel.Visible = false;
+            // 
+            // hotelPanel
+            // 
+            this.hotelPanel.Controls.Add(this.label6);
+            this.hotelPanel.Controls.Add(this.label5);
+            this.hotelPanel.Controls.Add(this.starsNumeric);
+            this.hotelPanel.Controls.Add(this.hotelName);
+            this.hotelPanel.Location = new System.Drawing.Point(9, 571);
+            this.hotelPanel.Name = "hotelPanel";
+            this.hotelPanel.Size = new System.Drawing.Size(611, 138);
+            this.hotelPanel.TabIndex = 17;
+            this.hotelPanel.Visible = false;
+            // 
+            // bonusComboBox
+            // 
+            this.bonusComboBox.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusComboBox.FormattingEnabled = true;
+            this.bonusComboBox.Location = new System.Drawing.Point(18, 36);
+            this.bonusComboBox.Name = "bonusComboBox";
+            this.bonusComboBox.Size = new System.Drawing.Size(264, 33);
+            this.bonusComboBox.TabIndex = 0;
+            // 
+            // bonusNumeric
+            // 
+            this.bonusNumeric.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusNumeric.Location = new System.Drawing.Point(327, 36);
+            this.bonusNumeric.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.bonusNumeric.Name = "bonusNumeric";
+            this.bonusNumeric.Size = new System.Drawing.Size(168, 34);
+            this.bonusNumeric.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Bonus";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(322, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Price";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(322, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 25);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Price";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(13, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 25);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Bonus";
+            // 
+            // roomNumeric
+            // 
+            this.roomNumeric.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomNumeric.Location = new System.Drawing.Point(327, 51);
+            this.roomNumeric.Name = "roomNumeric";
+            this.roomNumeric.Size = new System.Drawing.Size(168, 34);
+            this.roomNumeric.TabIndex = 5;
+            // 
+            // roomComboBox
+            // 
+            this.roomComboBox.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomComboBox.FormattingEnabled = true;
+            this.roomComboBox.Location = new System.Drawing.Point(18, 51);
+            this.roomComboBox.Name = "roomComboBox";
+            this.roomComboBox.Size = new System.Drawing.Size(264, 33);
+            this.roomComboBox.TabIndex = 4;
+            // 
+            // roomFreeRadioBtn
+            // 
+            this.roomFreeRadioBtn.AutoSize = true;
+            this.roomFreeRadioBtn.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomFreeRadioBtn.Location = new System.Drawing.Point(519, 24);
+            this.roomFreeRadioBtn.Name = "roomFreeRadioBtn";
+            this.roomFreeRadioBtn.Size = new System.Drawing.Size(83, 29);
+            this.roomFreeRadioBtn.TabIndex = 8;
+            this.roomFreeRadioBtn.TabStop = true;
+            this.roomFreeRadioBtn.Text = "Free";
+            this.roomFreeRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // roomBusyRadioBtn
+            // 
+            this.roomBusyRadioBtn.AutoSize = true;
+            this.roomBusyRadioBtn.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomBusyRadioBtn.Location = new System.Drawing.Point(519, 61);
+            this.roomBusyRadioBtn.Name = "roomBusyRadioBtn";
+            this.roomBusyRadioBtn.Size = new System.Drawing.Size(85, 29);
+            this.roomBusyRadioBtn.TabIndex = 9;
+            this.roomBusyRadioBtn.TabStop = true;
+            this.roomBusyRadioBtn.Text = "Busy";
+            this.roomBusyRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // hotelName
+            // 
+            this.hotelName.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hotelName.Location = new System.Drawing.Point(18, 45);
+            this.hotelName.Name = "hotelName";
+            this.hotelName.Size = new System.Drawing.Size(251, 34);
+            this.hotelName.TabIndex = 0;
+            // 
+            // starsNumeric
+            // 
+            this.starsNumeric.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.starsNumeric.Location = new System.Drawing.Point(371, 45);
+            this.starsNumeric.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.starsNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.starsNumeric.Name = "starsNumeric";
+            this.starsNumeric.Size = new System.Drawing.Size(168, 34);
+            this.starsNumeric.TabIndex = 6;
+            this.starsNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(366, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 25);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Stars";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(13, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 25);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Hotel name";
+            // 
             // AdminForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(240)))), ((int)(((byte)(218)))));
-            this.ClientSize = new System.Drawing.Size(1315, 546);
+            this.ClientSize = new System.Drawing.Size(1315, 726);
+            this.Controls.Add(this.hotelPanel);
+            this.Controls.Add(this.roomPanel);
+            this.Controls.Add(this.bonusPanel);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelNav);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.comboBox1);
@@ -271,8 +525,17 @@
             this.Text = "AdminForm";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panelNav.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.bonusPanel.ResumeLayout(false);
+            this.bonusPanel.PerformLayout();
+            this.roomPanel.ResumeLayout(false);
+            this.roomPanel.PerformLayout();
+            this.hotelPanel.ResumeLayout(false);
+            this.hotelPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bonusNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.starsNumeric)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,14 +544,30 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private FontAwesome.Sharp.IconButton btnCreate;
-        private FontAwesome.Sharp.IconButton btnDelete;
-        private FontAwesome.Sharp.IconButton btnEdit;
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconButton btnClose;
         private System.Windows.Forms.Panel panelNav;
         private FontAwesome.Sharp.IconButton btnLogo;
         private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton btnSubmit;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Panel bonusPanel;
+        private System.Windows.Forms.NumericUpDown bonusNumeric;
+        private System.Windows.Forms.ComboBox bonusComboBox;
+        private System.Windows.Forms.Panel roomPanel;
+        private System.Windows.Forms.Panel hotelPanel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton roomBusyRadioBtn;
+        private System.Windows.Forms.RadioButton roomFreeRadioBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox roomComboBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown roomNumeric;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown starsNumeric;
+        private System.Windows.Forms.TextBox hotelName;
     }
 }

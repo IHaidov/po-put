@@ -20,5 +20,9 @@ namespace PO_PRO.Classes
         public Room_Type Type { get; set; }
         public double Price { get; set; }
         public bool Free_or_no { get; set; }
+        public Room()
+        {
+            ID = Guid.NewGuid().ToString();
+        }
     }
 }
