@@ -110,6 +110,11 @@ namespace PO_PRO.Forms
 
         private void comboBox_Index_Changed()
         {
+            roomPanel.Visible = false;
+            hotelPanel.Visible = false;
+            bonusPanel.Visible = false;
+            dataGridView2.Visible = false;
+
             switch (comboBox1.SelectedIndex)
             {
                 case (int) classes.Address:
@@ -182,7 +187,7 @@ namespace PO_PRO.Forms
                         DB.Write("ADDR_"+address_credit[0].ID, JsonConvert.SerializeObject(address_credit[0]));
                         addresses.Add(address_credit[0]);
                         dataGridView1.DataSource = addresses;
-                        dataGridView1.Visible = false;
+                        dataGridView2.Visible = false;
                     }
                     catch (Exception ex)
                     {
@@ -263,7 +268,7 @@ namespace PO_PRO.Forms
                         DB.Write(user_credit[0].Email.ToLower(), JsonConvert.SerializeObject(user_credit[0]));
                         users.Add(user_credit[0]);
                         dataGridView1.DataSource = users;
-                        dataGridView1.Visible = false;
+                        dataGridView2.Visible = false;
                     }
                     catch (Exception ex)
                     {
