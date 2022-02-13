@@ -106,7 +106,6 @@ namespace PO_PRO.Forms.UserChildForms
             // 
             // panelFacilities
             // 
-            this.panelFacilities.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panelFacilities.AutoScroll = true;
             this.panelFacilities.BackColor = System.Drawing.Color.Transparent;
             this.panelFacilities.Controls.Add(this.btnElectricKettle);
@@ -678,9 +677,9 @@ namespace PO_PRO.Forms.UserChildForms
             this.monthCalendar.Location = new System.Drawing.Point(234, 75);
             this.monthCalendar.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.monthCalendar.MaxSelectionCount = 365;
-            this.monthCalendar.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
+            this.monthCalendar.MinDate = new System.DateTime(2022, 2, 1, 0, 0, 0, 0);
             this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2022, 1, 10, 0, 0, 0, 0), new System.DateTime(2023, 1, 9, 0, 0, 0, 0));
+            this.monthCalendar.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2022, 2, 1, 0, 0, 0, 0), new System.DateTime(2023, 1, 9, 0, 0, 0, 0));
             this.monthCalendar.TabIndex = 3;
             this.monthCalendar.Visible = false;
             this.monthCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);

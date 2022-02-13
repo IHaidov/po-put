@@ -118,7 +118,14 @@ namespace PO_PRO.Forms.UserChildForms
 
         private void monthCalendar_DateSelected(object sender, DateRangeEventArgs e)
         {
-            lblCheckIn.Text = monthCalendar.SelectionRange.Start.ToShortDateString() + " -\n" + monthCalendar.SelectionRange.End.ToShortDateString();
+            if(monthCalendar.SelectionRange.Start >= DateTime.Today && monthCalendar.SelectionRange.End >= DateTime.Today)
+            {
+                lblCheckIn.Text = monthCalendar.SelectionRange.Start.ToShortDateString() + " -\n" + monthCalendar.SelectionRange.End.ToShortDateString();
+            }
+            else
+            {
+                lblCheckIn.Text = "Wrong range";
+            }
         }
         #region HamburgerMenu
         private void btnCloseMenu_Click(object sender, EventArgs e)
