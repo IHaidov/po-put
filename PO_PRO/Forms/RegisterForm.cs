@@ -16,6 +16,7 @@ namespace PO_PRO
 {
     public partial class RegisterForm : Form
     {
+        public int Type = 2;
         public RegisterForm()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace PO_PRO
 
         private void onClick_Register(object sender, EventArgs e)
         {
+            Type = 1;
             Register();
         }
         private void onClick_ClearFields(object sender, EventArgs e)
@@ -87,7 +89,7 @@ namespace PO_PRO
                 Person user = new Person();
                 user.Email = txtUsername.Text;
                 user.Password = txtPassword.Text;
-               
+                user.User_Type = ((Classes.Type)Type);
                 try
                 {
                     if (!DB.Key_exist(user.Email.ToLower()))
