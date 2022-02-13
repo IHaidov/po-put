@@ -20,8 +20,10 @@ namespace PO_PRO.Classes
         public string ID { get; }
         public Room_Type Type { get; set; }
         public double Price { get; set; }
-        public bool Free_or_no { get; set; }
+        public bool Free_Room { get; set; }
         public List<Bonus> Facilities { get; set; }
+
+        public DateTime StayTime { get; set; }
 
         public Image Photo { get; set; }
 

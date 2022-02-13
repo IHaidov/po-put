@@ -257,10 +257,10 @@ namespace PO_PRO.Forms
                         room_credit[0].Facilities.Add(b);
                     }
                     if(roomFreeRadioBtn.Checked)
-                        room_credit[0].Free_or_no = true;
+                        room_credit[0].Free_Room = true;
                     else
                     {
-                        room_credit[0].Free_or_no = false;
+                        room_credit[0].Free_Room = false;
                     }
 
                     try
