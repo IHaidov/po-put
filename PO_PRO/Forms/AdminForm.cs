@@ -284,6 +284,7 @@ namespace PO_PRO.Forms
                     user_credit[0].Password = dataGridView2.Rows[0].Cells[6].Value.ToString();
                     user_credit[0].Phone = dataGridView2.Rows[0].Cells[7].Value.ToString();
                     user_credit[0].Passport_ID = dataGridView2.Rows[0].Cells[8].Value.ToString();
+                    user_credit[0].Blocked = Convert.ToBoolean(dataGridView2.Rows[0].Cells[10].Value.ToString());
                     try
                     {
                         DB.Write(user_credit[0].Email.ToLower(), JsonConvert.SerializeObject(user_credit[0]));

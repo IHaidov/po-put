@@ -48,7 +48,7 @@ namespace PO_PRO.Forms
             string temp;
             DB.Read(key, out temp);
             user = JsonConvert.DeserializeObject<Person>(temp);
-            btnProfile.Text = user.Email;
+            btnProfile.Text = user.Username!=""?user.Username:user.Email;
 
         }
         private void SetFilterBackground(Object sender, PaintEventArgs e)
@@ -120,7 +120,7 @@ namespace PO_PRO.Forms
         }
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new UserChildForms.Profile());
+            OpenChildForm(new UserChildForms.Profile(user.Email));
         }
         #endregion
         #region WindowTools

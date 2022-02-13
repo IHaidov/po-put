@@ -95,27 +95,33 @@ namespace PO_PRO
                 string temp;
                 DB.Read(txtUsername.Text.ToLower(), out temp);
                 Person user = JsonConvert.DeserializeObject<Person>(temp);
-                
-                if (txtPassword.Text.Equals(user.Password)) 
+                if (user.Blocked)
                 {
-                    new UserForm(txtUsername.Text.ToLower()).Show();
-                    this.Hide(); 
-                    //MessageBox.Show("User");
+                    MessageBox.Show("Sorry, but You are blocked :(\nPlease, contact us to change it.");
                 }
-
-                else if (txtPassword.Text.Equals(user.Password) && txtUsername.Text == "admin@gmail.com")
-                {
-                    new AdminForm().Show();
-                    this.Hide();
-                    //MessageBox.Show("Admin");
-                }
-
                 else
                 {
-                    txtUsername.BackColor = ColorTranslator.FromHtml("#ff8787");
-                    txtPassword.BackColor = ColorTranslator.FromHtml("#ff8787");
-                    MessageBox.Show("The password or username is not correct");
-                    //txtUsername.Focus();
+                    if (txtPassword.Text.Equals(user.Password))
+                    {
+                        new UserForm(txtUsername.Text.ToLower()).Show();
+                        this.Hide();
+                        //MessageBox.Show("User");
+                    }
+
+                    else if (txtPassword.Text.Equals(user.Password) && txtUsername.Text == "admin@gmail.com")
+                    {
+                        new AdminForm().Show();
+                        this.Hide();
+                        //MessageBox.Show("Admin");
+                    }
+
+                    else
+                    {
+                        txtUsername.BackColor = ColorTranslator.FromHtml("#ff8787");
+                        txtPassword.BackColor = ColorTranslator.FromHtml("#ff8787");
+                        MessageBox.Show("The password or username is not correct");
+                        //txtUsername.Focus();
+                    }
                 }
             }
             else
