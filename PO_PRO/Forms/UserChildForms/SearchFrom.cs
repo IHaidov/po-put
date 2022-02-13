@@ -211,7 +211,14 @@ namespace PO_PRO.Forms.UserChildForms
         #endregion
         private void btnFilter_Click(object sender, EventArgs e)
         {
+            if(lblCheckIn.Text == "Wrong range")
+            {
+                MessageBox.Show("Wrong date range\nPlease, correct it");
+            }
+            else
+            {
 
+            }
         }
 
         private void ToggleSeeMore(Panel panel)

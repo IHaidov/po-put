@@ -37,12 +37,14 @@
             this.btnLogo = new FontAwesome.Sharp.IconButton();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.btnAddProperty = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(104)))), ((int)(((byte)(36)))));
+            this.panelMenu.Controls.Add(this.btnAddProperty);
             this.panelMenu.Controls.Add(this.btnProfile);
             this.panelMenu.Controls.Add(this.btnMinimize);
             this.panelMenu.Controls.Add(this.btnHistory);
@@ -52,7 +54,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1096, 88);
+            this.panelMenu.Size = new System.Drawing.Size(1100, 88);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -70,7 +72,7 @@
             this.btnProfile.IconColor = System.Drawing.Color.Black;
             this.btnProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProfile.Location = new System.Drawing.Point(828, 30);
+            this.btnProfile.Location = new System.Drawing.Point(837, 31);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(260, 55);
             this.btnProfile.TabIndex = 9;
@@ -96,7 +98,7 @@
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnMinimize.IconSize = 24;
             this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMinimize.Location = new System.Drawing.Point(1030, 5);
+            this.btnMinimize.Location = new System.Drawing.Point(1034, 5);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(24, 24);
             this.btnMinimize.TabIndex = 6;
@@ -118,9 +120,9 @@
             this.btnHistory.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
             this.btnHistory.IconColor = System.Drawing.Color.Black;
             this.btnHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHistory.Location = new System.Drawing.Point(394, 0);
+            this.btnHistory.Location = new System.Drawing.Point(374, 0);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(240, 88);
+            this.btnHistory.Size = new System.Drawing.Size(220, 88);
             this.btnHistory.TabIndex = 8;
             this.btnHistory.Text = "Order history";
             this.btnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -144,7 +146,7 @@
             this.btnClose.IconColor = System.Drawing.Color.Black;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 24;
-            this.btnClose.Location = new System.Drawing.Point(1060, 5);
+            this.btnClose.Location = new System.Drawing.Point(1064, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(24, 24);
             this.btnClose.TabIndex = 6;
@@ -169,7 +171,7 @@
             this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSearch.Location = new System.Drawing.Point(154, 0);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(240, 88);
+            this.btnSearch.Size = new System.Drawing.Size(220, 88);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Find a hotel";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -207,7 +209,7 @@
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(0, 88);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1096, 1);
+            this.panelShadow.Size = new System.Drawing.Size(1100, 1);
             this.panelShadow.TabIndex = 1;
             // 
             // panelDesktop
@@ -216,14 +218,35 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(0, 89);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1096, 745);
+            this.panelDesktop.Size = new System.Drawing.Size(1100, 749);
             this.panelDesktop.TabIndex = 2;
+            // 
+            // btnAddProperty
+            // 
+            this.btnAddProperty.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddProperty.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddProperty.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAddProperty.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnAddProperty.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAddProperty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAddProperty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddProperty.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.btnAddProperty.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAddProperty.IconColor = System.Drawing.Color.Black;
+            this.btnAddProperty.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddProperty.Location = new System.Drawing.Point(594, 0);
+            this.btnAddProperty.Name = "btnAddProperty";
+            this.btnAddProperty.Size = new System.Drawing.Size(220, 88);
+            this.btnAddProperty.TabIndex = 10;
+            this.btnAddProperty.Text = "List your property";
+            this.btnAddProperty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddProperty.UseVisualStyleBackColor = false;
             // 
             // UserForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1096, 834);
+            this.ClientSize = new System.Drawing.Size(1100, 838);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
@@ -251,5 +274,6 @@
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconButton btnClose;
         private FontAwesome.Sharp.IconButton btnProfile;
+        private FontAwesome.Sharp.IconButton btnAddProperty;
     }
 }
