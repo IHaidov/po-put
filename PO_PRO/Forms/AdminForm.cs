@@ -34,12 +34,13 @@ namespace PO_PRO.Forms
         private readonly List<Bonus> bonus_credit = new List<Bonus>();
         private readonly List<Room> room_credit = new List<Room>();
         private readonly List<Order> order_credit = new List<Order>();
+        private readonly List<Bonus> facilities = new List<Bonus>();
         private readonly List<Address> address_credit = new List<Address>();
 
         public AdminForm()
         {
             InitializeComponent();
-
+            
             //Edit link 
 
             DataGridViewLinkColumn Editlink = new DataGridViewLinkColumn();
@@ -59,12 +60,28 @@ namespace PO_PRO.Forms
             Deletelink.LinkBehavior = LinkBehavior.SystemDefault;
             Deletelink.Text = "Delete";
             dataGridView1.Columns.Add(Deletelink);
+
             address_credit.Add(new Address());
             hotel_credit.Add(new Hotel());
             order_credit.Add(new Order());
             bonus_credit.Add(new Bonus());
             room_credit.Add(new Room());
             user_credit.Add(new Person());
+            
+            facilities.Add(new Bonus(Bonus_Type.Kitchen));
+            facilities.Add(new Bonus(Bonus_Type.Free_WiFi));
+            facilities.Add(new Bonus(Bonus_Type.Parking));
+            facilities.Add(new Bonus(Bonus_Type.Pets_allowed));
+            facilities.Add(new Bonus(Bonus_Type.Fitness_centre));
+            facilities.Add(new Bonus(Bonus_Type.Electric_kettle));
+            facilities.Add(new Bonus(Bonus_Type.TV));
+
+            foreach (var facility in facilities)
+            {
+                facilitiesCheckBox.Items.Add(facility.Type);
+            }
+           
+
             comboBox_Index_Changed();
         }
 
@@ -98,8 +115,7 @@ namespace PO_PRO.Forms
                     else if (db_elem.Key.Contains("@"))
                         users.Add(JsonConvert.DeserializeObject<Person>(db_elem.Value));
 
-                //users.Add(null);
-                //addresses.Add(new Address());
+                
             }
             catch (Exception ex)
             {
@@ -234,7 +250,12 @@ namespace PO_PRO.Forms
 
                 case (int)classes.Room:
                     room_credit[0].Type = (Room_Type)Convert.ToInt32(roomComboBox.SelectedIndex);
-                    room_credit[0].Price = Convert.ToDouble(roomNumeric.Text); 
+                    room_credit[0].Price = Convert.ToDouble(roomNumeric.Text);
+                    foreach (object facilityChecked in facilitiesCheckBox.CheckedItems)
+                    {
+                        Bonus b = new Bonus((Bonus_Type)facilityChecked);
+                        room_credit[0].Facilities.Add(b);
+                    }
                     if(roomFreeRadioBtn.Checked)
                         room_credit[0].Free_or_no = true;
                     else
@@ -322,6 +343,11 @@ namespace PO_PRO.Forms
         private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView2.Refresh();
+        }
+
+        private void facilitiesCheckBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)

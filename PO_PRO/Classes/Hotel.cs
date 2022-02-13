@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace PO_PRO.Classes
 {
@@ -11,6 +12,8 @@ namespace PO_PRO.Classes
         public int Stars { get; set; }
         public List<Room> Rooms { get; set; }
         public Address Address { get; set; }
+        public Image Photo { get; set; }
+
         public Hotel()
         {
             ID = Guid.NewGuid().ToString();

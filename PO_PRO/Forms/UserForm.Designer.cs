@@ -52,7 +52,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1100, 88);
+            this.panelMenu.Size = new System.Drawing.Size(1096, 88);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -96,7 +96,7 @@
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnMinimize.IconSize = 24;
             this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMinimize.Location = new System.Drawing.Point(1034, 5);
+            this.btnMinimize.Location = new System.Drawing.Point(1030, 5);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(24, 24);
             this.btnMinimize.TabIndex = 6;
@@ -144,7 +144,7 @@
             this.btnClose.IconColor = System.Drawing.Color.Black;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 24;
-            this.btnClose.Location = new System.Drawing.Point(1064, 5);
+            this.btnClose.Location = new System.Drawing.Point(1060, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(24, 24);
             this.btnClose.TabIndex = 6;
@@ -207,7 +207,7 @@
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(0, 88);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1100, 1);
+            this.panelShadow.Size = new System.Drawing.Size(1096, 1);
             this.panelShadow.TabIndex = 1;
             // 
             // panelDesktop
@@ -216,14 +216,14 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(0, 89);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1100, 749);
+            this.panelDesktop.Size = new System.Drawing.Size(1096, 745);
             this.panelDesktop.TabIndex = 2;
             // 
             // UserForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1100, 838);
+            this.ClientSize = new System.Drawing.Size(1096, 834);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);

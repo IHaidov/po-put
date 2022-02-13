@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnCreate = new FontAwesome.Sharp.IconButton();
@@ -45,65 +45,66 @@
             this.btnSubmit = new FontAwesome.Sharp.IconButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.bonusPanel = new System.Windows.Forms.Panel();
-            this.roomPanel = new System.Windows.Forms.Panel();
-            this.hotelPanel = new System.Windows.Forms.Panel();
-            this.bonusComboBox = new System.Windows.Forms.ComboBox();
-            this.bonusNumeric = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bonusNumeric = new System.Windows.Forms.NumericUpDown();
+            this.bonusComboBox = new System.Windows.Forms.ComboBox();
+            this.roomPanel = new System.Windows.Forms.Panel();
+            this.roomBusyRadioBtn = new System.Windows.Forms.RadioButton();
+            this.roomFreeRadioBtn = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.roomComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.roomNumeric = new System.Windows.Forms.NumericUpDown();
-            this.roomComboBox = new System.Windows.Forms.ComboBox();
-            this.roomFreeRadioBtn = new System.Windows.Forms.RadioButton();
-            this.roomBusyRadioBtn = new System.Windows.Forms.RadioButton();
-            this.hotelName = new System.Windows.Forms.TextBox();
-            this.starsNumeric = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
+            this.hotelPanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.starsNumeric = new System.Windows.Forms.NumericUpDown();
+            this.hotelName = new System.Windows.Forms.TextBox();
+            this.facilitiesCheckBox = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.bonusPanel.SuspendLayout();
-            this.roomPanel.SuspendLayout();
-            this.hotelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bonusNumeric)).BeginInit();
+            this.roomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roomNumeric)).BeginInit();
+            this.hotelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.starsNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(195)))), ((int)(((byte)(151)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle67.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle67.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle67;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle68;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.dataGridView1.Location = new System.Drawing.Point(9, 110);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle69.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle69;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1294, 421);
@@ -168,7 +169,7 @@
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnMinimize.IconSize = 24;
             this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMinimize.Location = new System.Drawing.Point(1249, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(1366, 12);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(24, 24);
             this.btnMinimize.TabIndex = 5;
@@ -190,7 +191,7 @@
             this.btnClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(4)))), ((int)(((byte)(15)))));
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 24;
-            this.btnClose.Location = new System.Drawing.Point(1279, 12);
+            this.btnClose.Location = new System.Drawing.Point(1396, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(24, 24);
             this.btnClose.TabIndex = 6;
@@ -206,7 +207,7 @@
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNav.Location = new System.Drawing.Point(0, 0);
             this.panelNav.Name = "panelNav";
-            this.panelNav.Size = new System.Drawing.Size(1315, 48);
+            this.panelNav.Size = new System.Drawing.Size(1432, 48);
             this.panelNav.TabIndex = 12;
             this.panelNav.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNav_Paint);
             // 
@@ -239,7 +240,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 48);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1315, 1);
+            this.panel1.Size = new System.Drawing.Size(1432, 1);
             this.panel1.TabIndex = 13;
             // 
             // btnSubmit
@@ -271,36 +272,36 @@
             // 
             this.dataGridView2.AllowDrop = true;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(171)))), ((int)(((byte)(134)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle70.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle70.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle70;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle71;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.dataGridView2.Location = new System.Drawing.Point(9, 581);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle72.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle72;
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
             this.dataGridView2.Size = new System.Drawing.Size(1294, 109);
@@ -323,40 +324,24 @@
             this.bonusPanel.TabIndex = 15;
             this.bonusPanel.Visible = false;
             // 
-            // roomPanel
+            // label2
             // 
-            this.roomPanel.Controls.Add(this.roomBusyRadioBtn);
-            this.roomPanel.Controls.Add(this.roomFreeRadioBtn);
-            this.roomPanel.Controls.Add(this.label3);
-            this.roomPanel.Controls.Add(this.roomComboBox);
-            this.roomPanel.Controls.Add(this.label4);
-            this.roomPanel.Controls.Add(this.roomNumeric);
-            this.roomPanel.Location = new System.Drawing.Point(9, 550);
-            this.roomPanel.Name = "roomPanel";
-            this.roomPanel.Size = new System.Drawing.Size(767, 137);
-            this.roomPanel.TabIndex = 16;
-            this.roomPanel.Visible = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(322, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Price";
             // 
-            // hotelPanel
+            // label1
             // 
-            this.hotelPanel.Controls.Add(this.label6);
-            this.hotelPanel.Controls.Add(this.label5);
-            this.hotelPanel.Controls.Add(this.starsNumeric);
-            this.hotelPanel.Controls.Add(this.hotelName);
-            this.hotelPanel.Location = new System.Drawing.Point(9, 571);
-            this.hotelPanel.Name = "hotelPanel";
-            this.hotelPanel.Size = new System.Drawing.Size(611, 138);
-            this.hotelPanel.TabIndex = 17;
-            this.hotelPanel.Visible = false;
-            // 
-            // bonusComboBox
-            // 
-            this.bonusComboBox.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bonusComboBox.FormattingEnabled = true;
-            this.bonusComboBox.Location = new System.Drawing.Point(18, 36);
-            this.bonusComboBox.Name = "bonusComboBox";
-            this.bonusComboBox.Size = new System.Drawing.Size(264, 33);
-            this.bonusComboBox.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Bonus";
             // 
             // bonusNumeric
             // 
@@ -371,24 +356,53 @@
             this.bonusNumeric.Size = new System.Drawing.Size(168, 34);
             this.bonusNumeric.TabIndex = 1;
             // 
-            // label1
+            // bonusComboBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Bonus";
+            this.bonusComboBox.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusComboBox.FormattingEnabled = true;
+            this.bonusComboBox.Location = new System.Drawing.Point(18, 36);
+            this.bonusComboBox.Name = "bonusComboBox";
+            this.bonusComboBox.Size = new System.Drawing.Size(264, 33);
+            this.bonusComboBox.TabIndex = 0;
             // 
-            // label2
+            // roomPanel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(322, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Price";
+            this.roomPanel.Controls.Add(this.facilitiesCheckBox);
+            this.roomPanel.Controls.Add(this.roomBusyRadioBtn);
+            this.roomPanel.Controls.Add(this.roomFreeRadioBtn);
+            this.roomPanel.Controls.Add(this.label3);
+            this.roomPanel.Controls.Add(this.roomComboBox);
+            this.roomPanel.Controls.Add(this.label4);
+            this.roomPanel.Controls.Add(this.roomNumeric);
+            this.roomPanel.Location = new System.Drawing.Point(9, 547);
+            this.roomPanel.Name = "roomPanel";
+            this.roomPanel.Size = new System.Drawing.Size(1090, 298);
+            this.roomPanel.TabIndex = 16;
+            this.roomPanel.Visible = false;
+            // 
+            // roomBusyRadioBtn
+            // 
+            this.roomBusyRadioBtn.AutoSize = true;
+            this.roomBusyRadioBtn.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomBusyRadioBtn.Location = new System.Drawing.Point(519, 61);
+            this.roomBusyRadioBtn.Name = "roomBusyRadioBtn";
+            this.roomBusyRadioBtn.Size = new System.Drawing.Size(85, 29);
+            this.roomBusyRadioBtn.TabIndex = 9;
+            this.roomBusyRadioBtn.TabStop = true;
+            this.roomBusyRadioBtn.Text = "Busy";
+            this.roomBusyRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // roomFreeRadioBtn
+            // 
+            this.roomFreeRadioBtn.AutoSize = true;
+            this.roomFreeRadioBtn.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomFreeRadioBtn.Location = new System.Drawing.Point(519, 24);
+            this.roomFreeRadioBtn.Name = "roomFreeRadioBtn";
+            this.roomFreeRadioBtn.Size = new System.Drawing.Size(83, 29);
+            this.roomFreeRadioBtn.TabIndex = 8;
+            this.roomFreeRadioBtn.TabStop = true;
+            this.roomFreeRadioBtn.Text = "Free";
+            this.roomFreeRadioBtn.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -399,6 +413,15 @@
             this.label3.Size = new System.Drawing.Size(64, 25);
             this.label3.TabIndex = 7;
             this.label3.Text = "Price";
+            // 
+            // roomComboBox
+            // 
+            this.roomComboBox.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomComboBox.FormattingEnabled = true;
+            this.roomComboBox.Location = new System.Drawing.Point(18, 51);
+            this.roomComboBox.Name = "roomComboBox";
+            this.roomComboBox.Size = new System.Drawing.Size(264, 33);
+            this.roomComboBox.TabIndex = 4;
             // 
             // label4
             // 
@@ -418,46 +441,37 @@
             this.roomNumeric.Size = new System.Drawing.Size(168, 34);
             this.roomNumeric.TabIndex = 5;
             // 
-            // roomComboBox
+            // hotelPanel
             // 
-            this.roomComboBox.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomComboBox.FormattingEnabled = true;
-            this.roomComboBox.Location = new System.Drawing.Point(18, 51);
-            this.roomComboBox.Name = "roomComboBox";
-            this.roomComboBox.Size = new System.Drawing.Size(264, 33);
-            this.roomComboBox.TabIndex = 4;
+            this.hotelPanel.Controls.Add(this.label6);
+            this.hotelPanel.Controls.Add(this.label5);
+            this.hotelPanel.Controls.Add(this.starsNumeric);
+            this.hotelPanel.Controls.Add(this.hotelName);
+            this.hotelPanel.Location = new System.Drawing.Point(48, 329);
+            this.hotelPanel.Name = "hotelPanel";
+            this.hotelPanel.Size = new System.Drawing.Size(611, 138);
+            this.hotelPanel.TabIndex = 17;
+            this.hotelPanel.Visible = false;
             // 
-            // roomFreeRadioBtn
+            // label6
             // 
-            this.roomFreeRadioBtn.AutoSize = true;
-            this.roomFreeRadioBtn.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomFreeRadioBtn.Location = new System.Drawing.Point(519, 24);
-            this.roomFreeRadioBtn.Name = "roomFreeRadioBtn";
-            this.roomFreeRadioBtn.Size = new System.Drawing.Size(83, 29);
-            this.roomFreeRadioBtn.TabIndex = 8;
-            this.roomFreeRadioBtn.TabStop = true;
-            this.roomFreeRadioBtn.Text = "Free";
-            this.roomFreeRadioBtn.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(13, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 25);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Hotel name";
             // 
-            // roomBusyRadioBtn
+            // label5
             // 
-            this.roomBusyRadioBtn.AutoSize = true;
-            this.roomBusyRadioBtn.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomBusyRadioBtn.Location = new System.Drawing.Point(519, 61);
-            this.roomBusyRadioBtn.Name = "roomBusyRadioBtn";
-            this.roomBusyRadioBtn.Size = new System.Drawing.Size(85, 29);
-            this.roomBusyRadioBtn.TabIndex = 9;
-            this.roomBusyRadioBtn.TabStop = true;
-            this.roomBusyRadioBtn.Text = "Busy";
-            this.roomBusyRadioBtn.UseVisualStyleBackColor = true;
-            // 
-            // hotelName
-            // 
-            this.hotelName.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hotelName.Location = new System.Drawing.Point(18, 45);
-            this.hotelName.Name = "hotelName";
-            this.hotelName.Size = new System.Drawing.Size(251, 34);
-            this.hotelName.TabIndex = 0;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(366, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 25);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Stars";
             // 
             // starsNumeric
             // 
@@ -482,32 +496,40 @@
             0,
             0});
             // 
-            // label5
+            // hotelName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(366, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 25);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Stars";
+            this.hotelName.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hotelName.Location = new System.Drawing.Point(18, 45);
+            this.hotelName.Name = "hotelName";
+            this.hotelName.Size = new System.Drawing.Size(251, 34);
+            this.hotelName.TabIndex = 0;
             // 
-            // label6
+            // facilitiesCheckBox
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 25);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Hotel name";
+            this.facilitiesCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
+            this.facilitiesCheckBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.facilitiesCheckBox.CheckOnClick = true;
+            this.facilitiesCheckBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.facilitiesCheckBox.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.facilitiesCheckBox.FormattingEnabled = true;
+            this.facilitiesCheckBox.IntegralHeight = false;
+            this.facilitiesCheckBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.facilitiesCheckBox.Location = new System.Drawing.Point(736, 0);
+            this.facilitiesCheckBox.Margin = new System.Windows.Forms.Padding(0, 0, 0, 40);
+            this.facilitiesCheckBox.Name = "facilitiesCheckBox";
+            this.facilitiesCheckBox.Size = new System.Drawing.Size(354, 298);
+            this.facilitiesCheckBox.TabIndex = 10;
+            this.facilitiesCheckBox.SelectedIndexChanged += new System.EventHandler(this.facilitiesCheckBox_SelectedIndexChanged);
             // 
             // AdminForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(240)))), ((int)(((byte)(218)))));
-            this.ClientSize = new System.Drawing.Size(1315, 726);
+            this.ClientSize = new System.Drawing.Size(1432, 897);
             this.Controls.Add(this.hotelPanel);
             this.Controls.Add(this.roomPanel);
             this.Controls.Add(this.bonusPanel);
@@ -529,12 +551,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.bonusPanel.ResumeLayout(false);
             this.bonusPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bonusNumeric)).EndInit();
             this.roomPanel.ResumeLayout(false);
             this.roomPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roomNumeric)).EndInit();
             this.hotelPanel.ResumeLayout(false);
             this.hotelPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bonusNumeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.starsNumeric)).EndInit();
             this.ResumeLayout(false);
 
@@ -569,5 +591,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown starsNumeric;
         private System.Windows.Forms.TextBox hotelName;
+        private System.Windows.Forms.CheckedListBox facilitiesCheckBox;
     }
 }

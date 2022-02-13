@@ -26,6 +26,10 @@ namespace PO_PRO.Classes
         {
             ID = Guid.NewGuid().ToString();
         }
-
+        public Bonus(Bonus_Type fac)
+        {
+            this.Type = fac;
+            ID = Guid.NewGuid().ToString();
+        }
     }
 }
