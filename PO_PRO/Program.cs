@@ -17,7 +17,7 @@ namespace PO_PRO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserForm());
+            Application.Run(new AdminForm());
         }
     }
 }

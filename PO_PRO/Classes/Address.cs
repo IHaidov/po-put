@@ -9,7 +9,7 @@ namespace PO_PRO.Classes
     [Serializable]
     public class Address
     {
-        public string ID { get; }
+        public string ID { get; set; }
         public string Street { get; set; }
         public string City { get; set; }
         public string State { get; set; }

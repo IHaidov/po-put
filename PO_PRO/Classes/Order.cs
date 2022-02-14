@@ -9,7 +9,7 @@ namespace PO_PRO.Classes
    [Serializable]
     public class Order
     {
-        public string ID { get; }
+        public string ID { get; set; }
         public DateTime Date_of_Reservation { get; set; }
         public double Price { get; set; }
         private string User_ID { get; set; }

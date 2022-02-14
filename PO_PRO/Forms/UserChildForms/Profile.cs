@@ -112,5 +112,10 @@ namespace PO_PRO.Forms.UserChildForms
             user.Password = txt_box_Password.Text;
             Submit_changes(user);
         }
+
+        private void txt_box_Username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

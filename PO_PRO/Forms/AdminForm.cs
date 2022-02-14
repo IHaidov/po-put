@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Newtonsoft.Json;
@@ -11,31 +12,29 @@ namespace PO_PRO.Forms
     {
         public enum classes
         {
-            Address,
-            Bonus,
+            _,
             Hotel,
             Order,
-            Person,
-            Room
+            Person
+            
         }
-
         private bool createClicked = false, editClicked = false, deleteClicked = false;
         
-        private readonly List<Address> addresses = new List<Address>();
-        private readonly List<Bonus> bonuses = new List<Bonus>();
+        private  List<Address> addresses = new List<Address>();
+        private  List<Bonus> bonuses = new List<Bonus>();
         private Dictionary<string, string> db_string = new Dictionary<string, string>();
-        private readonly List<Hotel> hotels = new List<Hotel>();
-        private readonly List<Order> orders = new List<Order>();
-        private readonly List<Room> rooms = new List<Room>();
-        private readonly List<Person> users = new List<Person>();
+        private  List<Hotel> hotels = new List<Hotel>();
+        private  List<Order> orders = new List<Order>();
+        private  List<Room> rooms = new List<Room>();
+        private  List<Person> users = new List<Person>();
 
-        private readonly List<Person> user_credit = new List<Person>();
-        private readonly List<Hotel> hotel_credit = new List<Hotel>();
-        private readonly List<Bonus> bonus_credit = new List<Bonus>();
-        private readonly List<Room> room_credit = new List<Room>();
-        private readonly List<Order> order_credit = new List<Order>();
-        private readonly List<Bonus> facilities = new List<Bonus>();
-        private readonly List<Address> address_credit = new List<Address>();
+        private  List<Person> user_credit = new List<Person>();
+        private  List<Hotel> hotel_credit = new List<Hotel>();
+        private  List<Bonus> bonus_credit = new List<Bonus>();
+        private  List<Room> room_credit = new List<Room>();
+        private  List<Order> order_credit = new List<Order>();
+        private  List<Bonus> facilities = new List<Bonus>();
+        private  List<Address> address_credit = new List<Address>();
 
         public AdminForm()
         {
@@ -75,7 +74,7 @@ namespace PO_PRO.Forms
             facilities.Add(new Bonus(Bonus_Type.Fitness_centre));
             facilities.Add(new Bonus(Bonus_Type.Electric_kettle));
             facilities.Add(new Bonus(Bonus_Type.TV));
-
+            
             foreach (var facility in facilities)
             {
                 facilitiesCheckBox.Items.Add(facility.Type);
@@ -85,9 +84,59 @@ namespace PO_PRO.Forms
             comboBox_Index_Changed();
         }
 
+        public string KeyMaker(string ID)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+               
+                case (int)classes.Hotel:
+                    return "HOT_"+ID;
+                    break;
+                case (int)classes.Order:
+                    return "ORD_" + ID;
+                    break;
+               
+                case (int)classes.Person:
+                    return ID;
+                    break;
+                
+            }
+
+            return "";
+        }
+        public void ListKeyDelete(string id)
+        {
+            dataGridView1.DataSource = null;
+            switch (comboBox1.SelectedIndex)
+            {
+
+                case (int)classes.Hotel:
+                    
+                    var elem = hotels.SingleOrDefault(r => r.ID == id);
+                    hotels.Remove(elem);
+                    dataGridView1.DataSource = hotels;
+                    
+                    break;
+                case (int)classes.Order:
+                    var elem1 = orders.SingleOrDefault(r => r.ID == id);
+                    orders.Remove(elem1);
+                    dataGridView1.DataSource = orders;
+                    break;
+
+                case (int)classes.Person:
+                    var elem2 = users.SingleOrDefault(r => r.ID == id);
+                    users.Remove(elem2);
+                    dataGridView1.DataSource = users;
+                    break;
+
+            }
+
+           
+        }
         private void AdminForm_Load(object sender, EventArgs e)
         {
             comboBox1.DataSource = Enum.GetValues(typeof(classes));
+            roomComboBox.DataSource = Enum.GetValues(typeof(Room_Type));
             dbUpdate();
 
             comboBox_Index_Changed();
@@ -98,24 +147,38 @@ namespace PO_PRO.Forms
             try
             {
                 db_string.Clear();
+                
                 DB.ReadAll(out db_string);
                 
                 foreach (var db_elem in db_string)
-                    
+
                     if (db_elem.Key.Contains("ADDR_"))
+                    {
+                        
                         addresses.Add(JsonConvert.DeserializeObject<Address>(db_elem.Value));
+                    }
                     else if (db_elem.Key.Contains("BON_"))
                         bonuses.Add(JsonConvert.DeserializeObject<Bonus>(db_elem.Value));
                     else if (db_elem.Key.Contains("HOT_"))
-                        hotels.Add(JsonConvert.DeserializeObject<Hotel>(db_elem.Value));
+                    {
+                        hotels.Add((new Hotel()));
+                        hotels[hotels.Count - 1] = JsonConvert.DeserializeObject<Hotel>(db_elem.Value);
+                        
+                    }
                     else if (db_elem.Key.Contains("ORD_"))
                         orders.Add(JsonConvert.DeserializeObject<Order>(db_elem.Value));
                     else if (db_elem.Key.Contains("ROOM_"))
                         rooms.Add(JsonConvert.DeserializeObject<Room>(db_elem.Value));
                     else if (db_elem.Key.Contains("@"))
-                        users.Add(JsonConvert.DeserializeObject<Person>(db_elem.Value));
+                    {
+                        users.Add((new Person()));
+                        
+                        Person usr = JsonConvert.DeserializeObject<Person>(db_elem.Value);
+                        
+                        users[users.Count - 1] = JsonConvert.DeserializeObject<Person>(db_elem.Value);
+                    }
 
-                
+
             }
             catch (Exception ex)
             {
@@ -126,42 +189,37 @@ namespace PO_PRO.Forms
 
         private void comboBox_Index_Changed()
         {
-            roomPanel.Visible = false;
-            hotelPanel.Visible = false;
+            
+            hotelTab.Visible = false;
             bonusPanel.Visible = false;
             dataGridView2.Visible = false;
 
             switch (comboBox1.SelectedIndex)
             {
-                case (int) classes.Address:
-                    dataGridView1.DataSource = addresses;
-                    
-                    dataGridView2.DataSource = address_credit;
-                    break;
+               
                 case (int) classes.Hotel:
+                    dataGridView1.DataSource = null;
                     dataGridView1.DataSource = hotels;
                     
                     dataGridView2.DataSource = hotel_credit;
                     break;
                 case (int) classes.Order:
+                    dataGridView1.DataSource = null;
                     dataGridView1.DataSource = orders;
                     
                     dataGridView2.DataSource = order_credit;
                     break;
-                case (int) classes.Bonus:
-                    dataGridView1.DataSource = bonuses;
-                    
-                    dataGridView2.DataSource = bonus_credit;
-                    break;
-                case (int) classes.Room:
-                    dataGridView1.DataSource = rooms;
-                   
-                    dataGridView2.DataSource = room_credit;
-                    break;
+              
                 case (int) classes.Person:
+                    dataGridView1.DataSource = null;
                     dataGridView1.DataSource = users;
                     
                     dataGridView2.DataSource = user_credit;
+                    break;
+                case (int)classes._:
+                    dataGridView1.DataSource = null;
+
+                    dataGridView2.DataSource = null;
                     break;
             }
 
@@ -187,39 +245,53 @@ namespace PO_PRO.Forms
             deleteClicked = true;
         }
 
+        public void addHotel()
+        {
+            hotel_credit[0].Info = hotelInfo.Text;
+            hotel_credit[0].Name = hotelName.Text;
+            hotel_credit[0].Photo = hotelPicture.Image;
+            hotel_credit[0].Stars = Convert.ToInt32(starsNumeric.Text);
+            hotel_credit[0].Address.Street = streetText.Text;
+            hotel_credit[0].Address.City = cityText.Text;
+            hotel_credit[0].Address.State = stateText.Text;
+            hotel_credit[0].Address.Postal_Code = postalCodeText.Text;
+            hotel_credit[0].Address.Country = countryText.Text;
+            room_credit[0].Type = (Room_Type)Convert.ToInt32(roomComboBox.SelectedIndex);
+            room_credit[0].Price = Convert.ToDouble(roomNumeric.Text);
+            foreach (object facilityChecked in facilitiesCheckBox.CheckedItems)
+            {
+                Bonus b = new Bonus((Bonus_Type)facilityChecked);
+                hotel_credit[0].Facilities.Add(b);
+            }
+            if (roomFreeRadioBtn.Checked)
+                room_credit[0].Free_Room = true;
+            else
+            {
+                room_credit[0].Free_Room = false;
+            }
+
+            for (int i = 0; i < Convert.ToDouble(roomAmountnumeric.Text); i++)
+            {
+                hotel_credit[0].Rooms.Add(room_credit[0]);
+            }
+        }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            Height -= 200;
             switch (comboBox1.SelectedIndex)
             {
-                case (int)classes.Address:
-                   address_credit[0].Street = dataGridView2.Rows[0].Cells[1].Value.ToString();
-                   address_credit[0].City = dataGridView2.Rows[0].Cells[2].Value.ToString();
-                   address_credit[0].State = dataGridView2.Rows[0].Cells[3].Value.ToString();
-                   address_credit[0].Postal_Code = dataGridView2.Rows[0].Cells[4].Value.ToString();
-                   address_credit[0].Country = dataGridView2.Rows[0].Cells[5].Value.ToString();
+               
+
+                case (int)classes.Hotel:
                    
                     try
                     {
-                        DB.Write("ADDR_"+address_credit[0].ID, JsonConvert.SerializeObject(address_credit[0]));
-                        addresses.Add(address_credit[0]);
-                        dataGridView1.DataSource = addresses;
-                        dataGridView2.Visible = false;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                    break;
-
-                case (int)classes.Hotel:
-                    hotel_credit[0].Name = hotelName.Text;
-                    hotel_credit[0].Stars = Convert.ToInt32(starsNumeric.Text);
-                    try
-                    {
-                        DB.Write("HOT_" + address_credit[0].ID, JsonConvert.SerializeObject(hotel_credit[0]));
+                        addHotel();
+                        DB.Write("HOT_" + hotel_credit[0].ID, JsonConvert.SerializeObject(hotel_credit[0]));
                         hotels.Add(hotel_credit[0]);
+                        dataGridView1.DataSource = null;
                         dataGridView1.DataSource = hotels;
-                        hotelPanel.Visible = false;
+                        hotelTab.Visible = false;
                     }
                     catch (Exception ex)
                     {
@@ -231,51 +303,7 @@ namespace PO_PRO.Forms
                    
                     break;
 
-                case (int)classes.Bonus:
-                    bonus_credit[0].Type = (Bonus_Type)Convert.ToInt32(bonusComboBox.SelectedIndex);
-                    bonus_credit[0].Price = Convert.ToDouble(bonusNumeric.Text);
-
-                    try
-                    {
-                        DB.Write("BON_" + bonus_credit[0].ID, JsonConvert.SerializeObject(bonus_credit[0]));
-                        bonuses.Add(bonus_credit[0]);
-                        dataGridView1.DataSource = bonuses;
-                        bonusPanel.Visible = false;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                    break;
-
-                case (int)classes.Room:
-                    room_credit[0].Type = (Room_Type)Convert.ToInt32(roomComboBox.SelectedIndex);
-                    room_credit[0].Price = Convert.ToDouble(roomNumeric.Text);
-                    foreach (object facilityChecked in facilitiesCheckBox.CheckedItems)
-                    {
-                        Bonus b = new Bonus((Bonus_Type)facilityChecked);
-                        room_credit[0].Facilities.Add(b);
-                    }
-                    if(roomFreeRadioBtn.Checked)
-                        room_credit[0].Free_or_no = true;
-                    else
-                    {
-                        room_credit[0].Free_or_no = false;
-                    }
-
-                    try
-                    {
-                        DB.Write("ROOM_" + room_credit[0].ID, JsonConvert.SerializeObject(room_credit[0]));
-                        rooms.Add(room_credit[0]);
-                        dataGridView1.DataSource = rooms;
-                        roomPanel.Visible = false;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                    break;
-
+               
                 case (int)classes.Person:
                     user_credit[0].Name = dataGridView2.Rows[0].Cells[2].Value.ToString();
                     user_credit[0].Surname = dataGridView2.Rows[0].Cells[3].Value.ToString();
@@ -284,10 +312,12 @@ namespace PO_PRO.Forms
                     user_credit[0].Password = dataGridView2.Rows[0].Cells[6].Value.ToString();
                     user_credit[0].Phone = dataGridView2.Rows[0].Cells[7].Value.ToString();
                     user_credit[0].Passport_ID = dataGridView2.Rows[0].Cells[8].Value.ToString();
+                    user_credit[0].Blocked = Convert.ToBoolean(dataGridView2.Rows[0].Cells[10].Value.ToString());
                     try
                     {
                         DB.Write(user_credit[0].Email.ToLower(), JsonConvert.SerializeObject(user_credit[0]));
                         users.Add(user_credit[0]);
+                        dataGridView1.DataSource = null;
                         dataGridView1.DataSource = users;
                         dataGridView2.Visible = false;
                     }
@@ -315,13 +345,51 @@ namespace PO_PRO.Forms
             //edit column 
             if (e.ColumnIndex == 0)
             {
-
+                if (comboBox1.SelectedIndex == (int)classes.Person)
+                {
+                    
+                }
+                else
+                {
+                    hotelTab.Visible = true;
+                }
                 dataGridView1.Refresh();
 
             } //delete column
 
             if (e.ColumnIndex == 1)
             {
+                if (comboBox1.SelectedIndex == (int) classes.Person)
+                {
+                    try
+                    {
+                        DB.Delete_key(dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString());
+                        ListKeyDelete(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    }
+                    catch (Exception exception)
+                    {
+                        Console.WriteLine(exception);
+                        throw;
+                    }
+                    
+                }
+                else
+                {
+                    try
+                    {
+                       
+                        DB.Delete_key(KeyMaker(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()));
+                        ListKeyDelete(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                        
+                    }
+                    catch (Exception exception)
+                    {
+                        Console.WriteLine(exception);
+                        throw;
+                    }
+                }
+                
+                dbUpdate();
                 dataGridView1.Refresh();
             }
             
@@ -329,13 +397,7 @@ namespace PO_PRO.Forms
 
         private void dataGridView2_KeyDown(object sender, KeyEventArgs e)
         {
-            //if (e.KeyCode == Keys.Tab && dataGridView1.CurrentCell.ColumnIndex == 1)
-            //{
-            //    e.Handled = true;
-            //    DataGridViewCell cell = dataGridView2.Rows[0].Cells[0];
-            //    dataGridView1.CurrentCell = cell;
-            //    dataGridView1.BeginEdit(true);
-            //}
+           
             dataGridView2.EditMode = DataGridViewEditMode.EditOnEnter;
             dataGridView2.RefreshEdit();
         }
@@ -350,6 +412,30 @@ namespace PO_PRO.Forms
 
         }
 
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            dbUpdate();
+            comboBox_Index_Changed();
+            dataGridView1.Update();
+            dataGridView1.Refresh();
+        }
+
+        private void hotelPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+
+                hotelPicture.Image = new Bitmap(open.FileName);
+            }
+        }
+
+        private void roomComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
@@ -357,35 +443,23 @@ namespace PO_PRO.Forms
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            Height += 200;
             createClicked = true;
             switch (comboBox1.SelectedIndex)
-            {
-                case (int)classes.Address:
-                    address_credit.Clear();
-                    address_credit.Add(new Address());
-                    dataGridView2.Visible = true;
-                    break;
+            { 
+                
                 case (int)classes.Hotel:
                     hotel_credit.Clear();
                     hotel_credit.Add(new Hotel());
-                    hotelPanel.Visible = true;
+                    hotelTab.Visible = true;
                     break;
                 case (int)classes.Order:
                    
                     break;
-                case (int)classes.Bonus:
-                    bonus_credit.Clear();
-                    bonus_credit.Add(new Bonus());
-                    bonusPanel.Visible = true;
-                    bonusComboBox.DataSource = Enum.GetValues(typeof(Bonus_Type)); 
-                    break;
-                case (int)classes.Room:
-                    room_credit.Clear();
-                    room_credit.Add(new Room());
-                    roomPanel.Visible = true;
-                    roomComboBox.DataSource = Enum.GetValues(typeof(Room_Type));
-                    break;
+              
+                //    break;
                 case (int)classes.Person:
+                    hotelTab.Visible = false;
                     user_credit.Clear();
                     user_credit.Add(new Person());
                     dataGridView2.Visible = true;
