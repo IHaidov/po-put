@@ -193,7 +193,7 @@ namespace PO_PRO.Forms
             hotelTab.Visible = false;
             bonusPanel.Visible = false;
             dataGridView2.Visible = false;
-
+            btnSubmit.Visible = false;
             switch (comboBox1.SelectedIndex)
             {
                
@@ -249,7 +249,7 @@ namespace PO_PRO.Forms
         {
             hotel_credit[0].Info = hotelInfo.Text;
             hotel_credit[0].Name = hotelName.Text;
-            hotel_credit[0].Photo = hotelPicture.Image;
+            hotel_credit[0].Photo = (Image)hotelPicture.Image;
             hotel_credit[0].Stars = Convert.ToInt32(starsNumeric.Text);
             hotel_credit[0].Address.Street = streetText.Text;
             hotel_credit[0].Address.City = cityText.Text;
@@ -258,6 +258,36 @@ namespace PO_PRO.Forms
             hotel_credit[0].Address.Country = countryText.Text;
             room_credit[0].Type = (Room_Type)Convert.ToInt32(roomComboBox.SelectedIndex);
             room_credit[0].Price = Convert.ToDouble(roomNumeric.Text);
+            foreach (object facilityChecked in facilitiesCheckBox.CheckedItems)
+            {
+                Bonus b = new Bonus((Bonus_Type)facilityChecked);
+                hotel_credit[0].Facilities.Add(b);
+            }
+            if (roomFreeRadioBtn.Checked)
+                room_credit[0].Free_Room = true;
+            else
+            {
+                room_credit[0].Free_Room = false;
+            }
+
+            for (int i = 0; i < Convert.ToDouble(roomAmountnumeric.Text); i++)
+            {
+                hotel_credit[0].Rooms.Add(room_credit[0]);
+            }
+        }
+        public void clearHotel()
+        {
+            hotelInfo.Text="";
+            hotelName.Text="";
+           hotelPicture.Image=null;
+            starsNumeric.Text="";
+            streetText.Text="";
+            cityText.Text="";
+            stateText.Text="";
+            postalCodeText.Text="";
+            countryText.Text="";
+            roomComboBox.SelectedIndex=0;
+            roomNumeric.Text="";
             foreach (object facilityChecked in facilitiesCheckBox.CheckedItems)
             {
                 Bonus b = new Bonus((Bonus_Type)facilityChecked);
@@ -348,10 +378,17 @@ namespace PO_PRO.Forms
                 if (comboBox1.SelectedIndex == (int)classes.Person)
                 {
                     
+                    dataGridView2.DataSource = null;
+                    user_credit.Clear();
+                    user_credit.Add(users[e.RowIndex]);
+                    dataGridView2.DataSource = user_credit;
+                    dataGridView2.Visible = true;
+                    btnSubmit.Visible = true;
                 }
                 else
                 {
                     hotelTab.Visible = true;
+                    
                 }
                 dataGridView1.Refresh();
 
@@ -449,7 +486,9 @@ namespace PO_PRO.Forms
             { 
                 
                 case (int)classes.Hotel:
+                    
                     hotel_credit.Clear();
+                    clearHotel();
                     hotel_credit.Add(new Hotel());
                     hotelTab.Visible = true;
                     break;
@@ -460,8 +499,10 @@ namespace PO_PRO.Forms
                 //    break;
                 case (int)classes.Person:
                     hotelTab.Visible = false;
+                    dataGridView2.DataSource = null;
                     user_credit.Clear();
                     user_credit.Add(new Person());
+                    dataGridView2.DataSource = user_credit;
                     dataGridView2.Visible = true;
                     break;
             }
