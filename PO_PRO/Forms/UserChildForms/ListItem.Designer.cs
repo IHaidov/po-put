@@ -36,12 +36,16 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnSeeMore = new FontAwesome.Sharp.IconButton();
             this.lblFacilitiesInfo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblStars = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblStars);
+            this.panel1.Controls.Add(this.lblPrice);
             this.panel1.Controls.Add(this.pbPhoto);
             this.panel1.Controls.Add(this.btnHotelName);
             this.panel1.Controls.Add(this.lblCity);
@@ -157,6 +161,32 @@ namespace PO_PRO.Forms.UserChildForms
             this.panel2.Size = new System.Drawing.Size(765, 1);
             this.panel2.TabIndex = 12;
             // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrice.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPrice.ForeColor = System.Drawing.Color.Black;
+            this.lblPrice.Location = new System.Drawing.Point(673, 81);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(72, 30);
+            this.lblPrice.TabIndex = 10;
+            this.lblPrice.Text = "Price";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblStars
+            // 
+            this.lblStars.AutoSize = true;
+            this.lblStars.BackColor = System.Drawing.Color.Transparent;
+            this.lblStars.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblStars.ForeColor = System.Drawing.Color.Black;
+            this.lblStars.Location = new System.Drawing.Point(679, 23);
+            this.lblStars.Name = "lblStars";
+            this.lblStars.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblStars.Size = new System.Drawing.Size(66, 30);
+            this.lblStars.TabIndex = 11;
+            this.lblStars.Text = "Stars";
+            // 
             // ListItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -181,5 +211,7 @@ namespace PO_PRO.Forms.UserChildForms
         private FontAwesome.Sharp.IconButton btnSeeMore;
         private System.Windows.Forms.Label lblFacilitiesInfo;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblStars;
+        private System.Windows.Forms.Label lblPrice;
     }
 }

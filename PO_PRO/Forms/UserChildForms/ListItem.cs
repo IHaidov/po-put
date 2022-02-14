@@ -22,6 +22,8 @@ namespace PO_PRO.Forms.UserChildForms
         private string _hotelName;
         private string _city;
         private string _id;
+        private double _price;
+        private int _stars;
         private Image _photo;
 
         [Category("Custom Props")]
@@ -48,6 +50,20 @@ namespace PO_PRO.Forms.UserChildForms
         {
             get { return _id; }
             set { _id = value; }
+        }
+
+        [Category("Custom Props")]
+        public double Price
+        {
+            get { return _price; }
+            set { _price = value; lblPrice.Text = value.ToString() + " zł"; }
+        }
+
+        [Category("Custom Props")]
+        public int Stars
+        {
+            get { return _stars; }
+            set { _stars = value; lblStars.Text = "Stars: " + value.ToString(); }
         }
         #endregion
 
