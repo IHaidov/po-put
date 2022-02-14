@@ -148,5 +148,10 @@ namespace PO_PRO.Forms
         {
             lastPoint = new Point(e.X, e.Y);
         }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

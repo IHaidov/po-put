@@ -5,10 +5,11 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using StackExchange.Redis;
 namespace PO_PRO
 {
-    public class DB
+    public static class DB
     {
         public static bool Redis_initialized;
 
@@ -58,6 +59,7 @@ namespace PO_PRO
             }
             catch (Exception e)
             {
+                MessageBox.Show(e.Message);
                 ex = e;
                 return false;
             }
@@ -80,7 +82,7 @@ namespace PO_PRO
                 }
                 catch (Exception e)
                 {
-                    Console.Write($"Write exception : {e}");
+                    MessageBox.Show($"Write exception : {e}");
                 }
         }
 
@@ -102,7 +104,7 @@ namespace PO_PRO
                 }
                 catch (Exception e)
                 {
-                    Console.Write($"Write exception : {e}");
+                    MessageBox.Show($"Write exception : {e}");
                 }
         }
 
@@ -123,7 +125,7 @@ namespace PO_PRO
                 }
                 catch (Exception e)
                 {
-                    Console.Write($"Write exception : {e}");
+                    MessageBox.Show($"Write exception : {e}");
                 }
         }
 
@@ -144,7 +146,7 @@ namespace PO_PRO
                 }
                 catch (Exception e)
                 {
-                    Console.Write($"Write exception : {e}");
+                    MessageBox.Show($"Write exception : {e}");
                 }
         }
 
@@ -166,7 +168,7 @@ namespace PO_PRO
                 }
                 catch (Exception e)
                 {
-                    Console.Write($"Check key exception : {e}", true);
+                    MessageBox.Show($"Check key exception : {e}");
                 }
         }
 
@@ -187,7 +189,7 @@ namespace PO_PRO
                 }
                 catch (Exception e)
                 {
-                    Console.Write($"Read exception : {e}");
+                    MessageBox.Show($"Read exception : {e}");
                 }
         }
 
@@ -208,7 +210,7 @@ namespace PO_PRO
                 }
                 catch (Exception e)
                 {
-                    Console.Write($"Read exception : {e}");
+                    MessageBox.Show($"Read exception : {e}");
                 }
         }
 
@@ -230,7 +232,7 @@ namespace PO_PRO
                 }
                 catch (Exception e)
                 {
-                    Console.Write($"Write exception : {e}");
+                    MessageBox.Show($"Write exception : {e}");
                 }
         }
 
@@ -250,7 +252,7 @@ namespace PO_PRO
                 }
                 catch (Exception e)
                 {
-                    Console.Write($"Write exception : {e}");
+                    MessageBox.Show($"Write exception : {e}");
                 }
         }
 
@@ -273,7 +275,7 @@ namespace PO_PRO
                 }
                 catch (Exception e)
                 {
-                    Console.Write($"Function {func.Method.Name} call exception  : {e}");
+                    MessageBox.Show($"Function {func.Method.Name} call exception  : {e}");
                 }
         }
 
@@ -302,29 +304,40 @@ namespace PO_PRO
 
         public static List<string> GetAllkeys()
         {
+            Redis_initialized = false;
+           
             List<string> listKeys = new List<string>();
             try
             {
-                if (!Redis_initialized)
-            {
+                
+                
+               
                 var redis = ConnectionMultiplexer.Connect(configurationOptions);
-                db = redis.GetDatabase(0);
-                Redis_initialized = true;
-            
+                   
+               // db = redis.GetDatabase(0);
+                   
+                  
+                
                 var keys = redis.GetServer("redis-16263.c16.us-east-1-2.ec2.cloud.redislabs.com", 16263).Keys();
+                
+
                 listKeys.AddRange(keys.Select(key => (string)key).ToList());
 
             }
-            }
             catch (Exception e)
             {
-                Console.Write($" exception  : {e}");
+                MessageBox.Show($" exception  : {e}");
             }
             return listKeys;
         }
         public static bool ReadAll(out Dictionary<string, string> answer)
         {
+            
             List<string> keys = GetAllkeys();
+            foreach (var VARIABLE in keys)
+            {
+                Console.WriteLine(VARIABLE.ToString());
+            }
             answer = new Dictionary<string, string>();
             while (true)
                 try
@@ -344,7 +357,7 @@ namespace PO_PRO
                 }
                 catch (Exception e)
                 {
-                    Console.Write($"Read exception : {e}");
+                    MessageBox.Show($"Read exception : {e}");
                 }
         }
     }

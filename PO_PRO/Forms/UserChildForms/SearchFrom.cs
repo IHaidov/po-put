@@ -43,7 +43,9 @@ namespace PO_PRO.Forms.UserChildForms
             btnHamburger.Visible = false;
             btnHamburger.Location = new Point(10, 10);
             monthCalendar.BringToFront();
+            MessageBox.Show("Before Update");
             dbUpdate();
+            MessageBox.Show("After Update");
         }
         #region BackgroundGradient
         private void SetFilterBackground(Object sender, PaintEventArgs e)
@@ -198,11 +200,11 @@ namespace PO_PRO.Forms.UserChildForms
         {
             try
             {
-                db_string.Clear();
+                
                 DB.ReadAll(out db_string);
 
                 foreach (var db_elem in db_string)
-
+                {
                     if (db_elem.Key.Contains("ADDR_"))
                         addresses.Add(JsonConvert.DeserializeObject<Address>(db_elem.Value));
                     else if (db_elem.Key.Contains("BON_"))
@@ -215,8 +217,9 @@ namespace PO_PRO.Forms.UserChildForms
                         rooms.Add(JsonConvert.DeserializeObject<Room>(db_elem.Value));
                     else if (db_elem.Key.Contains("@"))
                         users.Add(JsonConvert.DeserializeObject<Person>(db_elem.Value));
-
-            }
+                    Console.WriteLine(db_elem.Key);
+                }
+        }
             catch (Exception ex)
             {
                 Console.WriteLine("!!!!!" + ex);
@@ -278,5 +281,10 @@ namespace PO_PRO.Forms.UserChildForms
             ToggleSeeMore(panel);
         }
         #endregion
+
+        private void flowLayoutHotels_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

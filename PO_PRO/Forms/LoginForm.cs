@@ -101,17 +101,21 @@ namespace PO_PRO
                 }
                 else
                 {
-                    if (txtPassword.Text.Equals(user.Password))
+                    if (txtPassword.Text.Equals(user.Password) && txtUsername.Text != "admin@gmail.com")
                     {
-                        new UserForm(txtUsername.Text.ToLower()).Show();
+                       
                         this.Hide();
+                        UserForm f = new UserForm(txtUsername.Text);
+                        f.ShowDialog();
                         //MessageBox.Show("User");
                     }
 
                     else if (txtPassword.Text.Equals(user.Password) && txtUsername.Text == "admin@gmail.com")
                     {
-                        new AdminForm().Show();
+
                         this.Hide();
+                        AdminForm f = new AdminForm();
+                        f.ShowDialog();
                         //MessageBox.Show("Admin");
                     }
 

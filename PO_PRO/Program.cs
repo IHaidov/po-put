@@ -12,12 +12,23 @@ namespace PO_PRO
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        public static int LoggedIn = 0;
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminForm());
+            
+            if (LoggedIn == 0)
+                Application.Run(new LoginForm());
+            else if (LoggedIn == 1)
+            {
+                Application.Run(new AdminForm());
+            }
+            else if (LoggedIn == 2)
+            {
+                Application.Run(new UserForm());
+            }
         }
     }
 }

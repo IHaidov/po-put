@@ -13,7 +13,7 @@ namespace PO_PRO.Classes
         public List<Room> Rooms { get; set; }
         public List<Bonus> Facilities { get; set; }
         public Address Address { get; set; }
-        public Image Photo { get; set; }
+       // public Image Photo { get; set; }
         public string Info { get; set; }
 
         public Hotel()
