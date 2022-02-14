@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnAddProperty = new FontAwesome.Sharp.IconButton();
             this.btnProfile = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnHistory = new FontAwesome.Sharp.IconButton();
@@ -37,7 +38,6 @@
             this.btnLogo = new FontAwesome.Sharp.IconButton();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnAddProperty = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +56,31 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(1100, 88);
             this.panelMenu.TabIndex = 0;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
+            this.panelMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
+            this.panelMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
+            // 
+            // btnAddProperty
+            // 
+            this.btnAddProperty.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddProperty.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddProperty.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAddProperty.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnAddProperty.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAddProperty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAddProperty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddProperty.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.btnAddProperty.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAddProperty.IconColor = System.Drawing.Color.Black;
+            this.btnAddProperty.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddProperty.Location = new System.Drawing.Point(594, 0);
+            this.btnAddProperty.Name = "btnAddProperty";
+            this.btnAddProperty.Size = new System.Drawing.Size(220, 88);
+            this.btnAddProperty.TabIndex = 10;
+            this.btnAddProperty.Text = "List your property";
+            this.btnAddProperty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddProperty.UseVisualStyleBackColor = false;
+            this.btnAddProperty.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
+            this.btnAddProperty.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
             // 
             // btnProfile
             // 
@@ -81,6 +105,8 @@
             this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProfile.UseVisualStyleBackColor = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            this.btnProfile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
+            this.btnProfile.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
             // 
             // btnMinimize
             // 
@@ -104,8 +130,10 @@
             this.btnMinimize.TabIndex = 6;
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.btnMinimize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
             this.btnMinimize.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnMinimize.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            this.btnMinimize.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
             // 
             // btnHistory
             // 
@@ -128,8 +156,10 @@
             this.btnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHistory.UseVisualStyleBackColor = false;
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            this.btnHistory.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
             this.btnHistory.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnHistory.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            this.btnHistory.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
             // 
             // btnClose
             // 
@@ -152,8 +182,10 @@
             this.btnClose.TabIndex = 6;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
             this.btnClose.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            this.btnClose.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
             // 
             // btnSearch
             // 
@@ -177,8 +209,10 @@
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
             this.btnSearch.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnSearch.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
+            this.btnSearch.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
             // 
             // btnLogo
             // 
@@ -202,6 +236,8 @@
             this.btnLogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogo.UseVisualStyleBackColor = false;
             this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
+            this.btnLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
+            this.btnLogo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
             // 
             // panelShadow
             // 
@@ -220,27 +256,8 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1100, 749);
             this.panelDesktop.TabIndex = 2;
-            // 
-            // btnAddProperty
-            // 
-            this.btnAddProperty.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddProperty.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddProperty.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAddProperty.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnAddProperty.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAddProperty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAddProperty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddProperty.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.btnAddProperty.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnAddProperty.IconColor = System.Drawing.Color.Black;
-            this.btnAddProperty.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAddProperty.Location = new System.Drawing.Point(594, 0);
-            this.btnAddProperty.Name = "btnAddProperty";
-            this.btnAddProperty.Size = new System.Drawing.Size(220, 88);
-            this.btnAddProperty.TabIndex = 10;
-            this.btnAddProperty.Text = "List your property";
-            this.btnAddProperty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddProperty.UseVisualStyleBackColor = false;
+            this.panelDesktop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
+            this.panelDesktop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
             // 
             // UserForm
             // 
@@ -258,6 +275,8 @@
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.UserForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
             this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 

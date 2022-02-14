@@ -32,7 +32,6 @@ namespace PO_PRO.Forms
         }
 
         private Person user;
-
         private Form currentChildForm;
         public UserForm()
         {
@@ -95,10 +94,6 @@ namespace PO_PRO.Forms
             btn.ForeColor = Color.Black;
             btn.IconColor = Color.Black;
         }
-        private void Reset()
-        {
-
-        }
 
         private void UserForm_Load(object sender, EventArgs e)
         {
@@ -108,7 +103,6 @@ namespace PO_PRO.Forms
         private void btnLogo_Click(object sender, EventArgs e)
         {
             if(currentChildForm != null)  currentChildForm.Close();
-            Reset();
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -140,10 +134,19 @@ namespace PO_PRO.Forms
             WindowState = FormWindowState.Minimized;
         }
         #endregion
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        Point lastPoint;
+        private void UserForm_MouseMove(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
 
+        private void UserForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
         }
     }
 }
