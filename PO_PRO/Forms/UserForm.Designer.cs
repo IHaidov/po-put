@@ -275,7 +275,6 @@
             this.MinimumSize = new System.Drawing.Size(1118, 856);
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.UserForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
             this.panelMenu.ResumeLayout(false);

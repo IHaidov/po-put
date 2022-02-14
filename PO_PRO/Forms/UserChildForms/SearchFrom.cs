@@ -30,7 +30,7 @@ namespace PO_PRO.Forms.UserChildForms
             AW_SLIDE = 0x00040000,
             AW_BLEND = 0x00080000
         }
-
+        public List<Room> room = new List<Room>();
         public SearchFrom()
         {
             InitializeComponent();
@@ -43,9 +43,14 @@ namespace PO_PRO.Forms.UserChildForms
             btnHamburger.Visible = false;
             btnHamburger.Location = new Point(10, 10);
             monthCalendar.BringToFront();
-            //MessageBox.Show("Before Update");
             dbUpdate();
-            //MessageBox.Show("After Update");
+            room.Add(new Room());
+            room.Add(new Room());
+            room.Add(new Room());
+            room[0].Price = 10;
+            room[1].Price = 30;
+            room[2].Price = 20;
+            hotels[0].Rooms = room;
         }
         #region BackgroundGradient
         private void SetFilterBackground(Object sender, PaintEventArgs e)
@@ -180,46 +185,23 @@ namespace PO_PRO.Forms.UserChildForms
         #endregion
 
         #region HotelFilter
-        public enum classes
-        {
-            Address,
-            Bonus,
-            Hotel,
-            Order,
-            Person,
-            Room
-        }
-        private readonly List<Address> addresses = new List<Address>();
-        private readonly List<Bonus> bonuses = new List<Bonus>();
         private Dictionary<string, string> db_string = new Dictionary<string, string>();
         public List<Hotel> hotels = new List<Hotel>();
-        private readonly List<Order> orders = new List<Order>();
-        private readonly List<Room> rooms = new List<Room>();
-        private readonly List<Person> users = new List<Person>();
         public void dbUpdate()
         {
             try
             {
-                
+                db_string.Clear();
                 DB.ReadAll(out db_string);
 
                 foreach (var db_elem in db_string)
                 {
-                    if (db_elem.Key.Contains("ADDR_"))
-                        addresses.Add(JsonConvert.DeserializeObject<Address>(db_elem.Value));
-                    else if (db_elem.Key.Contains("BON_"))
-                        bonuses.Add(JsonConvert.DeserializeObject<Bonus>(db_elem.Value));
-                    else if (db_elem.Key.Contains("HOT_"))
+                    if (db_elem.Key.Contains("HOT_"))
                         hotels.Add(JsonConvert.DeserializeObject<Hotel>(db_elem.Value));
-                    else if (db_elem.Key.Contains("ORD_"))
-                        orders.Add(JsonConvert.DeserializeObject<Order>(db_elem.Value));
-                    else if (db_elem.Key.Contains("ROOM_"))
-                        rooms.Add(JsonConvert.DeserializeObject<Room>(db_elem.Value));
-                    else if (db_elem.Key.Contains("@"))
-                        users.Add(JsonConvert.DeserializeObject<Person>(db_elem.Value));
-                    Console.WriteLine(db_elem.Key);
                 }
-        }
+
+                MessageBox.Show("DB is updated");
+            }
             catch (Exception ex)
             {
                 Console.WriteLine("!!!!!" + ex);
@@ -234,20 +216,28 @@ namespace PO_PRO.Forms.UserChildForms
             }
             else
             {
+                //MessageBox.Show(hotels.Count.ToString());
+                flowLayoutHotels.Controls.Clear();
                 PopulateItems();
-                MessageBox.Show(numMin.Value.ToString());
+                //MessageBox.Show(numMin.Value.ToString());
             }
         }
 
         private void PopulateItems()
         {
-            //var filteredHotels = hotels.Select(i => i.Rooms.Select(j => j.Price <= ))
+            List<Hotel> filteredHotels = new List<Hotel>();
+            filteredHotels = hotels.Where(x => x.Rooms.Any(y => y.Price == 10)).ToList();
+            //filteredHotels = hotels.Select(i => i.Rooms.Select(j => j.Price <= (double)numMax.Value && j.Price >= (double)numMin.Value));
+            foreach (var n in filteredHotels)
+                MessageBox.Show(n.Name.ToString());
             ListItem[] listItems = new ListItem[hotels.Count];
             for(int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
                 listItems[i].HotelName = hotels[i].Name;
-                listItems[i].City = "cityy";
+                listItems[i].City = hotels[i].Address.City;
+                listItems[i].Stars = hotels[i].Stars;
+                listItems[i].Price = hotels[i].Rooms[0].Price;
                 
                 //add to flow layout
                 if(flowLayoutHotels.Controls.Count < 0)
@@ -259,32 +249,6 @@ namespace PO_PRO.Forms.UserChildForms
             }
             
         }
-
-        private void ToggleSeeMore(Panel panel)
-        {
-            if(panel.Height == 220)
-            {
-                panel.AutoSize = true;
-            }
-            else
-            {
-                panel.AutoSize = false;
-                panel.Height = 220;
-            }
-        }
-
-        
-        private void btnHotelName_Click(object sender, EventArgs e)
-        {
-            IconButton btn = (IconButton)sender;
-            Panel panel = (Panel)btn.Parent;
-            ToggleSeeMore(panel);
-        }
         #endregion
-
-        private void flowLayoutHotels_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

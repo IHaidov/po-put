@@ -33,6 +33,7 @@ namespace PO_PRO.Forms
 
         private Person user;
         private Form currentChildForm;
+
         public UserForm()
         {
             InitializeComponent();
@@ -48,7 +49,12 @@ namespace PO_PRO.Forms
             DB.Read(key, out temp);
             user = JsonConvert.DeserializeObject<Person>(temp);
             btnProfile.Text = user.Username!=""?user.Username:user.Email;
-
+            if(user.User_Type == Classes.Type.User)
+            {
+                btnAddProperty.Visible = false;
+                btnHistory.Width = 240;
+                btnSearch.Width = 240;
+            }
         }
         private void SetFilterBackground(Object sender, PaintEventArgs e)
         {
@@ -93,11 +99,6 @@ namespace PO_PRO.Forms
             IconButton btn = (IconButton)sender;
             btn.ForeColor = Color.Black;
             btn.IconColor = Color.Black;
-        }
-
-        private void UserForm_Load(object sender, EventArgs e)
-        {
-
         }
         #region Menu
         private void btnLogo_Click(object sender, EventArgs e)

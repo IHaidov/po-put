@@ -11,6 +11,7 @@ using System.Drawing.Drawing2D;
 using Newtonsoft.Json;
 using PO_PRO.Classes;
 using PO_PRO.Forms;
+using System.Threading;
 
 namespace PO_PRO
 {
@@ -87,7 +88,7 @@ namespace PO_PRO
         {
             Application.Exit();
         }
-
+        public static string usernameText;
         private void Login()
         {
             if (DB.Key_exist(txtUsername.Text.ToLower()))
