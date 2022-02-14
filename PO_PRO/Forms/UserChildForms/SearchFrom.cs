@@ -225,13 +225,14 @@ namespace PO_PRO.Forms.UserChildForms
         }
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            if(lblCheckIn.Text == "Wrong range")
+            if(lblCheckIn.Text == "Wrong range" || numMax.Value < numMin.Value)
             {
                 MessageBox.Show("Wrong date range\nPlease, correct it");
             }
             else
             {
                 PopulateItems();
+                MessageBox.Show(numMin.Value.ToString());
             }
         }
 

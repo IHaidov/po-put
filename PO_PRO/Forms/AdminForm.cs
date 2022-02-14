@@ -440,6 +440,21 @@ namespace PO_PRO.Forms
         {
             WindowState = FormWindowState.Minimized;
         }
+        Point lastPoint;
+
+        private void AdminForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void AdminForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {

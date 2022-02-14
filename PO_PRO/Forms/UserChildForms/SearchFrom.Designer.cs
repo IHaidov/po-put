@@ -30,12 +30,10 @@ namespace PO_PRO.Forms.UserChildForms
         private void InitializeComponent()
         {
             this.panelFilter = new System.Windows.Forms.Panel();
+            this.numMax = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numMin = new System.Windows.Forms.NumericUpDown();
             this.panelFacilities = new System.Windows.Forms.Panel();
-            this.txtLocation = new System.Windows.Forms.TextBox();
-            this.lblCheckIn = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelShadow = new System.Windows.Forms.Panel();
-            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.btnElectricKettle = new FontAwesome.Sharp.IconButton();
             this.btnFitnessCentre = new FontAwesome.Sharp.IconButton();
             this.btnParking = new FontAwesome.Sharp.IconButton();
@@ -45,28 +43,30 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnBalcony = new FontAwesome.Sharp.IconButton();
             this.btnPrivateBathroom = new FontAwesome.Sharp.IconButton();
             this.btnKitchen = new FontAwesome.Sharp.IconButton();
+            this.txtLocation = new System.Windows.Forms.TextBox();
             this.btnFilter = new FontAwesome.Sharp.IconButton();
             this.btnFacilities = new FontAwesome.Sharp.IconButton();
             this.btnCloseMenu = new FontAwesome.Sharp.IconButton();
             this.btnCheckIn = new FontAwesome.Sharp.IconButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblCheckIn = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelShadow = new System.Windows.Forms.Panel();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.btnHamburger = new FontAwesome.Sharp.IconButton();
             this.flowLayoutHotels = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.panelFilter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMin)).BeginInit();
             this.panelFacilities.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFilter
             // 
             this.panelFilter.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panelFilter.Controls.Add(this.numericUpDown2);
+            this.panelFilter.Controls.Add(this.numMax);
             this.panelFilter.Controls.Add(this.label2);
-            this.panelFilter.Controls.Add(this.numericUpDown1);
+            this.panelFilter.Controls.Add(this.numMin);
             this.panelFilter.Controls.Add(this.panelFacilities);
             this.panelFilter.Controls.Add(this.txtLocation);
             this.panelFilter.Controls.Add(this.btnFilter);
@@ -81,6 +81,43 @@ namespace PO_PRO.Forms.UserChildForms
             this.panelFilter.Name = "panelFilter";
             this.panelFilter.Size = new System.Drawing.Size(225, 749);
             this.panelFilter.TabIndex = 1;
+            // 
+            // numMax
+            // 
+            this.numMax.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.numMax.Location = new System.Drawing.Point(125, 300);
+            this.numMax.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numMax.Name = "numMax";
+            this.numMax.Size = new System.Drawing.Size(94, 36);
+            this.numMax.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(103, 300);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 30);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "-";
+            // 
+            // numMin
+            // 
+            this.numMin.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.numMin.Location = new System.Drawing.Point(8, 298);
+            this.numMin.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numMin.Name = "numMin";
+            this.numMin.Size = new System.Drawing.Size(94, 36);
+            this.numMin.TabIndex = 9;
             // 
             // panelFacilities
             // 
@@ -99,63 +136,6 @@ namespace PO_PRO.Forms.UserChildForms
             this.panelFacilities.Name = "panelFacilities";
             this.panelFacilities.Size = new System.Drawing.Size(225, 312);
             this.panelFacilities.TabIndex = 7;
-            // 
-            // txtLocation
-            // 
-            this.txtLocation.BackColor = System.Drawing.SystemColors.Info;
-            this.txtLocation.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtLocation.Location = new System.Drawing.Point(15, 60);
-            this.txtLocation.MaxLength = 35000;
-            this.txtLocation.Multiline = true;
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(190, 34);
-            this.txtLocation.TabIndex = 1;
-            this.txtLocation.Text = "Where to go?";
-            // 
-            // lblCheckIn
-            // 
-            this.lblCheckIn.BackColor = System.Drawing.Color.Transparent;
-            this.lblCheckIn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCheckIn.ForeColor = System.Drawing.Color.Black;
-            this.lblCheckIn.Location = new System.Drawing.Point(28, 178);
-            this.lblCheckIn.Name = "lblCheckIn";
-            this.lblCheckIn.Size = new System.Drawing.Size(170, 74);
-            this.lblCheckIn.TabIndex = 0;
-            this.lblCheckIn.Text = "Location";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(20, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Location";
-            // 
-            // panelShadow
-            // 
-            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelShadow.Location = new System.Drawing.Point(225, 0);
-            this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1, 749);
-            this.panelShadow.TabIndex = 2;
-            // 
-            // monthCalendar
-            // 
-            this.monthCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.monthCalendar.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.monthCalendar.Location = new System.Drawing.Point(234, 75);
-            this.monthCalendar.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
-            this.monthCalendar.MaxSelectionCount = 365;
-            this.monthCalendar.MinDate = new System.DateTime(2022, 2, 1, 0, 0, 0, 0);
-            this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2022, 2, 1, 0, 0, 0, 0), new System.DateTime(2023, 1, 9, 0, 0, 0, 0));
-            this.monthCalendar.TabIndex = 3;
-            this.monthCalendar.Visible = false;
-            this.monthCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
             // 
             // btnElectricKettle
             // 
@@ -409,6 +389,18 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnKitchen.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnKitchen.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
+            // txtLocation
+            // 
+            this.txtLocation.BackColor = System.Drawing.SystemColors.Info;
+            this.txtLocation.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtLocation.Location = new System.Drawing.Point(15, 60);
+            this.txtLocation.MaxLength = 35000;
+            this.txtLocation.Multiline = true;
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(190, 34);
+            this.txtLocation.TabIndex = 1;
+            this.txtLocation.Text = "Where to go?";
+            // 
             // btnFilter
             // 
             this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -517,6 +509,62 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnCheckIn.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnCheckIn.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(13, 253);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(185, 30);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Price per night";
+            // 
+            // lblCheckIn
+            // 
+            this.lblCheckIn.BackColor = System.Drawing.Color.Transparent;
+            this.lblCheckIn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCheckIn.ForeColor = System.Drawing.Color.Black;
+            this.lblCheckIn.Location = new System.Drawing.Point(28, 178);
+            this.lblCheckIn.Name = "lblCheckIn";
+            this.lblCheckIn.Size = new System.Drawing.Size(170, 74);
+            this.lblCheckIn.TabIndex = 0;
+            this.lblCheckIn.Text = "Location";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Location";
+            // 
+            // panelShadow
+            // 
+            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelShadow.Location = new System.Drawing.Point(225, 0);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(1, 749);
+            this.panelShadow.TabIndex = 2;
+            // 
+            // monthCalendar
+            // 
+            this.monthCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.monthCalendar.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
+            this.monthCalendar.Location = new System.Drawing.Point(234, 75);
+            this.monthCalendar.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
+            this.monthCalendar.MaxSelectionCount = 365;
+            this.monthCalendar.MinDate = new System.DateTime(2022, 2, 1, 0, 0, 0, 0);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2022, 2, 1, 0, 0, 0, 0), new System.DateTime(2023, 1, 9, 0, 0, 0, 0));
+            this.monthCalendar.TabIndex = 3;
+            this.monthCalendar.Visible = false;
+            this.monthCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
+            // 
             // btnHamburger
             // 
             this.btnHamburger.BackColor = System.Drawing.Color.Transparent;
@@ -551,54 +599,6 @@ namespace PO_PRO.Forms.UserChildForms
             this.flowLayoutHotels.Size = new System.Drawing.Size(795, 621);
             this.flowLayoutHotels.TabIndex = 7;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(13, 253);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 30);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Price per night";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.numericUpDown1.Location = new System.Drawing.Point(8, 298);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(94, 36);
-            this.numericUpDown1.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(103, 300);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 30);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "-";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.numericUpDown2.Location = new System.Drawing.Point(125, 300);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(94, 36);
-            this.numericUpDown2.TabIndex = 11;
-            // 
             // SearchFrom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -618,9 +618,9 @@ namespace PO_PRO.Forms.UserChildForms
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelFilter.ResumeLayout(false);
             this.panelFilter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMin)).EndInit();
             this.panelFacilities.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -648,9 +648,9 @@ namespace PO_PRO.Forms.UserChildForms
         private FontAwesome.Sharp.IconButton btnTV;
         private FontAwesome.Sharp.IconButton btnPetsAllowed;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutHotels;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numMax;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numMin;
         private System.Windows.Forms.Label label3;
     }
 }
