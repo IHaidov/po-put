@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using PO_PRO.Classes;
+using Newtonsoft.Json;
 
 namespace PO_PRO.Forms.UserChildForms
 {
@@ -41,6 +43,7 @@ namespace PO_PRO.Forms.UserChildForms
             btnHamburger.Visible = false;
             btnHamburger.Location = new Point(10, 10);
             monthCalendar.BringToFront();
+            dbUpdate();
         }
         #region BackgroundGradient
         private void SetFilterBackground(Object sender, PaintEventArgs e)
@@ -75,42 +78,6 @@ namespace PO_PRO.Forms.UserChildForms
             btn.ForeColor = Color.Black;
             btn.IconColor = Color.Black;
         }
-
-        #region PlusMinusButtons
-        private void btnAdultsPlus_Click(object sender, EventArgs e)
-        {
-            int number = Int32.Parse(lblAdults.Text);
-            number++;
-            lblAdults.Text = number.ToString();
-        }
-
-        private void btnAdultsMinus_Click(object sender, EventArgs e)
-        {
-            int number = Int32.Parse(lblAdults.Text);
-            if(number > 1)
-            {
-                number--;
-                lblAdults.Text = number.ToString();
-            }
-        }
-
-        private void btnChildrenPlus_Click(object sender, EventArgs e)
-        {
-            int number = Int32.Parse(lblChildren.Text);
-            number++;
-            lblChildren.Text = number.ToString();
-        }
-
-        private void btnChildrenMinus_Click(object sender, EventArgs e)
-        {
-            int number = Int32.Parse(lblChildren.Text);
-            if(number > 0)
-            {
-                number--;
-                lblChildren.Text = number.ToString();
-            }
-        }
-        #endregion
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
             monthCalendar.Visible = !monthCalendar.Visible;
@@ -134,14 +101,14 @@ namespace PO_PRO.Forms.UserChildForms
             panelShadow.Visible = false;
             AnimateWindow(panelFilter.Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_HOR_NEGATIVE | AnimateWindowFlags.AW_HIDE);
             btnHamburger.Visible = true;
-            panelHotels.Left -= 3 * panelFilter.Size.Width / 4;
-            panelHotels.Width += panelFilter.Size.Width / 2;
+            flowLayoutHotels.Left -= 3 * panelFilter.Size.Width / 4;
+            flowLayoutHotels.Width += panelFilter.Size.Width / 2;
         }
         private void btnHamburger_Click(object sender, EventArgs e)
         {
             btnHamburger.Visible = false;
-            panelHotels.Left += 3 * panelFilter.Size.Width / 4;
-            panelHotels.Width -= panelFilter.Size.Width / 2;
+            flowLayoutHotels.Left += 3 * panelFilter.Size.Width / 4;
+            flowLayoutHotels.Width -= panelFilter.Size.Width / 2;
             AnimateWindow(panelFilter.Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_HOR_POSITIVE);
             panelShadow.Visible = true;
         }
@@ -209,6 +176,53 @@ namespace PO_PRO.Forms.UserChildForms
             CheckedClicked((IconButton)sender);
         }
         #endregion
+
+        #region HotelFilter
+        public enum classes
+        {
+            Address,
+            Bonus,
+            Hotel,
+            Order,
+            Person,
+            Room
+        }
+        private readonly List<Address> addresses = new List<Address>();
+        private readonly List<Bonus> bonuses = new List<Bonus>();
+        private Dictionary<string, string> db_string = new Dictionary<string, string>();
+        public List<Hotel> hotels = new List<Hotel>();
+        private readonly List<Order> orders = new List<Order>();
+        private readonly List<Room> rooms = new List<Room>();
+        private readonly List<Person> users = new List<Person>();
+        public void dbUpdate()
+        {
+            try
+            {
+                db_string.Clear();
+                DB.ReadAll(out db_string);
+
+                foreach (var db_elem in db_string)
+
+                    if (db_elem.Key.Contains("ADDR_"))
+                        addresses.Add(JsonConvert.DeserializeObject<Address>(db_elem.Value));
+                    else if (db_elem.Key.Contains("BON_"))
+                        bonuses.Add(JsonConvert.DeserializeObject<Bonus>(db_elem.Value));
+                    else if (db_elem.Key.Contains("HOT_"))
+                        hotels.Add(JsonConvert.DeserializeObject<Hotel>(db_elem.Value));
+                    else if (db_elem.Key.Contains("ORD_"))
+                        orders.Add(JsonConvert.DeserializeObject<Order>(db_elem.Value));
+                    else if (db_elem.Key.Contains("ROOM_"))
+                        rooms.Add(JsonConvert.DeserializeObject<Room>(db_elem.Value));
+                    else if (db_elem.Key.Contains("@"))
+                        users.Add(JsonConvert.DeserializeObject<Person>(db_elem.Value));
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("!!!!!" + ex);
+                throw;
+            }
+        }
         private void btnFilter_Click(object sender, EventArgs e)
         {
             if(lblCheckIn.Text == "Wrong range")
@@ -217,8 +231,29 @@ namespace PO_PRO.Forms.UserChildForms
             }
             else
             {
-
+                PopulateItems();
             }
+        }
+
+        private void PopulateItems()
+        {
+            //var filteredHotels = hotels.Select(i => i.Rooms.Select(j => j.Price <= ))
+            ListItem[] listItems = new ListItem[hotels.Count];
+            for(int i = 0; i < listItems.Length; i++)
+            {
+                listItems[i] = new ListItem();
+                listItems[i].HotelName = hotels[i].Name;
+                listItems[i].City = "cityy";
+                
+                //add to flow layout
+                if(flowLayoutHotels.Controls.Count < 0)
+                {
+                    flowLayoutHotels.Controls.Clear();
+                }
+                flowLayoutHotels.Controls.Add(listItems[i]);
+                //flowLayoutHotels.Controls.IndexOf
+            }
+            
         }
 
         private void ToggleSeeMore(Panel panel)
@@ -234,12 +269,13 @@ namespace PO_PRO.Forms.UserChildForms
             }
         }
 
+        
         private void btnHotelName_Click(object sender, EventArgs e)
         {
             IconButton btn = (IconButton)sender;
             Panel panel = (Panel)btn.Parent;
             ToggleSeeMore(panel);
         }
-
+        #endregion
     }
 }

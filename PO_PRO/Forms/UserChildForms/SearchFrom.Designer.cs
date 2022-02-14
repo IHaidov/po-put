@@ -31,6 +31,11 @@ namespace PO_PRO.Forms.UserChildForms
         {
             this.panelFilter = new System.Windows.Forms.Panel();
             this.panelFacilities = new System.Windows.Forms.Panel();
+            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.lblCheckIn = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelShadow = new System.Windows.Forms.Panel();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.btnElectricKettle = new FontAwesome.Sharp.IconButton();
             this.btnFitnessCentre = new FontAwesome.Sharp.IconButton();
             this.btnParking = new FontAwesome.Sharp.IconButton();
@@ -40,68 +45,41 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnBalcony = new FontAwesome.Sharp.IconButton();
             this.btnPrivateBathroom = new FontAwesome.Sharp.IconButton();
             this.btnKitchen = new FontAwesome.Sharp.IconButton();
-            this.txtLocation = new System.Windows.Forms.TextBox();
             this.btnFilter = new FontAwesome.Sharp.IconButton();
             this.btnFacilities = new FontAwesome.Sharp.IconButton();
             this.btnCloseMenu = new FontAwesome.Sharp.IconButton();
-            this.btnChildrenMinus = new FontAwesome.Sharp.IconButton();
-            this.btnAdultsMinus = new FontAwesome.Sharp.IconButton();
-            this.btnChildrenPlus = new FontAwesome.Sharp.IconButton();
-            this.btnAdultsPlus = new FontAwesome.Sharp.IconButton();
             this.btnCheckIn = new FontAwesome.Sharp.IconButton();
-            this.lblAdults = new System.Windows.Forms.Label();
-            this.lblChildren = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblCheckIn = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelShadow = new System.Windows.Forms.Panel();
-            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.btnHamburger = new FontAwesome.Sharp.IconButton();
-            this.panelHotels = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pbPhoto = new FontAwesome.Sharp.IconPictureBox();
-            this.btnHotelName = new FontAwesome.Sharp.IconButton();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.btnSeeMore = new FontAwesome.Sharp.IconButton();
-            this.lblFacilitiesInfo = new System.Windows.Forms.Label();
+            this.flowLayoutHotels = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.panelFilter.SuspendLayout();
             this.panelFacilities.SuspendLayout();
-            this.panelHotels.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFilter
             // 
             this.panelFilter.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelFilter.Controls.Add(this.numericUpDown2);
+            this.panelFilter.Controls.Add(this.label2);
+            this.panelFilter.Controls.Add(this.numericUpDown1);
             this.panelFilter.Controls.Add(this.panelFacilities);
             this.panelFilter.Controls.Add(this.txtLocation);
             this.panelFilter.Controls.Add(this.btnFilter);
             this.panelFilter.Controls.Add(this.btnFacilities);
             this.panelFilter.Controls.Add(this.btnCloseMenu);
-            this.panelFilter.Controls.Add(this.btnChildrenMinus);
-            this.panelFilter.Controls.Add(this.btnAdultsMinus);
-            this.panelFilter.Controls.Add(this.btnChildrenPlus);
-            this.panelFilter.Controls.Add(this.btnAdultsPlus);
             this.panelFilter.Controls.Add(this.btnCheckIn);
-            this.panelFilter.Controls.Add(this.lblAdults);
-            this.panelFilter.Controls.Add(this.lblChildren);
             this.panelFilter.Controls.Add(this.label3);
-            this.panelFilter.Controls.Add(this.label2);
             this.panelFilter.Controls.Add(this.lblCheckIn);
             this.panelFilter.Controls.Add(this.label1);
             this.panelFilter.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelFilter.Location = new System.Drawing.Point(0, 0);
             this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(225, 700);
+            this.panelFilter.Size = new System.Drawing.Size(225, 749);
             this.panelFilter.TabIndex = 1;
             // 
             // panelFacilities
@@ -117,10 +95,67 @@ namespace PO_PRO.Forms.UserChildForms
             this.panelFacilities.Controls.Add(this.btnBalcony);
             this.panelFacilities.Controls.Add(this.btnPrivateBathroom);
             this.panelFacilities.Controls.Add(this.btnKitchen);
-            this.panelFacilities.Location = new System.Drawing.Point(0, 374);
+            this.panelFacilities.Location = new System.Drawing.Point(0, 383);
             this.panelFacilities.Name = "panelFacilities";
-            this.panelFacilities.Size = new System.Drawing.Size(225, 275);
+            this.panelFacilities.Size = new System.Drawing.Size(225, 312);
             this.panelFacilities.TabIndex = 7;
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.BackColor = System.Drawing.SystemColors.Info;
+            this.txtLocation.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtLocation.Location = new System.Drawing.Point(15, 60);
+            this.txtLocation.MaxLength = 35000;
+            this.txtLocation.Multiline = true;
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(190, 34);
+            this.txtLocation.TabIndex = 1;
+            this.txtLocation.Text = "Where to go?";
+            // 
+            // lblCheckIn
+            // 
+            this.lblCheckIn.BackColor = System.Drawing.Color.Transparent;
+            this.lblCheckIn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCheckIn.ForeColor = System.Drawing.Color.Black;
+            this.lblCheckIn.Location = new System.Drawing.Point(28, 178);
+            this.lblCheckIn.Name = "lblCheckIn";
+            this.lblCheckIn.Size = new System.Drawing.Size(170, 74);
+            this.lblCheckIn.TabIndex = 0;
+            this.lblCheckIn.Text = "Location";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Location";
+            // 
+            // panelShadow
+            // 
+            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelShadow.Location = new System.Drawing.Point(225, 0);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(1, 749);
+            this.panelShadow.TabIndex = 2;
+            // 
+            // monthCalendar
+            // 
+            this.monthCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.monthCalendar.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
+            this.monthCalendar.Location = new System.Drawing.Point(234, 75);
+            this.monthCalendar.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
+            this.monthCalendar.MaxSelectionCount = 365;
+            this.monthCalendar.MinDate = new System.DateTime(2022, 2, 1, 0, 0, 0, 0);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2022, 2, 1, 0, 0, 0, 0), new System.DateTime(2023, 1, 9, 0, 0, 0, 0));
+            this.monthCalendar.TabIndex = 3;
+            this.monthCalendar.Visible = false;
+            this.monthCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
             // 
             // btnElectricKettle
             // 
@@ -374,18 +409,6 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnKitchen.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnKitchen.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
-            // txtLocation
-            // 
-            this.txtLocation.BackColor = System.Drawing.SystemColors.Info;
-            this.txtLocation.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtLocation.Location = new System.Drawing.Point(15, 60);
-            this.txtLocation.MaxLength = 35000;
-            this.txtLocation.Multiline = true;
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(190, 34);
-            this.txtLocation.TabIndex = 1;
-            this.txtLocation.Text = "Where to go?";
-            // 
             // btnFilter
             // 
             this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -401,7 +424,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnFilter.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnFilter.IconSize = 30;
             this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFilter.Location = new System.Drawing.Point(0, 649);
+            this.btnFilter.Location = new System.Drawing.Point(0, 698);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnFilter.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -467,106 +490,6 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnCloseMenu.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnCloseMenu.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
-            // btnChildrenMinus
-            // 
-            this.btnChildrenMinus.BackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenMinus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChildrenMinus.FlatAppearance.BorderSize = 0;
-            this.btnChildrenMinus.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenMinus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenMinus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChildrenMinus.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.btnChildrenMinus.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.btnChildrenMinus.IconColor = System.Drawing.Color.Black;
-            this.btnChildrenMinus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChildrenMinus.IconSize = 24;
-            this.btnChildrenMinus.Location = new System.Drawing.Point(142, 303);
-            this.btnChildrenMinus.Margin = new System.Windows.Forms.Padding(0);
-            this.btnChildrenMinus.Name = "btnChildrenMinus";
-            this.btnChildrenMinus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnChildrenMinus.Size = new System.Drawing.Size(24, 24);
-            this.btnChildrenMinus.TabIndex = 6;
-            this.btnChildrenMinus.UseVisualStyleBackColor = false;
-            this.btnChildrenMinus.Click += new System.EventHandler(this.btnChildrenMinus_Click);
-            this.btnChildrenMinus.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnChildrenMinus.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
-            // btnAdultsMinus
-            // 
-            this.btnAdultsMinus.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdultsMinus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdultsMinus.FlatAppearance.BorderSize = 0;
-            this.btnAdultsMinus.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnAdultsMinus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAdultsMinus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAdultsMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdultsMinus.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.btnAdultsMinus.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.btnAdultsMinus.IconColor = System.Drawing.Color.Black;
-            this.btnAdultsMinus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAdultsMinus.IconSize = 24;
-            this.btnAdultsMinus.Location = new System.Drawing.Point(142, 258);
-            this.btnAdultsMinus.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAdultsMinus.Name = "btnAdultsMinus";
-            this.btnAdultsMinus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAdultsMinus.Size = new System.Drawing.Size(24, 24);
-            this.btnAdultsMinus.TabIndex = 4;
-            this.btnAdultsMinus.UseVisualStyleBackColor = false;
-            this.btnAdultsMinus.Click += new System.EventHandler(this.btnAdultsMinus_Click);
-            this.btnAdultsMinus.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnAdultsMinus.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
-            // btnChildrenPlus
-            // 
-            this.btnChildrenPlus.BackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenPlus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChildrenPlus.FlatAppearance.BorderSize = 0;
-            this.btnChildrenPlus.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenPlus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenPlus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnChildrenPlus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChildrenPlus.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.btnChildrenPlus.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnChildrenPlus.IconColor = System.Drawing.Color.Black;
-            this.btnChildrenPlus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChildrenPlus.IconSize = 24;
-            this.btnChildrenPlus.Location = new System.Drawing.Point(196, 303);
-            this.btnChildrenPlus.Margin = new System.Windows.Forms.Padding(0);
-            this.btnChildrenPlus.Name = "btnChildrenPlus";
-            this.btnChildrenPlus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnChildrenPlus.Size = new System.Drawing.Size(24, 24);
-            this.btnChildrenPlus.TabIndex = 7;
-            this.btnChildrenPlus.UseVisualStyleBackColor = false;
-            this.btnChildrenPlus.Click += new System.EventHandler(this.btnChildrenPlus_Click);
-            this.btnChildrenPlus.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnChildrenPlus.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
-            // btnAdultsPlus
-            // 
-            this.btnAdultsPlus.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdultsPlus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdultsPlus.FlatAppearance.BorderSize = 0;
-            this.btnAdultsPlus.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnAdultsPlus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAdultsPlus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAdultsPlus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdultsPlus.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.btnAdultsPlus.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAdultsPlus.IconColor = System.Drawing.Color.Black;
-            this.btnAdultsPlus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAdultsPlus.IconSize = 24;
-            this.btnAdultsPlus.Location = new System.Drawing.Point(196, 258);
-            this.btnAdultsPlus.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAdultsPlus.Name = "btnAdultsPlus";
-            this.btnAdultsPlus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAdultsPlus.Size = new System.Drawing.Size(24, 24);
-            this.btnAdultsPlus.TabIndex = 5;
-            this.btnAdultsPlus.UseVisualStyleBackColor = false;
-            this.btnAdultsPlus.Click += new System.EventHandler(this.btnAdultsPlus_Click);
-            this.btnAdultsPlus.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnAdultsPlus.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
             // btnCheckIn
             // 
             this.btnCheckIn.BackColor = System.Drawing.Color.Transparent;
@@ -594,96 +517,6 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnCheckIn.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnCheckIn.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
-            // lblAdults
-            // 
-            this.lblAdults.AutoSize = true;
-            this.lblAdults.BackColor = System.Drawing.Color.Transparent;
-            this.lblAdults.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblAdults.Location = new System.Drawing.Point(169, 252);
-            this.lblAdults.Name = "lblAdults";
-            this.lblAdults.Size = new System.Drawing.Size(26, 30);
-            this.lblAdults.TabIndex = 0;
-            this.lblAdults.Text = "1";
-            // 
-            // lblChildren
-            // 
-            this.lblChildren.AutoSize = true;
-            this.lblChildren.BackColor = System.Drawing.Color.Transparent;
-            this.lblChildren.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblChildren.Location = new System.Drawing.Point(169, 297);
-            this.lblChildren.Name = "lblChildren";
-            this.lblChildren.Size = new System.Drawing.Size(26, 30);
-            this.lblChildren.TabIndex = 0;
-            this.lblChildren.Text = "0";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(20, 297);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 30);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Children";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(20, 252);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 30);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Adults";
-            // 
-            // lblCheckIn
-            // 
-            this.lblCheckIn.BackColor = System.Drawing.Color.Transparent;
-            this.lblCheckIn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCheckIn.ForeColor = System.Drawing.Color.Black;
-            this.lblCheckIn.Location = new System.Drawing.Point(28, 178);
-            this.lblCheckIn.Name = "lblCheckIn";
-            this.lblCheckIn.Size = new System.Drawing.Size(170, 74);
-            this.lblCheckIn.TabIndex = 0;
-            this.lblCheckIn.Text = "Location";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(20, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Location";
-            // 
-            // panelShadow
-            // 
-            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelShadow.Location = new System.Drawing.Point(225, 0);
-            this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1, 700);
-            this.panelShadow.TabIndex = 2;
-            // 
-            // monthCalendar
-            // 
-            this.monthCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.monthCalendar.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.monthCalendar.Location = new System.Drawing.Point(234, 75);
-            this.monthCalendar.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
-            this.monthCalendar.MaxSelectionCount = 365;
-            this.monthCalendar.MinDate = new System.DateTime(2022, 2, 1, 0, 0, 0, 0);
-            this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2022, 2, 1, 0, 0, 0, 0), new System.DateTime(2023, 1, 9, 0, 0, 0, 0));
-            this.monthCalendar.TabIndex = 3;
-            this.monthCalendar.Visible = false;
-            this.monthCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
-            // 
             // btnHamburger
             // 
             this.btnHamburger.BackColor = System.Drawing.Color.Transparent;
@@ -709,223 +542,68 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnHamburger.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnHamburger.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
-            // panelHotels
+            // flowLayoutHotels
             // 
-            this.panelHotels.AutoScroll = true;
-            this.panelHotels.BackColor = System.Drawing.Color.Transparent;
-            this.panelHotels.Controls.Add(this.panel2);
-            this.panelHotels.Controls.Add(this.panel1);
-            this.panelHotels.Location = new System.Drawing.Point(265, 60);
-            this.panelHotels.Name = "panelHotels";
-            this.panelHotels.Size = new System.Drawing.Size(795, 596);
-            this.panelHotels.TabIndex = 6;
+            this.flowLayoutHotels.AutoScroll = true;
+            this.flowLayoutHotels.BackColor = System.Drawing.SystemColors.Control;
+            this.flowLayoutHotels.Location = new System.Drawing.Point(265, 50);
+            this.flowLayoutHotels.Name = "flowLayoutHotels";
+            this.flowLayoutHotels.Size = new System.Drawing.Size(795, 621);
+            this.flowLayoutHotels.TabIndex = 7;
             // 
-            // panel2
+            // label3
             // 
-            this.panel2.Controls.Add(this.iconPictureBox1);
-            this.panel2.Controls.Add(this.iconButton1);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.iconButton2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 220);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(795, 220);
-            this.panel2.TabIndex = 11;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(13, 253);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(185, 30);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Price per night";
             // 
-            // iconPictureBox1
+            // numericUpDown1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.iconPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 200;
-            this.iconPictureBox1.Location = new System.Drawing.Point(10, 10);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.iconPictureBox1.TabIndex = 0;
-            this.iconPictureBox1.TabStop = false;
+            this.numericUpDown1.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.numericUpDown1.Location = new System.Drawing.Point(8, 298);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(94, 36);
+            this.numericUpDown1.TabIndex = 9;
             // 
-            // iconButton1
+            // label2
             // 
-            this.iconButton1.AutoSize = true;
-            this.iconButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 18F);
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 24;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.iconButton1.Location = new System.Drawing.Point(216, 10);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.iconButton1.Size = new System.Drawing.Size(199, 47);
-            this.iconButton1.TabIndex = 9;
-            this.iconButton1.Text = "Hotel Name";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(103, 300);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 30);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "-";
             // 
-            // label4
+            // numericUpDown2
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(225, 60);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 22);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "City";
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.iconButton2.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ChevronRight;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 24;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.iconButton2.Location = new System.Drawing.Point(610, 160);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.iconButton2.Size = new System.Drawing.Size(165, 40);
-            this.iconButton2.TabIndex = 8;
-            this.iconButton2.Text = "See More";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton2.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pbPhoto);
-            this.panel1.Controls.Add(this.btnHotelName);
-            this.panel1.Controls.Add(this.lblCity);
-            this.panel1.Controls.Add(this.btnSeeMore);
-            this.panel1.Controls.Add(this.lblFacilitiesInfo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(795, 220);
-            this.panel1.TabIndex = 10;
-            // 
-            // pbPhoto
-            // 
-            this.pbPhoto.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pbPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPhoto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pbPhoto.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.pbPhoto.IconColor = System.Drawing.SystemColors.ControlText;
-            this.pbPhoto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.pbPhoto.IconSize = 200;
-            this.pbPhoto.Location = new System.Drawing.Point(10, 10);
-            this.pbPhoto.Name = "pbPhoto";
-            this.pbPhoto.Size = new System.Drawing.Size(200, 200);
-            this.pbPhoto.TabIndex = 0;
-            this.pbPhoto.TabStop = false;
-            // 
-            // btnHotelName
-            // 
-            this.btnHotelName.AutoSize = true;
-            this.btnHotelName.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnHotelName.BackColor = System.Drawing.Color.Transparent;
-            this.btnHotelName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHotelName.FlatAppearance.BorderSize = 0;
-            this.btnHotelName.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnHotelName.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnHotelName.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnHotelName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHotelName.Font = new System.Drawing.Font("Century Gothic", 18F);
-            this.btnHotelName.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnHotelName.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnHotelName.IconColor = System.Drawing.Color.Black;
-            this.btnHotelName.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHotelName.IconSize = 24;
-            this.btnHotelName.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnHotelName.Location = new System.Drawing.Point(216, 10);
-            this.btnHotelName.Name = "btnHotelName";
-            this.btnHotelName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnHotelName.Size = new System.Drawing.Size(199, 47);
-            this.btnHotelName.TabIndex = 9;
-            this.btnHotelName.Text = "Hotel Name";
-            this.btnHotelName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHotelName.UseVisualStyleBackColor = false;
-            this.btnHotelName.Click += new System.EventHandler(this.btnHotelName_Click);
-            // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.BackColor = System.Drawing.Color.Transparent;
-            this.lblCity.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCity.ForeColor = System.Drawing.Color.Black;
-            this.lblCity.Location = new System.Drawing.Point(225, 60);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(46, 22);
-            this.lblCity.TabIndex = 0;
-            this.lblCity.Text = "City";
-            // 
-            // btnSeeMore
-            // 
-            this.btnSeeMore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeeMore.AutoSize = true;
-            this.btnSeeMore.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSeeMore.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSeeMore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeeMore.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnSeeMore.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnSeeMore.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnSeeMore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeeMore.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.btnSeeMore.IconChar = FontAwesome.Sharp.IconChar.ChevronRight;
-            this.btnSeeMore.IconColor = System.Drawing.Color.Black;
-            this.btnSeeMore.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSeeMore.IconSize = 24;
-            this.btnSeeMore.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnSeeMore.Location = new System.Drawing.Point(585, 158);
-            this.btnSeeMore.Name = "btnSeeMore";
-            this.btnSeeMore.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSeeMore.Size = new System.Drawing.Size(190, 42);
-            this.btnSeeMore.TabIndex = 8;
-            this.btnSeeMore.Text = "Show prices";
-            this.btnSeeMore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSeeMore.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnSeeMore.UseVisualStyleBackColor = false;
-            this.btnSeeMore.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
-            this.btnSeeMore.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
-            // 
-            // lblFacilitiesInfo
-            // 
-            this.lblFacilitiesInfo.AutoSize = true;
-            this.lblFacilitiesInfo.BackColor = System.Drawing.Color.Transparent;
-            this.lblFacilitiesInfo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblFacilitiesInfo.ForeColor = System.Drawing.Color.Black;
-            this.lblFacilitiesInfo.Location = new System.Drawing.Point(224, 101);
-            this.lblFacilitiesInfo.Name = "lblFacilitiesInfo";
-            this.lblFacilitiesInfo.Size = new System.Drawing.Size(158, 240);
-            this.lblFacilitiesInfo.TabIndex = 0;
-            this.lblFacilitiesInfo.Text = "Facilities\r\njhgdjsahgdh\r\njhdsajhd\r\ndhsahhdjsa\r\njhdsajhd\r\njhdasjhdhj\r\nhjdasjh\r\nkjk" +
-    "dsadsa";
+            this.numericUpDown2.Font = new System.Drawing.Font("Century Gothic", 13.8F);
+            this.numericUpDown2.Location = new System.Drawing.Point(125, 300);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(94, 36);
+            this.numericUpDown2.TabIndex = 11;
             // 
             // SearchFrom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1100, 700);
-            this.Controls.Add(this.panelHotels);
+            this.ClientSize = new System.Drawing.Size(1100, 749);
+            this.Controls.Add(this.flowLayoutHotels);
             this.Controls.Add(this.monthCalendar);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelFilter);
@@ -941,13 +619,8 @@ namespace PO_PRO.Forms.UserChildForms
             this.panelFilter.ResumeLayout(false);
             this.panelFilter.PerformLayout();
             this.panelFacilities.ResumeLayout(false);
-            this.panelHotels.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -956,15 +629,7 @@ namespace PO_PRO.Forms.UserChildForms
         private System.Windows.Forms.Panel panelFilter;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnCheckIn;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnFacilities;
-        private FontAwesome.Sharp.IconButton btnAdultsPlus;
-        private System.Windows.Forms.Label lblAdults;
-        private System.Windows.Forms.Label lblChildren;
-        private FontAwesome.Sharp.IconButton btnAdultsMinus;
-        private FontAwesome.Sharp.IconButton btnChildrenPlus;
-        private FontAwesome.Sharp.IconButton btnChildrenMinus;
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.MonthCalendar monthCalendar;
@@ -982,17 +647,10 @@ namespace PO_PRO.Forms.UserChildForms
         private FontAwesome.Sharp.IconButton btnFitnessCentre;
         private FontAwesome.Sharp.IconButton btnTV;
         private FontAwesome.Sharp.IconButton btnPetsAllowed;
-        private System.Windows.Forms.Panel panelHotels;
-        private FontAwesome.Sharp.IconButton btnHotelName;
-        private FontAwesome.Sharp.IconPictureBox pbPhoto;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblCity;
-        private FontAwesome.Sharp.IconButton btnSeeMore;
-        private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.Label label4;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private System.Windows.Forms.Label lblFacilitiesInfo;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutHotels;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label3;
     }
 }
