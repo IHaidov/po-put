@@ -43,9 +43,9 @@ namespace PO_PRO.Forms.UserChildForms
             btnHamburger.Visible = false;
             btnHamburger.Location = new Point(10, 10);
             monthCalendar.BringToFront();
-            MessageBox.Show("Before Update");
+            //MessageBox.Show("Before Update");
             dbUpdate();
-            MessageBox.Show("After Update");
+            //MessageBox.Show("After Update");
         }
         #region BackgroundGradient
         private void SetFilterBackground(Object sender, PaintEventArgs e)

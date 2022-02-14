@@ -19,16 +19,9 @@ namespace PO_PRO
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            if (LoggedIn == 0)
-                Application.Run(new LoginForm());
-            else if (LoggedIn == 1)
-            {
-                Application.Run(new AdminForm());
-            }
-            else if (LoggedIn == 2)
-            {
-                Application.Run(new UserForm());
-            }
+           
+            Application.Run(new LoginForm());
+           
         }
     }
 }
