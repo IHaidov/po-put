@@ -17,11 +17,11 @@ namespace PO_PRO.Classes
     [Serializable]
     public class Room
     {
-        public string ID { get; }
+        public string ID { get; set; }
         public Room_Type Type { get; set; }
         public double Price { get; set; }
         public bool Free_Room { get; set; }
-        public List<Bonus> Facilities { get; set; }
+        
 
         public DateTime StayTime { get; set; }
 
@@ -29,7 +29,7 @@ namespace PO_PRO.Classes
 
         public Room()
         {
-            Facilities = new List<Bonus>();
+            
             ID = Guid.NewGuid().ToString();
         }
     }

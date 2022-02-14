@@ -16,9 +16,10 @@ namespace PO_PRO.Classes
     [Serializable]
     public class Person
     {
-        public string ID { get; }
-        public Type User_Type { get; set; }
+        public string ID { get; set; }
         public string Name { get; set; }
+        public Type User_Type { get; set; }
+        
         public string Surname { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
