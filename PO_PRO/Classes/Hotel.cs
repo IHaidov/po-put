@@ -20,6 +20,8 @@ namespace PO_PRO.Classes
         {
             ID = Guid.NewGuid().ToString();
             Facilities = new List<Bonus>();
+            Rooms = new List<Room>();
+            Address = new Address();
         }
     }
 }

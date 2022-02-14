@@ -74,7 +74,7 @@ namespace PO_PRO.Forms
             facilities.Add(new Bonus(Bonus_Type.Fitness_centre));
             facilities.Add(new Bonus(Bonus_Type.Electric_kettle));
             facilities.Add(new Bonus(Bonus_Type.TV));
-
+            
             foreach (var facility in facilities)
             {
                 facilitiesCheckBox.Items.Add(facility.Type);
@@ -136,6 +136,7 @@ namespace PO_PRO.Forms
         private void AdminForm_Load(object sender, EventArgs e)
         {
             comboBox1.DataSource = Enum.GetValues(typeof(classes));
+            roomComboBox.DataSource = Enum.GetValues(typeof(Room_Type));
             dbUpdate();
 
             comboBox_Index_Changed();
@@ -255,14 +256,12 @@ namespace PO_PRO.Forms
             hotel_credit[0].Address.State = stateText.Text;
             hotel_credit[0].Address.Postal_Code = postalCodeText.Text;
             hotel_credit[0].Address.Country = countryText.Text;
-            
-            room_credit[0].Photo = roomPicture.Image;
             room_credit[0].Type = (Room_Type)Convert.ToInt32(roomComboBox.SelectedIndex);
             room_credit[0].Price = Convert.ToDouble(roomNumeric.Text);
             foreach (object facilityChecked in facilitiesCheckBox.CheckedItems)
             {
                 Bonus b = new Bonus((Bonus_Type)facilityChecked);
-               // room_credit[0].Facilities.Add(b);
+                hotel_credit[0].Facilities.Add(b);
             }
             if (roomFreeRadioBtn.Checked)
                 room_credit[0].Free_Room = true;
@@ -365,7 +364,7 @@ namespace PO_PRO.Forms
                     try
                     {
                         DB.Delete_key(dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString());
-                        ListKeyDelete(dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString());
+                        ListKeyDelete(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
                     }
                     catch (Exception exception)
                     {
@@ -430,6 +429,11 @@ namespace PO_PRO.Forms
 
                 hotelPicture.Image = new Bitmap(open.FileName);
             }
+        }
+
+        private void roomComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
