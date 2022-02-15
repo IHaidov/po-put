@@ -98,6 +98,8 @@
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\Bonus.cs" />
     <Compile Include="Classes\Hotel.cs" />
+    <Compile Include="Interfaces\IHotel.cs" />
+    <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\Room.cs" />
