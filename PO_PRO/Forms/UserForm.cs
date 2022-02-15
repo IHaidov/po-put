@@ -107,7 +107,7 @@ namespace PO_PRO.Forms
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            this.Visible = true;
+            //this.Visible = true;
             OpenChildForm(new UserChildForms.SearchFrom());
         }
         private void btnHistory_Click(object sender, EventArgs e)

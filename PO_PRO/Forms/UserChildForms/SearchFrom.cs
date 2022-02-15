@@ -30,11 +30,10 @@ namespace PO_PRO.Forms.UserChildForms
             AW_SLIDE = 0x00040000,
             AW_BLEND = 0x00080000
         }
-        public List<Room> room = new List<Room>();
+        //public List<Room> room = new List<Room>();
         public SearchFrom()
         {
             InitializeComponent();
-            this.Visible = true;
             panelFilter.Paint += new PaintEventHandler(SetFilterBackground);
             panelShadow.Paint += new PaintEventHandler(SetShadowBackground);
             lblCheckIn.Text = DateTime.Today.ToString("dd.MM.yyyy") + " -\n" + DateTime.Today.ToString("dd.MM.yyyy");
@@ -44,7 +43,7 @@ namespace PO_PRO.Forms.UserChildForms
             btnHamburger.Visible = false;
             btnHamburger.Location = new Point(10, 10);
             monthCalendar.BringToFront();
-            //dbUpdate();
+            dbUpdate();
 
         }
         #region BackgroundGradient
@@ -195,7 +194,7 @@ namespace PO_PRO.Forms.UserChildForms
                         hotels.Add(JsonConvert.DeserializeObject<Hotel>(db_elem.Value));
                 }
 
-                MessageBox.Show("DB is updated");
+                //MessageBox.Show("DB is updated");
             }
             catch (Exception ex)
             {
@@ -220,29 +219,29 @@ namespace PO_PRO.Forms.UserChildForms
 
         private void PopulateItems()
         {
-            //List<Hotel> filteredHotels = new List<Hotel>();
-            //filteredHotels = hotels;
-            ////filteredHotels = hotels.Select(i => i.Rooms.Select(j => j.Price <= (double)numMax.Value && j.Price >= (double)numMin.Value));
-            //foreach (var n in filteredHotels)
-            //    MessageBox.Show(n.Name.ToString());
-            //ListItem[] listItems = new ListItem[hotels.Count];
-            //for(int i = 0; i < listItems.Length; i++)
-            //{
-            //    listItems[i] = new ListItem();
-            //    listItems[i].HotelName = hotels[i].Name;
-            //    listItems[i].City = hotels[i].Address.City;
-            //    listItems[i].Stars = hotels[i].Stars;
-            //    listItems[i].Price = hotels[i].Rooms[0].Price;
-                
-            //    //add to flow layout
-            //    if(flowLayoutHotels.Controls.Count < 0)
-            //    {
-            //        flowLayoutHotels.Controls.Clear();
-            //    }
-            //    flowLayoutHotels.Controls.Add(listItems[i]);
-            //    //flowLayoutHotels.Controls.IndexOf
-            //}
-            
+            List<Hotel> filteredHotels = new List<Hotel>();
+            filteredHotels = hotels;
+            //filteredHotels = hotels.Select(i => i.Rooms.Select(j => j.Price <= (double)numMax.Value && j.Price >= (double)numMin.Value));
+            /*foreach (var n in filteredHotels)
+                MessageBox.Show(n.Name.ToString());*/
+            ListItem[] listItems = new ListItem[hotels.Count];
+            for (int i = 0; i < listItems.Length; i++)
+            {
+                listItems[i] = new ListItem();
+                listItems[i].HotelName = hotels[i].Name;
+                listItems[i].City = hotels[i].Address.City;
+                listItems[i].Stars = hotels[i].Stars;
+                listItems[i].Price = hotels[i].Rooms.Count;
+
+                //add to flow layout
+                if (flowLayoutHotels.Controls.Count < 0)
+                {
+                    flowLayoutHotels.Controls.Clear();
+                }
+                flowLayoutHotels.Controls.Add(listItems[i]);
+                //flowLayoutHotels.Controls.IndexOf
+            }
+
         }
         #endregion
     }
