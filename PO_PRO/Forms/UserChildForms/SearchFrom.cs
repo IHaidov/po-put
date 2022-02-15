@@ -227,7 +227,7 @@ namespace PO_PRO.Forms.UserChildForms
             {
                 if (facility.IconChar.ToString() == "CheckSquare")
                 {
-                    MessageBox.Show(facility.Text);
+                    //MessageBox.Show(facility.Text + " " + k.ToString());
                     foreach(Hotel hotel in hotels)
                     {
                         bool zm = false;
@@ -240,7 +240,7 @@ namespace PO_PRO.Forms.UserChildForms
                         }
                         if(!zm)
                         {
-                            MessageBox.Show(hotel.Name);
+                            //MessageBox.Show(hotel.Name);
                             filteredHotels.Remove(hotel);
                             //usuń z wypisywanych
                         }
@@ -248,17 +248,30 @@ namespace PO_PRO.Forms.UserChildForms
                 }
                 k++;
             }
-            //filteredHotels = hotels.Select(i => i.Rooms.Select(j => j.Price <= (double)numMax.Value && j.Price >= (double)numMin.Value));
-            /*foreach (var n in filteredHotels)
-                MessageBox.Show(n.Name.ToString());*/
-            ListItem[] listItems = new ListItem[hotels.Count];
+            ListItem[] listItems = new ListItem[filteredHotels.Count];
             for (int i = 0; i < listItems.Length; i++)
             {
-                listItems[i] = new ListItem();
-                listItems[i].HotelName = hotels[i].Name;
-                listItems[i].City = hotels[i].Address.City;
-                listItems[i].Stars = hotels[i].Stars;
-                listItems[i].Price = hotels[i].Rooms.Count;
+                bool zm = false;
+                for(int j = 0; j < filteredHotels[i].Rooms.Count; j++)
+                {
+                    if(filteredHotels[i].Rooms[j].Price <= (double)numMax.Value && filteredHotels[i].Rooms[j].Price >= (double)numMin.Value)
+                    {
+                        if(filteredHotels[i].Address.City == txtLocation.Text)
+                        {
+                            zm = true;
+                            listItems[i] = new ListItem();
+                            listItems[i].City = filteredHotels[i].Address.City;
+                            listItems[i].Price = filteredHotels[i].Rooms[j].Price;
+                        }
+                        break;
+                    }
+                }
+                if(zm)
+                {
+                    listItems[i].HotelName = filteredHotels[i].Name;
+                    listItems[i].Stars = filteredHotels[i].Stars;
+                    listItems[i].GlobalInfo = filteredHotels[i].Info;
+                }
 
                 //add to flow layout
                 if (flowLayoutHotels.Controls.Count < 0)
@@ -267,6 +280,10 @@ namespace PO_PRO.Forms.UserChildForms
                 }
                 flowLayoutHotels.Controls.Add(listItems[i]);
                 //flowLayoutHotels.Controls.IndexOf
+            }
+            if(flowLayoutHotels.Controls.Count == 0)
+            {
+                MessageBox.Show("No hotels match to your filter");
             }
 
         }

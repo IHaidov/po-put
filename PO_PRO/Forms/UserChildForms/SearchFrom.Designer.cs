@@ -92,7 +92,7 @@ namespace PO_PRO.Forms.UserChildForms
             0,
             0});
             this.numMax.Name = "numMax";
-            this.numMax.Size = new System.Drawing.Size(94, 41);
+            this.numMax.Size = new System.Drawing.Size(94, 36);
             this.numMax.TabIndex = 11;
             // 
             // label2
@@ -102,7 +102,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(103, 300);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 34);
+            this.label2.Size = new System.Drawing.Size(21, 30);
             this.label2.TabIndex = 10;
             this.label2.Text = "-";
             // 
@@ -116,7 +116,7 @@ namespace PO_PRO.Forms.UserChildForms
             0,
             0});
             this.numMin.Name = "numMin";
-            this.numMin.Size = new System.Drawing.Size(94, 41);
+            this.numMin.Size = new System.Drawing.Size(94, 36);
             this.numMin.TabIndex = 9;
             // 
             // panelFacilities
@@ -156,7 +156,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnElectricKettle.Name = "btnElectricKettle";
             this.btnElectricKettle.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnElectricKettle.Size = new System.Drawing.Size(190, 33);
-            this.btnElectricKettle.TabIndex = 8;
+            this.btnElectricKettle.TabIndex = 7;
             this.btnElectricKettle.Text = "Electric kettle";
             this.btnElectricKettle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnElectricKettle.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -184,7 +184,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnFitnessCentre.Name = "btnFitnessCentre";
             this.btnFitnessCentre.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnFitnessCentre.Size = new System.Drawing.Size(190, 33);
-            this.btnFitnessCentre.TabIndex = 8;
+            this.btnFitnessCentre.TabIndex = 6;
             this.btnFitnessCentre.Text = "Fitness centre";
             this.btnFitnessCentre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFitnessCentre.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -212,7 +212,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnParking.Name = "btnParking";
             this.btnParking.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnParking.Size = new System.Drawing.Size(190, 33);
-            this.btnParking.TabIndex = 8;
+            this.btnParking.TabIndex = 4;
             this.btnParking.Text = "Parking";
             this.btnParking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnParking.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -268,7 +268,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnPetsAllowed.Name = "btnPetsAllowed";
             this.btnPetsAllowed.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPetsAllowed.Size = new System.Drawing.Size(190, 33);
-            this.btnPetsAllowed.TabIndex = 8;
+            this.btnPetsAllowed.TabIndex = 5;
             this.btnPetsAllowed.Text = "Pets allowed";
             this.btnPetsAllowed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPetsAllowed.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -296,7 +296,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnWifi.Name = "btnWifi";
             this.btnWifi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnWifi.Size = new System.Drawing.Size(190, 33);
-            this.btnWifi.TabIndex = 8;
+            this.btnWifi.TabIndex = 3;
             this.btnWifi.Text = "Free WiFi";
             this.btnWifi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnWifi.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -324,7 +324,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnBalcony.Name = "btnBalcony";
             this.btnBalcony.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnBalcony.Size = new System.Drawing.Size(190, 33);
-            this.btnBalcony.TabIndex = 8;
+            this.btnBalcony.TabIndex = 2;
             this.btnBalcony.Text = "Balcony/Terrace";
             this.btnBalcony.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBalcony.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -352,7 +352,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnPrivateBathroom.Name = "btnPrivateBathroom";
             this.btnPrivateBathroom.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPrivateBathroom.Size = new System.Drawing.Size(190, 33);
-            this.btnPrivateBathroom.TabIndex = 8;
+            this.btnPrivateBathroom.TabIndex = 0;
             this.btnPrivateBathroom.Text = "Private bathroom";
             this.btnPrivateBathroom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrivateBathroom.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -380,7 +380,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.btnKitchen.Name = "btnKitchen";
             this.btnKitchen.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnKitchen.Size = new System.Drawing.Size(190, 33);
-            this.btnKitchen.TabIndex = 8;
+            this.btnKitchen.TabIndex = 1;
             this.btnKitchen.Text = "Kitchen";
             this.btnKitchen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKitchen.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -516,7 +516,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(13, 253);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 34);
+            this.label3.Size = new System.Drawing.Size(185, 30);
             this.label3.TabIndex = 0;
             this.label3.Text = "Price per night";
             // 
@@ -539,7 +539,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(20, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 34);
+            this.label1.Size = new System.Drawing.Size(117, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Location";
             // 
@@ -598,7 +598,6 @@ namespace PO_PRO.Forms.UserChildForms
             this.flowLayoutHotels.Name = "flowLayoutHotels";
             this.flowLayoutHotels.Size = new System.Drawing.Size(795, 621);
             this.flowLayoutHotels.TabIndex = 7;
-           // this.flowLayoutHotels.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutHotels_Paint);
             // 
             // SearchFrom
             // 

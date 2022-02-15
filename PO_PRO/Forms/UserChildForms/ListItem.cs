@@ -22,6 +22,7 @@ namespace PO_PRO.Forms.UserChildForms
         private string _hotelName;
         private string _city;
         private string _id;
+        private string _globalInfo;
         private double _price;
         private int _stars;
         private Image _photo;
@@ -53,6 +54,13 @@ namespace PO_PRO.Forms.UserChildForms
         }
 
         [Category("Custom Props")]
+        public string GlobalInfo
+        {
+            get { return _globalInfo; }
+            set { _globalInfo = value; lblGlobalInfo.Text = value; }
+        }
+
+        [Category("Custom Props")]
         public double Price
         {
             get { return _price; }
@@ -69,7 +77,7 @@ namespace PO_PRO.Forms.UserChildForms
 
         private void ToggleSeeMore(Panel panel)
         {
-            if (panel.Height == 220)
+            if (panel.Height == 200)
             {
                 panel.AutoSize = true;
                 Height = panel.Height + 1;
@@ -77,8 +85,8 @@ namespace PO_PRO.Forms.UserChildForms
             else
             {
                 panel.AutoSize = false;
-                panel.Height = 220;
-                Height = 221;
+                panel.Height = 200;
+                Height = 200;
             }
         }
 
