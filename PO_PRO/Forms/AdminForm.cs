@@ -584,7 +584,7 @@ namespace PO_PRO.Forms
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            
+            editIndex = -1;
             createClicked = true;
             switch (comboBox1.SelectedIndex)
             { 

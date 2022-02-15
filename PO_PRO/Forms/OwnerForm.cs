@@ -19,7 +19,7 @@ namespace PO_PRO.Forms
         private List<Hotel> hotels = new List<Hotel>();
 
         private int editIndex = -1;
-
+        private string id;
         private List<Hotel> hotel_credit = new List<Hotel>();
         private List<Room> room_credit = new List<Room>();
         private List<Bonus> facilities = new List<Bonus>();
@@ -27,6 +27,7 @@ namespace PO_PRO.Forms
         public OwnerForm(string ID)
         {
             InitializeComponent();
+            id = ID;
             DataGridViewLinkColumn Editlink = new DataGridViewLinkColumn();
             Editlink.UseColumnTextForLinkValue = true;
             Editlink.HeaderText = "Edit";
@@ -102,8 +103,11 @@ namespace PO_PRO.Forms
                 {
                     if (db_elem.Key.Contains("HOT_"))
                     {
-                        hotels.Add((new Hotel()));
-                        hotels[hotels.Count - 1] = JsonConvert.DeserializeObject<Hotel>(db_elem.Value);
+                        var unchecked_hotel = JsonConvert.DeserializeObject<Hotel>(db_elem.Value);
+                        if (unchecked_hotel.Owner!=null)
+                            if(unchecked_hotel.Owner.Equals(id))
+                        hotels.Add((JsonConvert.DeserializeObject<Hotel>(db_elem.Value)));
+                        
                     }
                 }
 
@@ -125,20 +129,30 @@ namespace PO_PRO.Forms
         public void editHotel()
         {
             hotelInfo.Text = hotels[editIndex].Info;
-            hotelName.Text = hotels[editIndex].Info;
+            hotelName.Text = hotels[editIndex].Name;
+
             // hotelPicture.Image = hotels[editIndex].Info;
-            starsNumeric.Text = hotels[editIndex].Info;
-            streetText.Text = hotels[editIndex].Info;
-            cityText.Text = hotels[editIndex].Info;
-            stateText.Text = hotels[editIndex].Info;
-            postalCodeText.Text = hotels[editIndex].Info;
-            countryText.Text = hotels[editIndex].Info; 
-            //roomComboBox.SelectedIndex = hotels[editIndex].Info;
-            roomNumeric.Text = hotels[editIndex].Info;
-            foreach (object facilityChecked in facilitiesCheckBox.Items)
+            starsNumeric.Text = hotels[editIndex].Stars.ToString();
+            streetText.Text = hotels[editIndex].Address.Street;
+            cityText.Text = hotels[editIndex].Address.City;
+            stateText.Text = hotels[editIndex].Address.State;
+            postalCodeText.Text = hotels[editIndex].Address.Postal_Code;
+            countryText.Text = hotels[editIndex].Address.Country;
+           
+            //  roomComboBox.SelectedIndex = hotels[editIndex].Info;
+            roomNumeric.Text = hotels[editIndex].Rooms.Count.ToString();
+
+
+            int index = 0;
+            foreach (var facility in facilities)
             {
-                //      facilitiesCheckBox.CheckedItems.
-                //      hotel_credit[0].Facilities.Add(b);
+                foreach (var hot_facility in hotels[editIndex].Facilities)
+                {
+                    if (hot_facility.Type.ToString().Equals(facility.Type.ToString())) { facilitiesCheckBox.SetItemCheckState(index, CheckState.Checked); }
+                }
+
+                index++;
+
             }
             if (roomFreeRadioBtn.Checked)
                 room_credit[0].Free_Room = true;
@@ -151,11 +165,15 @@ namespace PO_PRO.Forms
             {
                 hotel_credit[0].Rooms.Add(room_credit[0]);
             }
+
+
         }
         public void addHotel()
         {
+            hotel_credit.Add(new Hotel());
             hotel_credit[0].Info = hotelInfo.Text;
             hotel_credit[0].Name = hotelName.Text;
+            hotel_credit[0].Owner = id;
             //hotel_credit[0].Photo = (Image)hotelPicture.Image;
             hotel_credit[0].Stars = Convert.ToInt32(starsNumeric.Text);
             hotel_credit[0].Address.Street = streetText.Text;
@@ -186,7 +204,7 @@ namespace PO_PRO.Forms
         {
             hotelInfo.Text = "";
             hotelName.Text = "";
-            hotelPicture.Image = null;
+           // hotelPicture.Image = null;
             starsNumeric.Text = "";
             streetText.Text = "";
             cityText.Text = "";
@@ -195,23 +213,7 @@ namespace PO_PRO.Forms
             countryText.Text = "";
             roomComboBox.SelectedIndex = 0;
             roomNumeric.Text = "";
-            foreach (object facilityChecked in facilitiesCheckBox.CheckedItems)
-            {
-                Bonus b = new Bonus((Bonus_Type)facilityChecked);
-                hotel_credit[0].Facilities.Add(b);
-            }
-            if (roomFreeRadioBtn.Checked)
-                room_credit[0].Free_Room = true;
-            else
-            {
-                room_credit[0].Free_Room = false;
-            }
-
-            for (int i = 0; i < Convert.ToDouble(roomAmountnumeric.Text); i++)
-            {
-                hotel_credit[0].Rooms.Add(room_credit[0]);
-            }
-        }
+                    }
         #endregion
 
 
@@ -219,12 +221,22 @@ namespace PO_PRO.Forms
         {
 
            
-                    try
+                   // try
                     {
-                        addHotel();
+                    addHotel();
+                    if (editIndex > -1)
+                    {
+                        hotels[editIndex] = hotel_credit[0];
+                        DB.Write("HOT_" + hotels[editIndex].ID, JsonConvert.SerializeObject(hotels[editIndex]));
+                    }
+                    else
+                    {
+
                         DB.Write("HOT_" + hotel_credit[0].ID, JsonConvert.SerializeObject(hotel_credit[0]));
 
-                        dataGridView1.DataSource = null;
+                    }
+
+                    dataGridView1.DataSource = null;
                         if (editIndex > -1)
                         {
                             hotels.RemoveAt(editIndex);
@@ -236,10 +248,10 @@ namespace PO_PRO.Forms
                         dataGridView1.DataSource = hotels;
                         hotelTab.Visible = false;
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
+                    //catch (Exception ex)
+                    //{
+                    //    Console.WriteLine(ex.Message);
+                    //}
 
             dataGridView1.Update();
             dataGridView1.Refresh();
@@ -247,14 +259,15 @@ namespace PO_PRO.Forms
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            editIndex = e.RowIndex;
             //edit column 
             if (e.ColumnIndex == 0)
             {
-                editIndex = e.RowIndex;
-
                 hotelTab.Visible = true;
+                editHotel();
+                btnSubmit.Visible = true;
 
-                
+
                 dataGridView1.Refresh();
 
             } //delete column
@@ -290,7 +303,8 @@ namespace PO_PRO.Forms
             dataGridView1.Refresh();
         }
         private void btnCreate_Click(object sender, EventArgs e)
-        { 
+        {
+            editIndex = -1;
             hotel_credit.Clear();
             clearHotel();
             //hotel_credit.Add(new Hotel());
