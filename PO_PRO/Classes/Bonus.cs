@@ -8,7 +8,9 @@ namespace PO_PRO.Classes
 {
     public enum Bonus_Type
     {
+        Private_bathroom,
         Kitchen,
+        Balcony,
         Free_WiFi,
         Parking,
         Pets_allowed,

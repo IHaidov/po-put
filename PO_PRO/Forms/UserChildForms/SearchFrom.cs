@@ -220,7 +220,34 @@ namespace PO_PRO.Forms.UserChildForms
         private void PopulateItems()
         {
             List<Hotel> filteredHotels = new List<Hotel>();
-            filteredHotels = hotels;
+            filteredHotels = hotels.ToList();
+            IEnumerable<IconButton> facilities = panelFacilities.Controls.OfType<IconButton>();
+            int k = 0;
+            foreach (IconButton facility in facilities)
+            {
+                if (facility.IconChar.ToString() == "CheckSquare")
+                {
+                    MessageBox.Show(facility.Text);
+                    foreach(Hotel hotel in hotels)
+                    {
+                        bool zm = false;
+                        for(int j = 0; j < hotel.Facilities.Count; j++)
+                        {
+                            if((int)hotel.Facilities[j].Type == k)
+                            {
+                                zm = true;
+                            }
+                        }
+                        if(!zm)
+                        {
+                            MessageBox.Show(hotel.Name);
+                            filteredHotels.Remove(hotel);
+                            //usuń z wypisywanych
+                        }
+                    }
+                }
+                k++;
+            }
             //filteredHotels = hotels.Select(i => i.Rooms.Select(j => j.Price <= (double)numMax.Value && j.Price >= (double)numMin.Value));
             /*foreach (var n in filteredHotels)
                 MessageBox.Show(n.Name.ToString());*/
