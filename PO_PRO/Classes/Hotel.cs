@@ -5,9 +5,9 @@ using System.Drawing;
 namespace PO_PRO.Classes
 {
     [Serializable]
-    public class Hotel
+    public class Hotel :IHotel
     {
-        public string ID { get; set; }
+        private string ID { get; set; }
         public string Name { get; set; }
         public int Stars { get; set; }
         public List<Room> Rooms { get; set; }
@@ -23,6 +23,36 @@ namespace PO_PRO.Classes
             Facilities = new List<Bonus>();
             Rooms = new List<Room>();
             Address = new Address();
+        }
+
+        public string GetID()
+        {
+            return ID;
+        }
+
+        public Address getAddress()
+        {
+            return Address;
+        }
+
+        public void setAddress(Address address)
+        {
+            this.Address = address;
+        }
+
+        public void addRooms(List<Room> rooms)
+        {
+            this.Rooms = rooms;
+        }
+
+        public List<Room> getRooms()
+        {
+            return Rooms;
+        }
+
+        public void setOwner(string Owner)
+        {
+            this.Owner = Owner;
         }
     }
 }

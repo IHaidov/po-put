@@ -14,9 +14,9 @@ namespace PO_PRO.Classes
         Accountant
     }
     [Serializable]
-    public class Person
+    public class Person:IPerson
     {
-        public string ID { get; set; }
+        private string ID { get; set; }
         public Type User_Type { get; set; }
         public string Name { get; set; }
         
@@ -36,6 +36,34 @@ namespace PO_PRO.Classes
             User_Type = Type.User;
             BirthTime = DateTime.Now;
             Blocked = false;
+        }
+        public Person(string Email, string Password)
+        {
+            this.ID = Guid.NewGuid().ToString();
+            this.User_Type = Type.User;
+            this.BirthTime = DateTime.Now;
+            this.Blocked = false;
+            this.Email = Email;
+            this.Password = Password;
+        }
+        public string GetID()
+        {
+            return ID;
+        }
+
+        public string getEmail()
+        {
+            return Email;
+        }
+
+        public bool checkPassword(string pass)
+        {
+            return this.Password.Equals(pass);
+        }
+
+        public string getCredentials()
+        {
+            return Name + " " + Surname;
         }
     }
 }

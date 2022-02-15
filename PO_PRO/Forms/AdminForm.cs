@@ -66,15 +66,17 @@ namespace PO_PRO.Forms
             bonus_credit.Add(new Bonus());
             room_credit.Add(new Room());
             user_credit.Add(new Person());
-            
-            facilities.Add(new Bonus(Bonus_Type.Kitchen));
-            facilities.Add(new Bonus(Bonus_Type.Free_WiFi));
-            facilities.Add(new Bonus(Bonus_Type.Parking));
-            facilities.Add(new Bonus(Bonus_Type.Pets_allowed));
-            facilities.Add(new Bonus(Bonus_Type.Fitness_centre));
+
             facilities.Add(new Bonus(Bonus_Type.Electric_kettle));
+            facilities.Add(new Bonus(Bonus_Type.Fitness_centre));
+            facilities.Add(new Bonus(Bonus_Type.Parking));
             facilities.Add(new Bonus(Bonus_Type.TV));
-            
+            facilities.Add(new Bonus(Bonus_Type.Pets_allowed));
+            facilities.Add(new Bonus(Bonus_Type.Free_WiFi));
+            facilities.Add(new Bonus(Bonus_Type.Balcony));
+            facilities.Add(new Bonus(Bonus_Type.Private_bathroom));
+            facilities.Add(new Bonus(Bonus_Type.Kitchen));
+
             foreach (var facility in facilities)
             {
                 facilitiesCheckBox.Items.Add(facility.Type);
@@ -116,19 +118,19 @@ namespace PO_PRO.Forms
 
                 case (int)classes.Hotel:
                     
-                    var elem = hotels.SingleOrDefault(r => r.ID == id);
+                    var elem = hotels.SingleOrDefault(r => r.GetID() == id);
                     hotels.Remove(elem);
                     dataGridView1.DataSource = hotels;
                     
                     break;
                 case (int)classes.Order:
-                    var elem1 = orders.SingleOrDefault(r => r.ID == id);
+                    var elem1 = orders.SingleOrDefault(r => r.GetID() == id);
                     orders.Remove(elem1);
                     dataGridView1.DataSource = orders;
                     break;
 
                 case (int)classes.Person:
-                    var elem2 = users.SingleOrDefault(r => r.ID == id);
+                    var elem2 = users.SingleOrDefault(r => r.GetID() == id);
                     users.Remove(elem2);
                     dataGridView1.DataSource = users;
                     break;
@@ -361,12 +363,12 @@ namespace PO_PRO.Forms
                         if (editIndex > -1)
                         {
                             hotels[editIndex] = hotel_credit[0];
-                            DB.Write("HOT_" + hotels[editIndex].ID, JsonConvert.SerializeObject(hotels[editIndex]));
+                            DB.Write("HOT_" + hotels[editIndex].GetID(), JsonConvert.SerializeObject(hotels[editIndex]));
                         }
                         else
                         {
                             
-                            DB.Write("HOT_" + hotel_credit[0].ID, JsonConvert.SerializeObject(hotel_credit[0]));
+                            DB.Write("HOT_" + hotel_credit[0].GetID(), JsonConvert.SerializeObject(hotel_credit[0]));
                         
                         }
                         dataGridView1.DataSource = null;
