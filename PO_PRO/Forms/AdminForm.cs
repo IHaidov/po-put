@@ -66,15 +66,17 @@ namespace PO_PRO.Forms
             bonus_credit.Add(new Bonus());
             room_credit.Add(new Room());
             user_credit.Add(new Person());
-            
-            facilities.Add(new Bonus(Bonus_Type.Kitchen));
-            facilities.Add(new Bonus(Bonus_Type.Free_WiFi));
-            facilities.Add(new Bonus(Bonus_Type.Parking));
-            facilities.Add(new Bonus(Bonus_Type.Pets_allowed));
-            facilities.Add(new Bonus(Bonus_Type.Fitness_centre));
+
             facilities.Add(new Bonus(Bonus_Type.Electric_kettle));
+            facilities.Add(new Bonus(Bonus_Type.Fitness_centre));
+            facilities.Add(new Bonus(Bonus_Type.Parking));
             facilities.Add(new Bonus(Bonus_Type.TV));
-            
+            facilities.Add(new Bonus(Bonus_Type.Pets_allowed));
+            facilities.Add(new Bonus(Bonus_Type.Free_WiFi));
+            facilities.Add(new Bonus(Bonus_Type.Balcony));
+            facilities.Add(new Bonus(Bonus_Type.Private_bathroom));
+            facilities.Add(new Bonus(Bonus_Type.Kitchen));
+
             foreach (var facility in facilities)
             {
                 facilitiesCheckBox.Items.Add(facility.Type);
@@ -128,7 +130,7 @@ namespace PO_PRO.Forms
                     break;
 
                 case (int)classes.Person:
-                    var elem2 = users.SingleOrDefault(r => r.ID == id);
+                    var elem2 = users.SingleOrDefault(r => r.GetID() == id);
                     users.Remove(elem2);
                     dataGridView1.DataSource = users;
                     break;

@@ -8,15 +8,16 @@ namespace PO_PRO.Classes
 {
     public enum Bonus_Type
     {
-        Private_bathroom,
-        Kitchen,
-        Balcony,
-        Free_WiFi,
-        Parking,
-        Pets_allowed,
-        Fitness_centre,
         Electric_kettle,
-        TV
+        Fitness_centre,
+        Parking,
+        TV,
+        Pets_allowed,
+        Free_WiFi,
+        Balcony,
+        Private_bathroom,
+        Kitchen
+        
     }
     [Serializable]
     public class Bonus

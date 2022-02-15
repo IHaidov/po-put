@@ -49,14 +49,17 @@ namespace PO_PRO.Forms
             room_credit.Add(new Room());
             hotel_credit.Add(new Hotel());
 
-            facilities.Add(new Bonus(Bonus_Type.Kitchen));
-            facilities.Add(new Bonus(Bonus_Type.Free_WiFi));
-            facilities.Add(new Bonus(Bonus_Type.Parking));
-            facilities.Add(new Bonus(Bonus_Type.Pets_allowed));
-            facilities.Add(new Bonus(Bonus_Type.Fitness_centre));
             facilities.Add(new Bonus(Bonus_Type.Electric_kettle));
+            facilities.Add(new Bonus(Bonus_Type.Fitness_centre));
+            facilities.Add(new Bonus(Bonus_Type.Parking));
             facilities.Add(new Bonus(Bonus_Type.TV));
-
+            facilities.Add(new Bonus(Bonus_Type.Pets_allowed));
+            facilities.Add(new Bonus(Bonus_Type.Free_WiFi));
+            facilities.Add(new Bonus(Bonus_Type.Balcony));
+            facilities.Add(new Bonus(Bonus_Type.Private_bathroom));
+            facilities.Add(new Bonus(Bonus_Type.Kitchen));
+            
+           
             foreach (var facility in facilities)
             {
                 facilitiesCheckBox.Items.Add(facility.Type);
@@ -81,7 +84,7 @@ namespace PO_PRO.Forms
 
         public void ListKeyDelete(string id)
         {
-            var elem = hotels.SingleOrDefault(r => r.ID == id);
+            var elem = hotels.SingleOrDefault(r => r.GetID() == id);
             hotels.Remove(elem);
             dataGridView1.DataSource = hotels;
         }
@@ -227,12 +230,12 @@ namespace PO_PRO.Forms
                     if (editIndex > -1)
                     {
                         hotels[editIndex] = hotel_credit[0];
-                        DB.Write("HOT_" + hotels[editIndex].ID, JsonConvert.SerializeObject(hotels[editIndex]));
+                        DB.Write("HOT_" + hotels[editIndex].GetID(), JsonConvert.SerializeObject(hotels[editIndex]));
                     }
                     else
                     {
 
-                        DB.Write("HOT_" + hotel_credit[0].ID, JsonConvert.SerializeObject(hotel_credit[0]));
+                        DB.Write("HOT_" + hotel_credit[0].GetID(), JsonConvert.SerializeObject(hotel_credit[0]));
 
                     }
 
