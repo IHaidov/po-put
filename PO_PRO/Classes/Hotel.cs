@@ -7,7 +7,7 @@ namespace PO_PRO.Classes
     [Serializable]
     public class Hotel
     {
-        public string ID { get; set; }
+        private string ID { get; set; }
         public string Name { get; set; }
         public int Stars { get; set; }
         public List<Room> Rooms { get; set; }
@@ -23,6 +23,11 @@ namespace PO_PRO.Classes
             Facilities = new List<Bonus>();
             Rooms = new List<Room>();
             Address = new Address();
+        }
+
+        public string GetID()
+        {
+            return ID;
         }
     }
 }

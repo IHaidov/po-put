@@ -102,7 +102,7 @@ namespace PO_PRO
                 }
                 else
                 {
-                    if (txtPassword.Text.Equals(user.Password) && txtUsername.Text != "admin@gmail.com")
+                    if (txtPassword.Text.Equals(user.Password) && txtUsername.Text != "admin")
                     {
                        
                         this.Hide();
@@ -111,7 +111,7 @@ namespace PO_PRO
                         //MessageBox.Show("User");
                     }
 
-                    else if (txtPassword.Text.Equals(user.Password) && txtUsername.Text == "admin@gmail.com")
+                    else if (txtPassword.Text.Equals(user.Password) && txtUsername.Text == "admin")
                     {
 
                         this.Hide();

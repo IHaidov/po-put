@@ -116,13 +116,13 @@ namespace PO_PRO.Forms
 
                 case (int)classes.Hotel:
                     
-                    var elem = hotels.SingleOrDefault(r => r.ID == id);
+                    var elem = hotels.SingleOrDefault(r => r.GetID() == id);
                     hotels.Remove(elem);
                     dataGridView1.DataSource = hotels;
                     
                     break;
                 case (int)classes.Order:
-                    var elem1 = orders.SingleOrDefault(r => r.ID == id);
+                    var elem1 = orders.SingleOrDefault(r => r.GetID() == id);
                     orders.Remove(elem1);
                     dataGridView1.DataSource = orders;
                     break;
@@ -361,12 +361,12 @@ namespace PO_PRO.Forms
                         if (editIndex > -1)
                         {
                             hotels[editIndex] = hotel_credit[0];
-                            DB.Write("HOT_" + hotels[editIndex].ID, JsonConvert.SerializeObject(hotels[editIndex]));
+                            DB.Write("HOT_" + hotels[editIndex].GetID(), JsonConvert.SerializeObject(hotels[editIndex]));
                         }
                         else
                         {
                             
-                            DB.Write("HOT_" + hotel_credit[0].ID, JsonConvert.SerializeObject(hotel_credit[0]));
+                            DB.Write("HOT_" + hotel_credit[0].GetID(), JsonConvert.SerializeObject(hotel_credit[0]));
                         
                         }
                         dataGridView1.DataSource = null;

@@ -19,9 +19,9 @@ namespace PO_PRO.Classes
     [Serializable]
     public class Bonus
     {
-        public string ID { get; set; }
+        private string ID { get; set; }
         public Bonus_Type Type { get; set; }
-        public double Price { get; set; }
+        private double Price { get; set; }
         public Bonus()
         {
             ID = Guid.NewGuid().ToString();
