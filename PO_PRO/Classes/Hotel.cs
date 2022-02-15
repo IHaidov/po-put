@@ -15,6 +15,7 @@ namespace PO_PRO.Classes
         public Address Address { get; set; }
        // public Image Photo { get; set; }
         public string Info { get; set; }
+        public string Owner { get; set; }
 
         public Hotel()
         {

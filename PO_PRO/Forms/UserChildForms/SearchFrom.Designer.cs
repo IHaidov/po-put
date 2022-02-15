@@ -598,7 +598,7 @@ namespace PO_PRO.Forms.UserChildForms
             this.flowLayoutHotels.Name = "flowLayoutHotels";
             this.flowLayoutHotels.Size = new System.Drawing.Size(795, 621);
             this.flowLayoutHotels.TabIndex = 7;
-            this.flowLayoutHotels.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutHotels_Paint);
+           // this.flowLayoutHotels.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutHotels_Paint);
             // 
             // SearchFrom
             // 

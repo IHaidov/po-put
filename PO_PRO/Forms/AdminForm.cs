@@ -83,6 +83,9 @@ namespace PO_PRO.Forms
 
             comboBox_Index_Changed();
             dbUpdate();
+            ownerComboBox.DataSource = users;
+            ownerComboBox.DisplayMember = "Email";
+            ownerComboBox.ValueMember = "Email";
         }
 
         public string KeyMaker(string ID)
@@ -242,20 +245,30 @@ namespace PO_PRO.Forms
         public void editHotel()
         {
             hotelInfo.Text = hotels[editIndex].Info;
-            hotelName.Text = hotels[editIndex].Info;
+            hotelName.Text = hotels[editIndex].Name;
+            
            // hotelPicture.Image = hotels[editIndex].Info;
-            starsNumeric.Text = hotels[editIndex].Info;
-            streetText.Text = hotels[editIndex].Info;
-            cityText.Text = hotels[editIndex].Info;
-            stateText.Text = hotels[editIndex].Info;
-            postalCodeText.Text = hotels[editIndex].Info;
-            countryText.Text = hotels[editIndex].Info;
+            starsNumeric.Text = hotels[editIndex].Stars.ToString();
+            streetText.Text = hotels[editIndex].Address.Street;
+            cityText.Text = hotels[editIndex].Address.City;
+            stateText.Text = hotels[editIndex].Address.State;
+            postalCodeText.Text = hotels[editIndex].Address.Postal_Code;
+            countryText.Text = hotels[editIndex].Address.Country;
+            ownerComboBox.SelectedItem = hotels[editIndex].Owner;
           //  roomComboBox.SelectedIndex = hotels[editIndex].Info;
-            roomNumeric.Text = hotels[editIndex].Info;
-            foreach (object facilityChecked in facilitiesCheckBox.Items)
+            roomNumeric.Text = hotels[editIndex].Rooms.Count.ToString();
+            
+
+            int index = 0;
+            foreach (var facility in facilities)
             {
-          //      facilitiesCheckBox.CheckedItems.
-          //      hotel_credit[0].Facilities.Add(b);
+                foreach (var hot_facility in hotels[editIndex].Facilities)
+                {
+                    if(hot_facility.Type.ToString().Equals(facility.Type.ToString())){facilitiesCheckBox.SetItemCheckState(index,CheckState.Checked);}
+                }
+
+                index++;
+                
             }
             if (roomFreeRadioBtn.Checked)
                 room_credit[0].Free_Room = true;
@@ -268,11 +281,14 @@ namespace PO_PRO.Forms
             {
                 hotel_credit[0].Rooms.Add(room_credit[0]);
             }
+
+            
         }
         public void addHotel()
         {
             hotel_credit[0].Info = hotelInfo.Text;
             hotel_credit[0].Name = hotelName.Text;
+            hotel_credit[0].Owner = ownerComboBox.Text.ToString();
             //hotel_credit[0].Photo = (Image)hotelPicture.Image;
             hotel_credit[0].Stars = Convert.ToInt32(starsNumeric.Text);
             hotel_credit[0].Address.Street = streetText.Text;
@@ -332,24 +348,35 @@ namespace PO_PRO.Forms
         #endregion
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            
+
             switch (comboBox1.SelectedIndex)
             {
-               
 
-                case (int)classes.Hotel:
-                   
+
+                case (int) classes.Hotel:
+
                     try
                     {
                         addHotel();
-                        DB.Write("HOT_" + hotel_credit[0].ID, JsonConvert.SerializeObject(hotel_credit[0]));
+                        if (editIndex > -1)
+                        {
+                            hotels[editIndex] = hotel_credit[0];
+                            DB.Write("HOT_" + hotels[editIndex].ID, JsonConvert.SerializeObject(hotels[editIndex]));
+                        }
+                        else
+                        {
+                            
+                            DB.Write("HOT_" + hotel_credit[0].ID, JsonConvert.SerializeObject(hotel_credit[0]));
                         
+                        }
                         dataGridView1.DataSource = null;
                         if (editIndex > -1)
                         {
                             hotels.RemoveAt(editIndex);
                             hotels.Add(hotel_credit[0]);
-                        }else hotels.Add(hotel_credit[0]);
+                        }
+                        else hotels.Add(hotel_credit[0]);
+
                         dbUpdate();
                         dataGridView1.DataSource = hotels;
                         hotelTab.Visible = false;
@@ -358,22 +385,43 @@ namespace PO_PRO.Forms
                     {
                         Console.WriteLine(ex.Message);
                     }
+
                     break;
 
-                case (int)classes.Order:
-                   
+                case (int) classes.Order:
+
                     break;
 
-               
-                case (int)classes.Person:
+
+                case (int) classes.Person:
+                    if (editIndex > -1)
+                    {
+                        user_credit[0].User_Type = (Classes.Type)Enum.Parse(typeof(Classes.Type), dataGridView2.Rows[0].Cells[1].Value.ToString());
+                        user_credit[0].Name = dataGridView2.Rows[0].Cells[2].Value.ToString();
+                        user_credit[0].Surname = dataGridView2.Rows[0].Cells[3].Value.ToString();
+                        user_credit[0].Username = dataGridView2.Rows[0].Cells[4].Value.ToString();
+                        user_credit[0].Email = dataGridView2.Rows[0].Cells[5].Value.ToString();
+                        user_credit[0].Password = dataGridView2.Rows[0].Cells[6].Value.ToString();
+                        user_credit[0].Phone = dataGridView2.Rows[0].Cells[7].Value.ToString();
+                        user_credit[0].Passport_ID = dataGridView2.Rows[0].Cells[8].Value == null
+                            ? ""
+                            : dataGridView2.Rows[0].Cells[8].Value.ToString();
+                        user_credit[0].Blocked = Convert.ToBoolean(dataGridView2.Rows[0].Cells[10].Value.ToString());
+                    }
+                    else
+                    {
                     user_credit[0].Name = dataGridView2.Rows[0].Cells[2].Value.ToString();
                     user_credit[0].Surname = dataGridView2.Rows[0].Cells[3].Value.ToString();
                     user_credit[0].Username = dataGridView2.Rows[0].Cells[4].Value.ToString();
                     user_credit[0].Email = dataGridView2.Rows[0].Cells[5].Value.ToString();
                     user_credit[0].Password = dataGridView2.Rows[0].Cells[6].Value.ToString();
                     user_credit[0].Phone = dataGridView2.Rows[0].Cells[7].Value.ToString();
-                    user_credit[0].Passport_ID = dataGridView2.Rows[0].Cells[8].Value==null?"": dataGridView2.Rows[0].Cells[8].Value.ToString(); ;
+                    user_credit[0].Passport_ID = dataGridView2.Rows[0].Cells[8].Value == null
+                        ? ""
+                        : dataGridView2.Rows[0].Cells[8].Value.ToString();
                     user_credit[0].Blocked = Convert.ToBoolean(dataGridView2.Rows[0].Cells[10].Value.ToString());
+                    }
+                    
                     try
                     {
                         DB.Write(user_credit[0].Email.ToLower(), JsonConvert.SerializeObject(user_credit[0]));
@@ -428,7 +476,8 @@ namespace PO_PRO.Forms
                 else
                 {
                     hotelTab.Visible = true;
-                    
+                    editHotel();
+                    btnSubmit.Visible = true;
                 }
                 dataGridView1.Refresh();
 
@@ -535,7 +584,7 @@ namespace PO_PRO.Forms
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            Height += 200;
+            
             createClicked = true;
             switch (comboBox1.SelectedIndex)
             { 

@@ -79,6 +79,7 @@
             this.btnAddProperty.Text = "List your property";
             this.btnAddProperty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddProperty.UseVisualStyleBackColor = false;
+            this.btnAddProperty.Click += new System.EventHandler(this.btnAddProperty_Click);
             this.btnAddProperty.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseDown);
             this.btnAddProperty.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserForm_MouseMove);
             // 

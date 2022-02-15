@@ -107,6 +107,7 @@ namespace PO_PRO.Forms
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            this.Visible = true;
             OpenChildForm(new UserChildForms.SearchFrom());
         }
         private void btnHistory_Click(object sender, EventArgs e)
@@ -153,6 +154,11 @@ namespace PO_PRO.Forms
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnAddProperty_Click(object sender, EventArgs e)
+        {
+            new OwnerForm(user.Email).Show();
         }
     }
 }
